@@ -7,18 +7,21 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#050816;
   color:#fff;
   min-height:100vh;
 }
+
 header{
   padding:22px 16px;
   text-align:center;
   background:linear-gradient(135deg,#101b42,#24104d);
   border-bottom:1px solid #334;
 }
+
 .logo{
   font-size:28px;
   font-weight:900;
@@ -27,32 +30,135 @@ header{
   -webkit-background-clip:text;
   color:transparent;
 }
+
 .subtitle{
   margin-top:8px;
   color:#b9c4e8;
   font-size:14px;
 }
+
+/* LOGIN */
+
+.login-box{
+  max-width:450px;
+  margin:25px auto 0;
+  padding:24px;
+  background:linear-gradient(145deg,#101936,#080d20);
+  border:1px solid #26345e;
+  border-radius:22px;
+  box-shadow:0 15px 40px #0009;
+}
+
+.login-box h2{
+  text-align:center;
+  margin-bottom:8px;
+}
+
+.login-box p{
+  text-align:center;
+  color:#aab4d4;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.input{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border-radius:12px;
+  border:1px solid #33436f;
+  background:#080f25;
+  color:white;
+  font-size:15px;
+  outline:none;
+}
+
+.input:focus{
+  border-color:#00eaff;
+  box-shadow:0 0 0 2px #00eaff22;
+}
+
+.login-btn{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(90deg,#00c6ff,#7c4dff);
+  color:white;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.login-error{
+  color:#ff5c7c;
+  text-align:center;
+  font-size:13px;
+  margin-top:12px;
+  min-height:18px;
+}
+
+/* USER BAR */
+
+.user-bar{
+  max-width:1100px;
+  margin:15px auto 0;
+  padding:12px 15px;
+  border:1px solid #26345e;
+  background:#0c1430;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.user-info{
+  color:#dbe4ff;
+  font-size:14px;
+}
+
+.user-info strong{
+  color:#00eaff;
+}
+
+.logout{
+  border:1px solid #693a91;
+  background:#18112d;
+  color:#fff;
+  padding:8px 13px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+/* MAIN */
+
 .container{
   max-width:1100px;
   margin:auto;
   padding:20px 14px 50px;
 }
+
 .welcome{
   text-align:center;
   padding:28px 15px;
 }
+
 .welcome h1{
   font-size:30px;
   margin-bottom:10px;
 }
+
 .welcome p{
   color:#aeb8d8;
 }
+
 .tests{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   gap:16px;
 }
+
 .card{
   background:linear-gradient(145deg,#101936,#080d20);
   border:1px solid #26345e;
@@ -61,24 +167,29 @@ header{
   box-shadow:0 12px 35px #0008;
   transition:.25s;
 }
+
 .card:hover{
   transform:translateY(-5px);
   border-color:#00eaff;
 }
+
 .icon{
   font-size:38px;
   margin-bottom:12px;
 }
+
 .card h2{
   font-size:20px;
   margin-bottom:8px;
 }
+
 .card p{
   color:#aab4d4;
   font-size:13px;
   line-height:1.5;
   margin-bottom:18px;
 }
+
 .btn{
   width:100%;
   padding:13px;
@@ -90,6 +201,7 @@ header{
   font-size:15px;
   cursor:pointer;
 }
+
 .rank{
   margin-top:25px;
   background:#0c1430;
@@ -97,24 +209,29 @@ header{
   border-radius:20px;
   padding:20px;
 }
+
 .rank h2{
   text-align:center;
   margin-bottom:18px;
 }
+
 .top{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
 }
+
 .top div{
   text-align:center;
   padding:18px 8px;
   border-radius:16px;
   background:#111b3b;
 }
+
 .gold{border:1px solid #ffd700}
 .silver{border:1px solid #cfd3da}
 .bronze{border:1px solid #cd7f32}
+
 .congrats{
   margin-top:18px;
   text-align:center;
@@ -124,6 +241,7 @@ header{
   border:1px solid #693a91;
   color:#fff;
 }
+
 .chat{
   margin-top:25px;
   text-align:center;
@@ -132,6 +250,7 @@ header{
   border-radius:20px;
   padding:22px;
 }
+
 .amounts{
   display:flex;
   justify-content:center;
@@ -139,13 +258,16 @@ header{
   gap:8px;
   margin-top:15px;
 }
+
 .amounts button{
   border:1px solid #33436f;
   background:#111a38;
   color:white;
   padding:10px 15px;
   border-radius:10px;
+  cursor:pointer;
 }
+
 footer{
   text-align:center;
   color:#7884a9;
@@ -153,10 +275,28 @@ footer{
   font-size:13px;
 }
 
+.hidden{
+  display:none!important;
+}
+
 @media(max-width:600px){
-  .logo{font-size:23px}
-  .welcome h1{font-size:25px}
-  .top{grid-template-columns:1fr}
+
+  .logo{
+    font-size:23px;
+  }
+
+  .welcome h1{
+    font-size:25px;
+  }
+
+  .top{
+    grid-template-columns:1fr;
+  }
+
+  .user-bar{
+    margin-left:12px;
+    margin-right:12px;
+  }
 }
 </style>
 </head>
@@ -168,49 +308,183 @@ footer{
   <div class="subtitle">TEST • PRACTICE • RANK • IMPROVE</div>
 </header>
 
-<div class="container">
+
+<!-- LOGIN SCREEN -->
+
+<section id="loginSection" class="login-box">
+
+  <h2>🔐 Welcome to LOYAL</h2>
+
+  <p>
+    Test Series शुरू करने के लिए अपना नाम और Age दर्ज करें
+  </p>
+
+  <input
+    id="nameInput"
+    class="input"
+    type="text"
+    placeholder="👤 अपना पूरा नाम"
+    maxlength="50"
+    autocomplete="name"
+  >
+
+  <input
+    id="ageInput"
+    class="input"
+    type="number"
+    placeholder="🎂 आपकी Age"
+    min="10"
+    max="100"
+  >
+
+  <button class="login-btn" onclick="loginUser()">
+    🚀 LOGIN & CONTINUE
+  </button>
+
+  <div id="loginError" class="login-error"></div>
+
+</section>
+
+
+<!-- USER INFORMATION -->
+
+<div id="userBar" class="user-bar hidden">
+
+  <div class="user-info">
+    👋 Welcome,
+    <strong id="displayName"></strong>
+    <span id="displayAge"></span>
+  </div>
+
+  <button class="logout" onclick="logoutUser()">
+    Logout
+  </button>
+
+</div>
+
+
+<div id="mainContent" class="container hidden">
 
 <section class="welcome">
-  <h1>🚀 आपकी तैयारी, LOYAL की जिम्मेदारी</h1>
-  <p>Professional Competitive Exam Test Series</p>
+
+  <h1>
+    🚀 आपकी तैयारी, LOYAL की जिम्मेदारी
+  </h1>
+
+  <p>
+    Professional Competitive Exam Test Series
+  </p>
+
 </section>
+
 
 <section class="tests">
 
+
+<!-- UPSC -->
+
 <div class="card">
+
   <div class="icon">🇮🇳</div>
+
   <h2>UPSC Prelims</h2>
-  <p>UPSC Civil Services Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
-  <button class="btn" onclick="startTest('UPSC Prelims')">START TEST →</button>
+
+  <p>
+    UPSC Civil Services Preliminary Test Series
+    <br>
+    ⏱️ 30 Seconds / Question
+    <br>
+    📚 TEST-1 POLITY
+  </p>
+
+  <button
+    class="btn"
+    onclick="startTest('UPSC Prelims')">
+    START TEST →
+  </button>
+
 </div>
 
+
+<!-- UPPCS -->
+
 <div class="card">
+
   <div class="icon">🏛️</div>
+
   <h2>UPPCS Prelims</h2>
-  <p>UPPCS Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
-  <button class="btn" onclick="startTest('UPPCS Prelims')">START TEST →</button>
+
+  <p>
+    UPPCS Preliminary Test Series
+    <br>
+    ⏱️ 30 Seconds / Question
+  </p>
+
+  <button
+    class="btn"
+    onclick="startTest('UPPCS Prelims')">
+    START TEST →
+  </button>
+
 </div>
 
+
+<!-- PET -->
+
 <div class="card">
+
   <div class="icon">📚</div>
+
   <h2>UPSSSC PET</h2>
-  <p>UPSSSC PET Test Series<br>⏱️ 30 Seconds / Question</p>
-  <button class="btn" onclick="startTest('UPSSSC PET')">START TEST →</button>
+
+  <p>
+    UPSSSC PET Test Series
+    <br>
+    ⏱️ 30 Seconds / Question
+  </p>
+
+  <button
+    class="btn"
+    onclick="startTest('UPSSSC PET')">
+    START TEST →
+  </button>
+
 </div>
 
+
+<!-- BPSC -->
+
 <div class="card">
+
   <div class="icon">🎯</div>
+
   <h2>BPSC 72 Prelims</h2>
-  <p>BPSC 72nd Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
-  <button class="btn" onclick="startTest('BPSC 72 Prelims')">START TEST →</button>
+
+  <p>
+    BPSC 72nd Preliminary Test Series
+    <br>
+    ⏱️ 30 Seconds / Question
+  </p>
+
+  <button
+    class="btn"
+    onclick="startTest('BPSC 72 Prelims')">
+    START TEST →
+  </button>
+
 </div>
 
 </section>
 
+
+<!-- RANK -->
+
 <section class="rank">
+
 <h2>🏆 LIVE RANK DASHBOARD</h2>
 
 <div class="top">
+
   <div class="gold">
     🥇<br>
     <b>TOPPER #1</b><br>
@@ -231,43 +505,241 @@ footer{
     Priya<br>
     91%
   </div>
+
 </div>
 
 <div class="congrats">
-  🎉 <b>LOYAL की तरफ़ से सभी members को Congratulations!</b> 🎉<br>
+
+  🎉
+  <b>
+    LOYAL की तरफ़ से सभी members को Congratulations!
+  </b>
+  🎉
+
+  <br>
+
   मेहनत करते रहिए और अपनी rank बेहतर बनाते रहिए।
+
 </div>
+
 </section>
 
+
+<!-- SUPER CHAT -->
+
 <section class="chat">
+
   <h2>💬 LOYAL SUPER CHAT</h2>
+
   <p style="color:#aab4d4;margin-top:8px">
     ₹1 से ₹100 तक Super Chat
   </p>
 
   <div class="amounts">
-    <button>₹1</button>
-    <button>₹5</button>
-    <button>₹10</button>
-    <button>₹20</button>
-    <button>₹50</button>
-    <button>₹100</button>
+
+    <button onclick="superChat(1)">₹1</button>
+    <button onclick="superChat(5)">₹5</button>
+    <button onclick="superChat(10)">₹10</button>
+    <button onclick="superChat(20)">₹20</button>
+    <button onclick="superChat(50)">₹50</button>
+    <button onclick="superChat(100)">₹100</button>
+
   </div>
+
 </section>
 
 </div>
+
 
 <footer>
   © 2026 LOYAL TEST FACTORY • All Rights Reserved
 </footer>
 
+
 <script>
+
+/* ==========================================
+   LOYAL TEST FACTORY LOGIN SYSTEM
+   ========================================== */
+
+function loginUser(){
+
+  const name =
+    document.getElementById("nameInput").value.trim();
+
+  const age =
+    Number(document.getElementById("ageInput").value);
+
+  const error =
+    document.getElementById("loginError");
+
+
+  if(name.length < 2){
+
+    error.textContent =
+      "⚠️ कृपया अपना सही नाम दर्ज करें।";
+
+    return;
+  }
+
+
+  if(!age || age < 10 || age > 100){
+
+    error.textContent =
+      "⚠️ कृपया सही Age दर्ज करें।";
+
+    return;
+  }
+
+
+  const user = {
+
+    name:name,
+
+    age:age,
+
+    loginTime:new Date().toISOString()
+
+  };
+
+
+  localStorage.setItem(
+    "loyalUser",
+    JSON.stringify(user)
+  );
+
+
+  showLoggedInUser(user);
+
+}
+
+
+function showLoggedInUser(user){
+
+  document
+    .getElementById("loginSection")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("userBar")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("mainContent")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("displayName")
+    .textContent =
+    user.name;
+
+
+  document
+    .getElementById("displayAge")
+    .textContent =
+    " • Age: " + user.age;
+
+}
+
+
+function logoutUser(){
+
+  localStorage.removeItem("loyalUser");
+
+  location.reload();
+
+}
+
+
+/* ==========================================
+   PAGE LOAD
+   ========================================== */
+
+window.addEventListener("DOMContentLoaded",function(){
+
+  const saved =
+    localStorage.getItem("loyalUser");
+
+
+  if(saved){
+
+    try{
+
+      const user =
+        JSON.parse(saved);
+
+      if(user.name && user.age){
+
+        showLoggedInUser(user);
+
+      }
+
+    }catch(e){
+
+      localStorage.removeItem("loyalUser");
+
+    }
+
+  }
+
+});
+
+
+/* ==========================================
+   START TEST
+   ========================================== */
+
 function startTest(testName){
+
+  const saved =
+    localStorage.getItem("loyalUser");
+
+
+  if(!saved){
+
+    alert("पहले Login करें।");
+
+    return;
+
+  }
+
+
+  if(testName === "UPSC Prelims"){
+
+    window.location.href = "test.html";
+
+    return;
+
+  }
+
+
   alert(
     testName +
-    "\n\nTest system जल्द शुरू होगा।\n\n30 Seconds / Question"
+    "\n\nयह Test जल्द उपलब्ध होगा।\n\n" +
+    "⏱️ 30 Seconds / Question"
   );
+
 }
+
+
+/* ==========================================
+   SUPER CHAT
+   ========================================== */
+
+function superChat(amount){
+
+  alert(
+    "💬 LOYAL SUPER CHAT\n\n" +
+    "Selected Amount: ₹" +
+    amount +
+    "\n\nPayment system बाद में connect किया जाएगा।"
+  );
+
+}
+
 </script>
 
 </body>
