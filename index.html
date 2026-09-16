@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOYAL TEST FACTORY</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, sans-serif;
+  background:#050816;
+  color:#fff;
+  min-height:100vh;
+}
+header{
+  padding:22px 16px;
+  text-align:center;
+  background:linear-gradient(135deg,#101b42,#24104d);
+  border-bottom:1px solid #334;
+}
+.logo{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#00eaff,#a855f7,#ff4ecd);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.subtitle{
+  margin-top:8px;
+  color:#b9c4e8;
+  font-size:14px;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px 14px 50px;
+}
+.welcome{
+  text-align:center;
+  padding:28px 15px;
+}
+.welcome h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+.welcome p{
+  color:#aeb8d8;
+}
+.tests{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+}
+.card{
+  background:linear-gradient(145deg,#101936,#080d20);
+  border:1px solid #26345e;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 12px 35px #0008;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#00eaff;
+}
+.icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+.card h2{
+  font-size:20px;
+  margin-bottom:8px;
+}
+.card p{
+  color:#aab4d4;
+  font-size:13px;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+.btn{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(90deg,#00c6ff,#7c4dff);
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+.rank{
+  margin-top:25px;
+  background:#0c1430;
+  border:1px solid #27345e;
+  border-radius:20px;
+  padding:20px;
+}
+.rank h2{
+  text-align:center;
+  margin-bottom:18px;
+}
+.top{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.top div{
+  text-align:center;
+  padding:18px 8px;
+  border-radius:16px;
+  background:#111b3b;
+}
+.gold{border:1px solid #ffd700}
+.silver{border:1px solid #cfd3da}
+.bronze{border:1px solid #cd7f32}
+.congrats{
+  margin-top:18px;
+  text-align:center;
+  padding:17px;
+  border-radius:15px;
+  background:linear-gradient(90deg,#151044,#35104d);
+  border:1px solid #693a91;
+  color:#fff;
+}
+.chat{
+  margin-top:25px;
+  text-align:center;
+  background:#0c1430;
+  border:1px solid #27345e;
+  border-radius:20px;
+  padding:22px;
+}
+.amounts{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+.amounts button{
+  border:1px solid #33436f;
+  background:#111a38;
+  color:white;
+  padding:10px 15px;
+  border-radius:10px;
+}
+footer{
+  text-align:center;
+  color:#7884a9;
+  padding:25px;
+  font-size:13px;
+}
+
+@media(max-width:600px){
+  .logo{font-size:23px}
+  .welcome h1{font-size:25px}
+  .top{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎓 LOYAL TEST FACTORY</div>
+  <div class="subtitle">TEST • PRACTICE • RANK • IMPROVE</div>
+</header>
+
+<div class="container">
+
+<section class="welcome">
+  <h1>🚀 आपकी तैयारी, LOYAL की जिम्मेदारी</h1>
+  <p>Professional Competitive Exam Test Series</p>
+</section>
+
+<section class="tests">
+
+<div class="card">
+  <div class="icon">🇮🇳</div>
+  <h2>UPSC Prelims</h2>
+  <p>UPSC Civil Services Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
+  <button class="btn" onclick="startTest('UPSC Prelims')">START TEST →</button>
+</div>
+
+<div class="card">
+  <div class="icon">🏛️</div>
+  <h2>UPPCS Prelims</h2>
+  <p>UPPCS Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
+  <button class="btn" onclick="startTest('UPPCS Prelims')">START TEST →</button>
+</div>
+
+<div class="card">
+  <div class="icon">📚</div>
+  <h2>UPSSSC PET</h2>
+  <p>UPSSSC PET Test Series<br>⏱️ 30 Seconds / Question</p>
+  <button class="btn" onclick="startTest('UPSSSC PET')">START TEST →</button>
+</div>
+
+<div class="card">
+  <div class="icon">🎯</div>
+  <h2>BPSC 72 Prelims</h2>
+  <p>BPSC 72nd Preliminary Test Series<br>⏱️ 30 Seconds / Question</p>
+  <button class="btn" onclick="startTest('BPSC 72 Prelims')">START TEST →</button>
+</div>
+
+</section>
+
+<section class="rank">
+<h2>🏆 LIVE RANK DASHBOARD</h2>
+
+<div class="top">
+  <div class="gold">
+    🥇<br>
+    <b>TOPPER #1</b><br>
+    Rahul<br>
+    94%
+  </div>
+
+  <div class="silver">
+    🥈<br>
+    <b>TOPPER #2</b><br>
+    Amit<br>
+    92%
+  </div>
+
+  <div class="bronze">
+    🥉<br>
+    <b>TOPPER #3</b><br>
+    Priya<br>
+    91%
+  </div>
+</div>
+
+<div class="congrats">
+  🎉 <b>LOYAL की तरफ़ से सभी members को Congratulations!</b> 🎉<br>
+  मेहनत करते रहिए और अपनी rank बेहतर बनाते रहिए।
+</div>
+</section>
+
+<section class="chat">
+  <h2>💬 LOYAL SUPER CHAT</h2>
+  <p style="color:#aab4d4;margin-top:8px">
+    ₹1 से ₹100 तक Super Chat
+  </p>
+
+  <div class="amounts">
+    <button>₹1</button>
+    <button>₹5</button>
+    <button>₹10</button>
+    <button>₹20</button>
+    <button>₹50</button>
+    <button>₹100</button>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  © 2026 LOYAL TEST FACTORY • All Rights Reserved
+</footer>
+
+<script>
+function startTest(testName){
+  alert(
+    testName +
+    "\n\nTest system जल्द शुरू होगा।\n\n30 Seconds / Question"
+  );
+}
+</script>
+
+</body>
+</html>
