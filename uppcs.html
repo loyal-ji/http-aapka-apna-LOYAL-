@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOYAL TEST FACTORY — UPPCS PRELIMS</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#070b18;
+    color:white;
+}
+.header{
+    padding:20px;
+    text-align:center;
+    background:#10182f;
+    border-bottom:1px solid #293968;
+}
+.logo{
+    font-size:24px;
+    font-weight:900;
+    color:#00eaff;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px 15px 50px;
+}
+.info{
+    background:#10182f;
+    border:1px solid #293968;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
+}
+.info h1{
+    margin-top:0;
+    font-size:25px;
+}
+.info p{
+    color:#b8c3df;
+    line-height:1.7;
+}
+.btn{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(90deg,#00eaff,#00ffb3);
+}
+#testBox{display:none}
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:#0d1429;
+    padding:12px;
+    border-bottom:1px solid #293968;
+}
+.timer{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    color:#00ffb3;
+}
+.progress{
+    text-align:center;
+    color:#aeb9dc;
+    margin-top:5px;
+}
+.question{
+    background:#10182f;
+    border:1px solid #293968;
+    border-radius:16px;
+    padding:20px;
+    margin-top:20px;
+}
+.qno{
+    color:#00eaff;
+    font-weight:bold;
+}
+.qtext{
+    font-size:19px;
+    line-height:1.7;
+    margin:15px 0;
+}
+.option{
+    display:block;
+    background:#080d20;
+    border:1px solid #2b3b68;
+    border-radius:10px;
+    padding:14px;
+    margin:10px 0;
+    cursor:pointer;
+}
+.option:hover{
+    border-color:#00eaff;
+}
+.option input{
+    margin-right:10px;
+}
+.next{
+    margin-top:15px;
+}
+.result{
+    display:none;
+    background:#10182f;
+    border:1px solid #293968;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+}
+.score{
+    font-size:38px;
+    color:#00ffb3;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
+    <div>UPPCS PRELIMS</div>
+</div>
+
+<div class="container">
+
+<div id="instructions" class="info">
+
+<h1>📚 UPPCS PRELIMS — TEST 1</h1>
+
+<p>
+<strong>Test Mode:</strong> Online Practice Test
+</p>
+
+<p>
+प्रत्येक प्रश्न के लिए <strong>30 सेकंड</strong> का समय रहेगा।
+</p>
+
+<p>
+प्रश्न Hindi + English में दिए जाएंगे। प्रत्येक प्रश्न में एक सही उत्तर चुनें।
+</p>
+
+<p>
+⚠️ समय समाप्त होने पर अगला प्रश्न अपने आप खुल जाएगा।
+</p>
+
+<button class="btn" onclick="startTest()">
+🚀 START TEST
+</button>
+
+</div>
+
+<div id="testBox">
+
+<div class="topbar">
+    <div class="timer">
+        ⏱️ <span id="time">30</span> sec
+    </div>
+    <div class="progress">
+        Question <span id="current">1</span> / <span id="total">1</span>
+    </div>
+</div>
+
+<div id="questionArea"></div>
+
+<button class="btn next" onclick="nextQuestion()">
+NEXT QUESTION →
+</button>
+
+</div>
+
+<div id="result" class="result">
+
+<h2>🎉 TEST COMPLETED</h2>
+
+<p>आपका Score</p>
+
+<div class="score" id="score">0</div>
+
+<p id="correctText"></p>
+
+<button class="btn" onclick="location.reload()">
+RESTART TEST
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/*
+ STEP 3:
+ अभी demo questions हैं।
+ अगले step में PDF के वास्तविक UPPCS questions
+ इसी array में जोड़े जाएंगे।
+*/
+
+const questions = [
+
+{
+q:"भारतीय संविधान का कौन-सा भाग मौलिक अधिकारों से संबंधित है?<br>Which Part of the Indian Constitution deals with Fundamental Rights?",
+options:[
+"भाग I / Part I",
+"भाग II / Part II",
+"भाग III / Part III",
+"भाग IV / Part IV"
+],
+answer:2
+},
+
+{
+q:"भारतीय संविधान का अनुच्छेद 14 किससे संबंधित है?<br>Article 14 of the Indian Constitution deals with:",
+options:[
+"स्वतंत्रता का अधिकार / Right to Freedom",
+"समानता का अधिकार / Right to Equality",
+"धार्मिक स्वतंत्रता / Freedom of Religion",
+"संवैधानिक उपचार / Constitutional Remedies"
+],
+answer:1
+},
+
+{
+q:"भारत का सर्वोच्च न्यायालय कहाँ स्थित है?<br>Where is the Supreme Court of India located?",
+options:[
+"मुंबई / Mumbai",
+"नई दिल्ली / New Delhi",
+"प्रयागराज / Prayagraj",
+"लखनऊ / Lucknow"
+],
+answer:1
+}
+
+];
+
+let currentQuestion=0;
+let score=0;
+let time=30;
+let timer=null;
+
+document.getElementById("total").innerText=questions.length;
+
+function startTest(){
+
+    document.getElementById("instructions").style.display="none";
+    document.getElementById("testBox").style.display="block";
+
+    showQuestion();
+}
+
+function showQuestion(){
+
+    clearInterval(timer);
+
+    time=30;
+    document.getElementById("time").innerText=time;
+    document.getElementById("current").innerText=currentQuestion+1;
+
+    const q=questions[currentQuestion];
+
+    let html=`
+    <div class="question">
+        <div class="qno">QUESTION ${currentQuestion+1}</div>
+        <div class="qtext">${q.q}</div>
+    `;
+
+    q.options.forEach((option,index)=>{
+
+        html+=`
+        <label class="option">
+            <input type="radio" name="answer" value="${index}">
+            ${option}
+        </label>
+        `;
+
+    });
+
+    html+=`</div>`;
+
+    document.getElementById("questionArea").innerHTML=html;
+
+    startTimer();
+}
+
+function startTimer(){
+
+    timer=setInterval(()=>{
+
+        time--;
+
+        document.getElementById("time").innerText=time;
+
+        if(time<=0){
+
+            clearInterval(timer);
+            nextQuestion();
+
+        }
+
+    },1000);
+}
+
+function nextQuestion(){
+
+    clearInterval(timer);
+
+    const selected=document.querySelector(
+        'input[name="answer"]:checked'
+    );
+
+    if(selected){
+
+        if(Number(selected.value)===questions[currentQuestion].answer){
+            score++;
+        }
+
+    }
+
+    currentQuestion++;
+
+    if(currentQuestion>=questions.length){
+
+        finishTest();
+
+    }else{
+
+        showQuestion();
+
+    }
+}
+
+function finishTest(){
+
+    clearInterval(timer);
+
+    document.getElementById("testBox").style.display="none";
+    document.getElementById("result").style.display="block";
+
+    document.getElementById("score").innerText=
+        score+" / "+questions.length;
+
+    document.getElementById("correctText").innerText=
+        "सही उत्तर: "+score+" | गलत/छूटे हुए: "+
+        (questions.length-score);
+
+}
+
+</script>
+
+</body>
+</html>
