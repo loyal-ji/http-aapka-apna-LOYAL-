@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOYAL TEST FACTORY</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    font-family:Arial, sans-serif;
+    background:#070b18;
+    color:#fff;
+    min-height:100vh;
+}
+header{
+    padding:22px 15px;
+    text-align:center;
+    background:linear-gradient(135deg,#101a3a,#19104a);
+    border-bottom:1px solid #27356d;
+}
+.logo{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+.tagline{
+    margin-top:7px;
+    color:#b9c4e8;
+    font-size:14px;
+}
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 50px;
+}
+.hero{
+    text-align:center;
+    padding:35px 15px;
+}
+.hero h1{
+    font-size:34px;
+    margin-bottom:12px;
+}
+.hero p{
+    color:#aeb9dc;
+}
+.login-box{
+    max-width:420px;
+    margin:20px auto;
+    background:#10182f;
+    border:1px solid #26396d;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 15px 45px #0008;
+}
+input{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #344778;
+    background:#080d20;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+    margin:12px 0;
+}
+button{
+    border:0;
+    cursor:pointer;
+    border-radius:10px;
+    padding:13px 18px;
+    font-weight:700;
+}
+.primary{
+    width:100%;
+    color:#001018;
+    background:linear-gradient(90deg,#00eaff,#00ffb3);
+}
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    font-size:25px;
+}
+.exam-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+.exam-card{
+    background:#10182f;
+    border:1px solid #28396b;
+    border-radius:17px;
+    padding:23px;
+    transition:.2s;
+}
+.exam-card:hover{
+    transform:translateY(-4px);
+    border-color:#00eaff;
+}
+.exam-card h3{
+    margin-bottom:10px;
+}
+.exam-card p{
+    color:#aeb9dc;
+    font-size:14px;
+    line-height:1.6;
+}
+.start{
+    margin-top:18px;
+    background:#00eaff;
+    color:#001018;
+    width:100%;
+}
+.rank-box{
+    background:#10182f;
+    border:1px solid #28396b;
+    border-radius:17px;
+    padding:20px;
+}
+.rank{
+    display:flex;
+    justify-content:space-between;
+    padding:14px;
+    margin:8px 0;
+    border-radius:10px;
+    background:#080d20;
+}
+.rank span:last-child{
+    color:#00ffb3;
+    font-weight:bold;
+}
+.super-chat{
+    margin-top:30px;
+    text-align:center;
+    padding:25px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#17133b,#102d35);
+    border:1px solid #315878;
+}
+footer{
+    text-align:center;
+    padding:25px;
+    color:#8894b9;
+    border-top:1px solid #202c52;
+}
+#dashboard{
+    display:none;
+}
+.welcome{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffb3;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
+    <div class="tagline">Learn • Practice • Test • Rank</div>
+</header>
+
+<div class="container">
+
+<section id="login">
+    <div class="hero">
+        <h1>आपकी तैयारी, आपका TEST 🎯</h1>
+        <p>UPSC • UPPCS • BPSC • UPSSSC PET</p>
+    </div>
+
+    <div class="login-box">
+        <h2 style="text-align:center">Student Login</h2>
+        <input id="studentName" type="text" placeholder="अपना नाम दर्ज करें">
+        <button class="primary" onclick="login()">ENTER TEST FACTORY</button>
+    </div>
+</section>
+
+<section id="dashboard">
+
+    <div class="welcome" id="welcome"></div>
+
+    <h2 class="section-title">📚 Select Your Examination</h2>
+
+    <div class="exam-grid">
+
+        <div class="exam-card">
+            <h3>🇮🇳 UPPCS PRELIMS</h3>
+            <p>UPPCS Prelims practice tests with bilingual questions and timed examination.</p>
+            <button class="start" onclick="openExam('UPPCS PRELIMS')">
+                START TEST
+            </button>
+        </div>
+
+        <div class="exam-card">
+            <h3>🏛️ UPSC PRELIMS</h3>
+            <p>UPSC Prelims practice section for serious civil services preparation.</p>
+            <button class="start" onclick="openExam('UPSC PRELIMS')">
+                START TEST
+            </button>
+        </div>
+
+        <div class="exam-card">
+            <h3>📖 BPSC PRELIMS</h3>
+            <p>BPSC Prelims test series with professional test interface.</p>
+            <button class="start" onclick="openExam('BPSC PRELIMS')">
+                START TEST
+            </button>
+        </div>
+
+        <div class="exam-card">
+            <h3>🎓 UPSSSC PET</h3>
+            <p>UPSSSC PET practice tests with timed questions and result tracking.</p>
+            <button class="start" onclick="openExam('UPSSSC PET')">
+                START TEST
+            </button>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">🏆 TOP 3 RANKERS</h2>
+
+    <div class="rank-box">
+        <div class="rank">
+            <span>🥇 Rank 1 — LOYAL STUDENT</span>
+            <span>—</span>
+        </div>
+
+        <div class="rank">
+            <span>🥈 Rank 2 — LOYAL STUDENT</span>
+            <span>—</span>
+        </div>
+
+        <div class="rank">
+            <span>🥉 Rank 3 — LOYAL STUDENT</span>
+            <span>—</span>
+        </div>
+
+        <div class="rank">
+            <span>4. Student</span>
+            <span>—</span>
+        </div>
+
+        <div class="rank">
+            <span>5. Student</span>
+            <span>—</span>
+        </div>
+    </div>
+
+    <div class="super-chat">
+        <h2>💬 LOYAL SUPER CHAT</h2>
+        <p style="margin:12px 0;color:#b9c4e8">
+            Premium learning community में आपका स्वागत है।
+        </p>
+        <button class="primary" onclick="welcomeChat()">
+            OPEN SUPER CHAT
+        </button>
+    </div>
+
+</section>
+
+</div>
+
+<footer>
+    ✦ DEVELOPER BY LOYAL ✦
+</footer>
+
+<script>
+
+function login(){
+
+    const name = document.getElementById("studentName").value.trim();
+
+    if(!name){
+        alert("कृपया अपना नाम दर्ज करें।");
+        return;
+    }
+
+    localStorage.setItem("loyalStudentName",name);
+
+    document.getElementById("login").style.display="none";
+    document.getElementById("dashboard").style.display="block";
+
+    document.getElementById("welcome").innerHTML =
+        "👋 Welcome, " + name + "!";
+}
+
+function openExam(exam){
+
+    alert(
+        exam +
+        "\\n\\nTest system अगले step में connect किया जाएगा।\\n" +
+        "30 Seconds / Question"
+    );
+}
+
+function welcomeChat(){
+
+    alert("💬 LOYAL SUPER CHAT में आपका स्वागत है!");
+}
+
+window.onload=function(){
+
+    const savedName=localStorage.getItem("loyalStudentName");
+
+    if(savedName){
+        document.getElementById("login").style.display="none";
+        document.getElementById("dashboard").style.display="block";
+        document.getElementById("welcome").innerHTML=
+            "👋 Welcome back, " + savedName + "!";
+    }
+
+};
+
+</script>
+
+</body>
+</html>
