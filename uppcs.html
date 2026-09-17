@@ -3,330 +3,546 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOYAL TEST FACTORY — UPPCS PRELIMS</title>
+<title>UPPCS PRELIMS | LOYAL TEST FACTORY</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
     margin:0;
     font-family:Arial,sans-serif;
     background:#070b18;
-    color:white;
+    color:#fff;
 }
-.header{
-    padding:20px;
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
     text-align:center;
+    padding:15px;
     background:#10182f;
     border-bottom:1px solid #293968;
 }
+
 .logo{
-    font-size:24px;
+    font-size:23px;
     font-weight:900;
     color:#00eaff;
 }
+
 .container{
     max-width:900px;
     margin:auto;
-    padding:20px 15px 50px;
+    padding:18px 14px 50px;
 }
-.info{
+
+.card{
     background:#10182f;
     border:1px solid #293968;
-    border-radius:16px;
+    border-radius:17px;
     padding:20px;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
-.info h1{
+
+h1,h2,h3{
     margin-top:0;
-    font-size:25px;
 }
-.info p{
-    color:#b8c3df;
+
+.muted{
+    color:#aeb9dc;
     line-height:1.7;
 }
+
 .btn{
     width:100%;
     padding:15px;
     border:0;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
+    border-radius:11px;
     background:linear-gradient(90deg,#00eaff,#00ffb3);
+    color:#001018;
+    font-weight:800;
+    cursor:pointer;
+    font-size:15px;
 }
-#testBox{display:none}
-.topbar{
+
+.test-top{
     position:sticky;
-    top:0;
-    z-index:10;
-    background:#0d1429;
-    padding:12px;
-    border-bottom:1px solid #293968;
+    top:65px;
+    z-index:90;
+    background:#0b1227;
+    border:1px solid #293968;
+    border-radius:14px;
+    padding:13px;
+    margin-bottom:15px;
 }
+
 .timer{
     text-align:center;
-    font-size:22px;
-    font-weight:bold;
+    font-size:26px;
+    font-weight:900;
     color:#00ffb3;
 }
+
+.timer.warning{
+    color:#ffcc00;
+}
+
+.timer.danger{
+    color:#ff4d6d;
+}
+
 .progress{
     text-align:center;
+    margin-top:6px;
     color:#aeb9dc;
-    margin-top:5px;
 }
-.question{
-    background:#10182f;
-    border:1px solid #293968;
-    border-radius:16px;
-    padding:20px;
-    margin-top:20px;
-}
-.qno{
+
+.question-no{
     color:#00eaff;
-    font-weight:bold;
+    font-weight:800;
 }
-.qtext{
+
+.question{
     font-size:19px;
     line-height:1.7;
-    margin:15px 0;
+    margin:15px 0 20px;
 }
+
 .option{
     display:block;
     background:#080d20;
-    border:1px solid #2b3b68;
-    border-radius:10px;
+    border:1px solid #2d3e70;
+    border-radius:11px;
     padding:14px;
     margin:10px 0;
     cursor:pointer;
+    line-height:1.5;
 }
+
 .option:hover{
     border-color:#00eaff;
 }
+
 .option input{
     margin-right:10px;
 }
-.next{
-    margin-top:15px;
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
 }
-.result{
+
+.nav-buttons button{
+    flex:1;
+}
+
+.secondary{
+    background:#202d50;
+    color:white;
+}
+
+.hidden{
     display:none;
-    background:#10182f;
-    border:1px solid #293968;
-    border-radius:16px;
-    padding:25px;
+}
+
+.result{
     text-align:center;
 }
+
 .score{
-    font-size:38px;
+    font-size:42px;
     color:#00ffb3;
-    font-weight:bold;
+    font-weight:900;
+    margin:15px 0;
+}
+
+.solution{
+    text-align:left;
+    margin-top:20px;
+}
+
+.solution-item{
+    background:#080d20;
+    border:1px solid #293968;
+    border-radius:12px;
+    padding:15px;
+    margin:10px 0;
+}
+
+.correct{
+    color:#00ffb3;
+}
+
+.wrong{
+    color:#ff5b73;
+}
+
+footer{
+    text-align:center;
+    color:#8995b9;
+    padding:25px;
+    border-top:1px solid #202c52;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<header>
     <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
-    <div>UPPCS PRELIMS</div>
-</div>
+    <div>UPPCS PRELIMS — TEST 1</div>
+</header>
 
 <div class="container">
 
-<div id="instructions" class="info">
+<!-- INSTRUCTIONS -->
+
+<section id="instructions" class="card">
 
 <h1>📚 UPPCS PRELIMS — TEST 1</h1>
 
-<p>
-<strong>Test Mode:</strong> Online Practice Test
+<p class="muted">
+यह ऑनलाइन टेस्ट LOYAL TEST FACTORY के लिए तैयार किया गया है।
 </p>
 
-<p>
-प्रत्येक प्रश्न के लिए <strong>30 सेकंड</strong> का समय रहेगा।
-</p>
-
-<p>
-प्रश्न Hindi + English में दिए जाएंगे। प्रत्येक प्रश्न में एक सही उत्तर चुनें।
-</p>
-
-<p>
-⚠️ समय समाप्त होने पर अगला प्रश्न अपने आप खुल जाएगा।
+<p class="muted">
+⏱️ <b>30 Seconds / Question</b><br>
+🌐 Hindi + English<br>
+📝 प्रत्येक प्रश्न में एक विकल्प चुनें<br>
+⚡ समय समाप्त होने पर प्रश्न automatically next होगा
 </p>
 
 <button class="btn" onclick="startTest()">
 🚀 START TEST
 </button>
 
-</div>
+</section>
 
-<div id="testBox">
 
-<div class="topbar">
-    <div class="timer">
-        ⏱️ <span id="time">30</span> sec
+<!-- TEST -->
+
+<section id="testSection" class="hidden">
+
+<div class="test-top">
+
+    <div class="timer" id="timer">
+        ⏱️ 30
     </div>
+
     <div class="progress">
-        Question <span id="current">1</span> / <span id="total">1</span>
+        Question
+        <span id="questionNumber">1</span>
+        /
+        <span id="totalQuestions">0</span>
     </div>
-</div>
-
-<div id="questionArea"></div>
-
-<button class="btn next" onclick="nextQuestion()">
-NEXT QUESTION →
-</button>
 
 </div>
 
-<div id="result" class="result">
+<div class="card">
+
+    <div class="question-no" id="questionNo">
+        QUESTION 1
+    </div>
+
+    <div class="question" id="questionText"></div>
+
+    <div id="options"></div>
+
+    <div class="nav-buttons">
+
+        <button
+            class="btn secondary"
+            onclick="skipQuestion()">
+            SKIP
+        </button>
+
+        <button
+            class="btn"
+            onclick="nextQuestion()">
+            NEXT →
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- RESULT -->
+
+<section id="resultSection" class="card result hidden">
 
 <h2>🎉 TEST COMPLETED</h2>
 
-<p>आपका Score</p>
+<div class="score" id="finalScore">
+0
+</div>
 
-<div class="score" id="score">0</div>
+<p id="resultDetails"></p>
 
-<p id="correctText"></p>
-
-<button class="btn" onclick="location.reload()">
-RESTART TEST
+<button class="btn" onclick="showSolutions()">
+📖 VIEW SOLUTIONS
 </button>
 
-</div>
+</section>
+
+
+<!-- SOLUTIONS -->
+
+<section id="solutionSection" class="card solution hidden">
+
+<h2>📖 TEST SOLUTIONS</h2>
+
+<div id="solutions"></div>
+
+</section>
 
 </div>
+
+<footer>
+    ✦ DEVELOPER BY LOYAL ✦
+</footer>
+
 
 <script>
 
 /*
- STEP 3:
- अभी demo questions हैं।
- अगले step में PDF के वास्तविक UPPCS questions
- इसी array में जोड़े जाएंगे।
+========================================
+UPPCS TEST DATA
+========================================
+
+अभी structure तैयार है।
+
+अगले integration में PDF के
+वास्तविक questions/options/answers
+यहाँ लगाए जाएंगे।
+
 */
 
 const questions = [
 
 {
-q:"भारतीय संविधान का कौन-सा भाग मौलिक अधिकारों से संबंधित है?<br>Which Part of the Indian Constitution deals with Fundamental Rights?",
-options:[
-"भाग I / Part I",
-"भाग II / Part II",
-"भाग III / Part III",
-"भाग IV / Part IV"
-],
-answer:2
+    question:
+    "भारतीय संविधान का कौन-सा भाग मौलिक अधिकारों से संबंधित है?<br><br>" +
+    "Which Part of the Constitution of India deals with Fundamental Rights?",
+
+    options:[
+        "भाग I / Part I",
+        "भाग II / Part II",
+        "भाग III / Part III",
+        "भाग IV / Part IV"
+    ],
+
+    answer:2,
+
+    solution:
+    "मौलिक अधिकार भारतीय संविधान के भाग III में दिए गए हैं।"
 },
 
 {
-q:"भारतीय संविधान का अनुच्छेद 14 किससे संबंधित है?<br>Article 14 of the Indian Constitution deals with:",
-options:[
-"स्वतंत्रता का अधिकार / Right to Freedom",
-"समानता का अधिकार / Right to Equality",
-"धार्मिक स्वतंत्रता / Freedom of Religion",
-"संवैधानिक उपचार / Constitutional Remedies"
-],
-answer:1
+    question:
+    "अनुच्छेद 14 किससे संबंधित है?<br><br>" +
+    "Article 14 of the Constitution deals with:",
+
+    options:[
+        "स्वतंत्रता का अधिकार / Right to Freedom",
+        "समानता का अधिकार / Right to Equality",
+        "धार्मिक स्वतंत्रता / Freedom of Religion",
+        "संवैधानिक उपचार / Constitutional Remedies"
+    ],
+
+    answer:1,
+
+    solution:
+    "अनुच्छेद 14 कानून के समक्ष समानता और कानूनों के समान संरक्षण से संबंधित है।"
 },
 
 {
-q:"भारत का सर्वोच्च न्यायालय कहाँ स्थित है?<br>Where is the Supreme Court of India located?",
-options:[
-"मुंबई / Mumbai",
-"नई दिल्ली / New Delhi",
-"प्रयागराज / Prayagraj",
-"लखनऊ / Lucknow"
-],
-answer:1
+    question:
+    "भारत का सर्वोच्च न्यायालय कहाँ स्थित है?<br><br>" +
+    "Where is the Supreme Court of India located?",
+
+    options:[
+        "मुंबई / Mumbai",
+        "नई दिल्ली / New Delhi",
+        "लखनऊ / Lucknow",
+        "प्रयागराज / Prayagraj"
+    ],
+
+    answer:1,
+
+    solution:
+    "भारत का सर्वोच्च न्यायालय नई दिल्ली में स्थित है।"
 }
 
 ];
 
-let currentQuestion=0;
-let score=0;
-let time=30;
-let timer=null;
 
-document.getElementById("total").innerText=questions.length;
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = 30;
+let timerInterval = null;
+let userAnswers = [];
+
+
+document.getElementById("totalQuestions").textContent =
+    questions.length;
+
 
 function startTest(){
 
-    document.getElementById("instructions").style.display="none";
-    document.getElementById("testBox").style.display="block";
+    document.getElementById("instructions")
+        .classList.add("hidden");
+
+    document.getElementById("testSection")
+        .classList.remove("hidden");
+
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
 
     showQuestion();
 }
 
+
 function showQuestion(){
 
-    clearInterval(timer);
+    clearInterval(timerInterval);
 
-    time=30;
-    document.getElementById("time").innerText=time;
-    document.getElementById("current").innerText=currentQuestion+1;
+    const q = questions[currentQuestion];
 
-    const q=questions[currentQuestion];
+    document.getElementById("questionNumber")
+        .textContent = currentQuestion + 1;
 
-    let html=`
-    <div class="question">
-        <div class="qno">QUESTION ${currentQuestion+1}</div>
-        <div class="qtext">${q.q}</div>
-    `;
+    document.getElementById("questionNo")
+        .textContent =
+        "QUESTION " + (currentQuestion + 1);
+
+    document.getElementById("questionText")
+        .innerHTML = q.question;
+
+
+    let html = "";
 
     q.options.forEach((option,index)=>{
 
-        html+=`
+        html += `
         <label class="option">
-            <input type="radio" name="answer" value="${index}">
+            <input
+                type="radio"
+                name="answer"
+                value="${index}">
             ${option}
         </label>
         `;
 
     });
 
-    html+=`</div>`;
+    document.getElementById("options")
+        .innerHTML = html;
 
-    document.getElementById("questionArea").innerHTML=html;
 
-    startTimer();
-}
+    timeLeft = 30;
 
-function startTimer(){
+    updateTimer();
 
-    timer=setInterval(()=>{
+    timerInterval = setInterval(()=>{
 
-        time--;
+        timeLeft--;
 
-        document.getElementById("time").innerText=time;
+        updateTimer();
 
-        if(time<=0){
+        if(timeLeft <= 0){
 
-            clearInterval(timer);
-            nextQuestion();
+            clearInterval(timerInterval);
+
+            skipQuestion();
 
         }
 
     },1000);
+
 }
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById("timer");
+
+    timer.textContent =
+        "⏱️ " + timeLeft;
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+    if(timeLeft <= 10){
+
+        timer.classList.add("danger");
+
+    }else if(timeLeft <= 20){
+
+        timer.classList.add("warning");
+
+    }
+
+}
+
 
 function nextQuestion(){
 
-    clearInterval(timer);
+    clearInterval(timerInterval);
 
-    const selected=document.querySelector(
-        'input[name="answer"]:checked'
-    );
+    const selected =
+        document.querySelector(
+            'input[name="answer"]:checked'
+        );
+
+    let answer = null;
 
     if(selected){
 
-        if(Number(selected.value)===questions[currentQuestion].answer){
+        answer = Number(selected.value);
+
+        if(
+            answer ===
+            questions[currentQuestion].answer
+        ){
+
             score++;
+
         }
 
     }
 
+    userAnswers[currentQuestion] = answer;
+
+    moveNext();
+
+}
+
+
+function skipQuestion(){
+
+    clearInterval(timerInterval);
+
+    userAnswers[currentQuestion] = null;
+
+    moveNext();
+
+}
+
+
+function moveNext(){
+
     currentQuestion++;
 
-    if(currentQuestion>=questions.length){
+    if(currentQuestion >= questions.length){
 
         finishTest();
 
@@ -335,21 +551,110 @@ function nextQuestion(){
         showQuestion();
 
     }
+
 }
+
 
 function finishTest(){
 
-    clearInterval(timer);
+    clearInterval(timerInterval);
 
-    document.getElementById("testBox").style.display="none";
-    document.getElementById("result").style.display="block";
+    document.getElementById("testSection")
+        .classList.add("hidden");
 
-    document.getElementById("score").innerText=
-        score+" / "+questions.length;
+    document.getElementById("resultSection")
+        .classList.remove("hidden");
 
-    document.getElementById("correctText").innerText=
-        "सही उत्तर: "+score+" | गलत/छूटे हुए: "+
-        (questions.length-score);
+    document.getElementById("finalScore")
+        .textContent =
+        score + " / " + questions.length;
+
+    document.getElementById("resultDetails")
+        .innerHTML =
+        "सही उत्तर: <b class='correct'>" +
+        score +
+        "</b><br>" +
+        "गलत/छूटे: <b class='wrong'>" +
+        (questions.length - score) +
+        "</b>";
+
+}
+
+
+function showSolutions(){
+
+    document.getElementById("solutionSection")
+        .classList.remove("hidden");
+
+    const box =
+        document.getElementById("solutions");
+
+    let html = "";
+
+    questions.forEach((q,index)=>{
+
+        const userAnswer =
+            userAnswers[index];
+
+        const correct =
+            q.answer;
+
+        let status = "";
+
+        if(userAnswer === correct){
+
+            status =
+            "<span class='correct'>✓ सही</span>";
+
+        }else{
+
+            status =
+            "<span class='wrong'>✗ गलत/छूटा</span>";
+
+        }
+
+        html += `
+        <div class="solution-item">
+
+            <b>Question ${index+1}</b>
+
+            <p style="margin:10px 0">
+                ${q.question}
+            </p>
+
+            <p>
+                आपका उत्तर:
+                ${
+                    userAnswer === null ||
+                    userAnswer === undefined
+                    ? "नहीं दिया"
+                    : q.options[userAnswer]
+                }
+            </p>
+
+            <p class="correct">
+                सही उत्तर:
+                ${q.options[correct]}
+            </p>
+
+            <p>
+                <b>Explanation:</b>
+                ${q.solution}
+            </p>
+
+            <p>${status}</p>
+
+        </div>
+        `;
+
+    });
+
+    box.innerHTML = html;
+
+    document.getElementById("solutionSection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
