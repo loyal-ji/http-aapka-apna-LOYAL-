@@ -175,8 +175,16 @@ footer{
 
     <div class="login-box">
         <h2 style="text-align:center">Student Login</h2>
-        <input id="studentName" type="text" placeholder="अपना नाम दर्ज करें">
-        <button class="primary" onclick="login()">ENTER TEST FACTORY</button>
+
+        <input
+            id="studentName"
+            type="text"
+            placeholder="अपना नाम दर्ज करें"
+        >
+
+        <button class="primary" onclick="login()">
+            ENTER TEST FACTORY
+        </button>
     </div>
 </section>
 
@@ -188,34 +196,70 @@ footer{
 
     <div class="exam-grid">
 
+        <!-- UPPCS -->
         <div class="exam-card">
             <h3>🇮🇳 UPPCS PRELIMS</h3>
-            <p>UPPCS Prelims practice tests with bilingual questions and timed examination.</p>
-            <button class="start" onclick="openExam('UPPCS PRELIMS')">
+
+            <p>
+                UPPCS Prelims practice tests with bilingual
+                questions and timed examination.
+            </p>
+
+            <button
+                class="start"
+                onclick="location.href='uppcs.html'"
+            >
                 START TEST
             </button>
         </div>
 
+        <!-- UPSC -->
         <div class="exam-card">
             <h3>🏛️ UPSC PRELIMS</h3>
-            <p>UPSC Prelims practice section for serious civil services preparation.</p>
-            <button class="start" onclick="openExam('UPSC PRELIMS')">
+
+            <p>
+                UPSC Prelims practice section for serious
+                civil services preparation.
+            </p>
+
+            <button
+                class="start"
+                onclick="openExam('UPSC PRELIMS')"
+            >
                 START TEST
             </button>
         </div>
 
+        <!-- BPSC -->
         <div class="exam-card">
             <h3>📖 BPSC PRELIMS</h3>
-            <p>BPSC Prelims test series with professional test interface.</p>
-            <button class="start" onclick="openExam('BPSC PRELIMS')">
+
+            <p>
+                BPSC Prelims test series with professional
+                test interface.
+            </p>
+
+            <button
+                class="start"
+                onclick="openExam('BPSC PRELIMS')"
+            >
                 START TEST
             </button>
         </div>
 
+        <!-- PET -->
         <div class="exam-card">
             <h3>🎓 UPSSSC PET</h3>
-            <p>UPSSSC PET practice tests with timed questions and result tracking.</p>
-            <button class="start" onclick="openExam('UPSSSC PET')">
+
+            <p>
+                UPSSSC PET practice tests with timed questions
+                and result tracking.
+            </p>
+
+            <button
+                class="start"
+                onclick="openExam('UPSSSC PET')"
+            >
                 START TEST
             </button>
         </div>
@@ -225,6 +269,7 @@ footer{
     <h2 class="section-title">🏆 TOP 3 RANKERS</h2>
 
     <div class="rank-box">
+
         <div class="rank">
             <span>🥇 Rank 1 — LOYAL STUDENT</span>
             <span>—</span>
@@ -249,16 +294,24 @@ footer{
             <span>5. Student</span>
             <span>—</span>
         </div>
+
     </div>
 
     <div class="super-chat">
+
         <h2>💬 LOYAL SUPER CHAT</h2>
+
         <p style="margin:12px 0;color:#b9c4e8">
             Premium learning community में आपका स्वागत है।
         </p>
-        <button class="primary" onclick="welcomeChat()">
+
+        <button
+            class="primary"
+            onclick="welcomeChat()"
+        >
             OPEN SUPER CHAT
         </button>
+
     </div>
 
 </section>
@@ -273,45 +326,65 @@ footer{
 
 function login(){
 
-    const name = document.getElementById("studentName").value.trim();
+    const name =
+        document.getElementById("studentName").value.trim();
 
     if(!name){
+
         alert("कृपया अपना नाम दर्ज करें।");
         return;
+
     }
 
-    localStorage.setItem("loyalStudentName",name);
+    localStorage.setItem(
+        "loyalStudentName",
+        name
+    );
 
     document.getElementById("login").style.display="none";
+
     document.getElementById("dashboard").style.display="block";
 
     document.getElementById("welcome").innerHTML =
         "👋 Welcome, " + name + "!";
+
 }
+
 
 function openExam(exam){
 
     alert(
         exam +
-        "\\n\\nTest system अगले step में connect किया जाएगा।\\n" +
+        "\n\nTest system अगले step में connect किया जाएगा।\n" +
         "30 Seconds / Question"
     );
+
 }
+
 
 function welcomeChat(){
 
-    alert("💬 LOYAL SUPER CHAT में आपका स्वागत है!");
+    alert(
+        "💬 LOYAL SUPER CHAT में आपका स्वागत है!"
+    );
+
 }
+
 
 window.onload=function(){
 
-    const savedName=localStorage.getItem("loyalStudentName");
+    const savedName =
+        localStorage.getItem("loyalStudentName");
 
     if(savedName){
+
         document.getElementById("login").style.display="none";
+
         document.getElementById("dashboard").style.display="block";
-        document.getElementById("welcome").innerHTML=
+
+        document.getElementById("welcome").innerHTML =
             "👋 Welcome back, " + savedName + "!";
+
     }
 
 };
