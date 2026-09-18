@@ -3,113 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LOYAL TEST FACTORY</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
 body{
-    font-family:Arial, sans-serif;
-    background:#070b18;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(0,234,255,.10),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(255,78,205,.10),transparent 30%),
+        #050816;
     color:#fff;
     min-height:100vh;
 }
 
+button,input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
 header{
-    padding:22px 15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:18px 15px;
     text-align:center;
-    background:linear-gradient(135deg,#101a3a,#19104a);
-    border-bottom:1px solid #27356d;
+    background:rgba(10,14,35,.95);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 .logo{
-    font-size:28px;
+    font-size:27px;
     font-weight:900;
     letter-spacing:1px;
-    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #7c4dff,
+        #ff4ecd,
+        #00ffb3
+    );
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .tagline{
-    margin-top:7px;
-    color:#b9c4e8;
-    font-size:14px;
+    margin-top:6px;
+    color:#aeb8d8;
+    font-size:12px;
 }
 
 .container{
-    max-width:1100px;
+    width:min(1100px,94%);
     margin:auto;
-    padding:25px 15px 50px;
+    padding:20px 0 50px;
+}
+
+/* ================= LOGIN ================= */
+
+#login{
+    display:block;
 }
 
 .hero{
     text-align:center;
-    padding:35px 15px;
+    padding:35px 10px 20px;
 }
 
 .hero h1{
-    font-size:34px;
+    font-size:clamp(28px,6vw,42px);
     margin-bottom:12px;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #ff4ecd,
+        #ffe600,
+        #00ffb3
+    );
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .hero p{
     color:#aeb9dc;
+    line-height:1.7;
 }
 
 .login-box{
-    max-width:420px;
+    max-width:450px;
     margin:20px auto;
-    background:#10182f;
-    border:1px solid #26396d;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 15px 45px #0008;
+    padding:28px 22px;
+    border-radius:22px;
+    background:linear-gradient(
+        145deg,
+        #111a38,
+        #080d20
+    );
+    border:1px solid #304477;
+    box-shadow:0 20px 60px rgba(0,0,0,.40);
+}
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    text-align:center;
+    color:#8f9abd;
+    font-size:12px;
+    margin-bottom:15px;
 }
 
 input{
     width:100%;
     padding:15px;
-    border-radius:10px;
+    border-radius:13px;
     border:1px solid #344778;
-    background:#080d20;
+    background:#070c1d;
     color:#fff;
-    font-size:16px;
     outline:none;
-    margin:12px 0;
+    margin:10px 0;
 }
 
-button{
-    border:0;
-    cursor:pointer;
-    border-radius:10px;
-    padding:13px 18px;
-    font-weight:700;
+input:focus{
+    border-color:#00eaff;
+    box-shadow:0 0 20px rgba(0,234,255,.12);
 }
 
 .primary{
     width:100%;
+    border:0;
+    padding:15px;
+    border-radius:13px;
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #00ffb3
+    );
     color:#001018;
-    background:linear-gradient(90deg,#00eaff,#00ffb3);
+    font-weight:900;
 }
+
+/* ================= DASHBOARD ================= */
+
+#dashboard{
+    display:none;
+}
+
+.welcome{
+    text-align:center;
+    color:#00ffb3;
+    font-size:18px;
+    font-weight:900;
+    margin:20px 0;
+}
+
+.public-name-box{
+    max-width:800px;
+    margin:0 auto 20px;
+    padding:20px;
+    text-align:center;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #111b3b,
+        #17103a
+    );
+    border:1px solid #384b83;
+}
+
+.public-name-title{
+    color:#aeb9dc;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.public-name{
+    font-size:25px;
+    font-weight:900;
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #9b5cff,
+        #ff4ecd
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.my-rank{
+    margin-top:10px;
+    color:#ffe600;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ================= VISITOR ================= */
+
+.visitor-panel{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    max-width:800px;
+    margin:20px auto 30px;
+}
+
+.visitor-card{
+    position:relative;
+    overflow:hidden;
+    padding:22px 15px;
+    text-align:center;
+    border-radius:19px;
+    background:linear-gradient(
+        145deg,
+        #101936,
+        #080d20
+    );
+    border:1px solid #294277;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.visitor-icon{
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.visitor-label{
+    color:#aeb9dc;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.7px;
+}
+
+.visitor-number{
+    margin-top:6px;
+    font-size:34px;
+    font-weight:900;
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #00ffb3
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.live-dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    background:#00ffb3;
+    border-radius:50%;
+    margin-right:5px;
+    box-shadow:0 0 12px #00ffb3;
+    animation:livePulse 1.2s infinite;
+}
+
+@keyframes livePulse{
+    0%{transform:scale(1);opacity:1}
+    50%{transform:scale(1.5);opacity:.5}
+    100%{transform:scale(1);opacity:1}
+}
+
+/* ================= SECTION ================= */
 
 .section-title{
     text-align:center;
-    margin:35px 0 20px;
-    font-size:25px;
+    margin:32px 0 18px;
+    font-size:24px;
 }
+
+/* ================= EXAMS ================= */
 
 .exam-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
 }
 
 .exam-card{
-    background:#10182f;
+    padding:22px;
+    border-radius:18px;
+    background:linear-gradient(
+        145deg,
+        #10182f,
+        #080d20
+    );
     border:1px solid #28396b;
-    border-radius:17px;
-    padding:23px;
     transition:.2s;
 }
 
@@ -124,207 +320,213 @@ button{
 
 .exam-card p{
     color:#aeb9dc;
-    font-size:14px;
+    font-size:13px;
     line-height:1.6;
 }
 
 .start{
-    margin-top:18px;
+    width:100%;
+    margin-top:17px;
+    padding:13px;
+    border:0;
+    border-radius:11px;
     background:#00eaff;
     color:#001018;
-    width:100%;
+    font-weight:900;
 }
 
-.rank-box{
-    background:#10182f;
-    border:1px solid #28396b;
-    border-radius:17px;
-    padding:20px;
+/* ================= RANKING ================= */
+
+.rank-wrapper{
+    border-radius:22px;
+    padding:16px;
+    background:linear-gradient(
+        145deg,
+        #101936,
+        #080d20
+    );
+    border:1px solid #304477;
+    box-shadow:0 15px 50px rgba(0,0,0,.30);
 }
 
-.rank{
-    display:flex;
-    justify-content:space-between;
-    padding:14px;
-    margin:8px 0;
-    border-radius:10px;
-    background:#080d20;
-}
-
-.rank span:last-child{
-    color:#00ffb3;
+.rank-header{
+    display:grid;
+    grid-template-columns:
+        60px 1fr 100px 90px;
+    gap:10px;
+    padding:12px;
+    color:#8f9abd;
+    font-size:11px;
     font-weight:bold;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
+
+.rank-list{
+    max-height:600px;
+    overflow-y:auto;
+}
+
+.rank-row{
+    display:grid;
+    grid-template-columns:
+        60px 1fr 100px 90px;
+    gap:10px;
+    align-items:center;
+    padding:14px 12px;
+    margin:7px 0;
+    border-radius:13px;
+    background:#070c1d;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.rank-row.me{
+    border-color:#00ffb3;
+    background:rgba(0,255,179,.07);
+    box-shadow:0 0 20px rgba(0,255,179,.06);
+}
+
+.rank-number{
+    font-weight:900;
+    color:#ffe600;
+}
+
+.rank-name{
+    font-weight:bold;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.rank-score{
+    color:#00ffb3;
+    font-weight:900;
+    text-align:right;
+}
+
+.rank-percent{
+    color:#00eaff;
+    font-size:12px;
+    text-align:right;
+}
+
+.empty-rank{
+    text-align:center;
+    padding:35px 15px;
+    color:#8792b2;
+}
+
+.rank-status{
+    margin-top:12px;
+    text-align:center;
+    color:#7f8db7;
+    font-size:11px;
+}
+
+/* ================= CURRENT TEST ================= */
+
+.current-test{
+    margin-top:25px;
+    padding:18px;
+    border-radius:18px;
+    background:#0b1228;
+    border:1px solid #273b6e;
+    text-align:center;
+}
+
+.current-test-title{
+    color:#aeb9dc;
+    font-size:12px;
+}
+
+.current-test-number{
+    margin-top:6px;
+    font-size:28px;
+    font-weight:900;
+    color:#00ffb3;
+}
+
+/* ================= SUPER CHAT ================= */
 
 .super-chat{
     margin-top:30px;
+    padding:25px 18px;
     text-align:center;
-    padding:25px;
-    border-radius:18px;
-    background:linear-gradient(135deg,#17133b,#102d35);
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #17133b,
+        #102d35
+    );
     border:1px solid #315878;
 }
 
+.super-chat h2{
+    font-size:21px;
+}
+
+.super-chat p{
+    margin:10px 0 15px;
+    color:#b9c4e8;
+}
+
+.super-chat button{
+    width:100%;
+}
+
+/* ================= FOOTER ================= */
+
 footer{
     text-align:center;
-    padding:25px;
-    color:#8894b9;
+    padding:25px 10px;
+    color:#737d9e;
     border-top:1px solid #202c52;
+    font-size:12px;
 }
 
-#dashboard{
-    display:none;
-}
-
-.welcome{
-    text-align:center;
-    margin-bottom:20px;
-    color:#00ffb3;
-}
-
-
-/* ============================= */
-/* NEW LIVE VISITOR PANEL */
-/* ============================= */
-
-.visitor-panel{
-    margin:20px auto 35px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    max-width:750px;
-}
-
-.visitor-card{
-    position:relative;
-    overflow:hidden;
-    padding:22px 15px;
-    text-align:center;
-    border-radius:18px;
-    background:linear-gradient(145deg,#101936,#080d20);
-    border:1px solid #294277;
-    box-shadow:0 10px 35px #0007;
-}
-
-.visitor-card::before{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:100px;
-    background:#00eaff;
-    filter:blur(55px);
-    opacity:.16;
-    top:-40px;
-    left:-30px;
-}
-
-.visitor-icon{
-    font-size:28px;
-    margin-bottom:8px;
-}
-
-.visitor-label{
-    color:#aeb9dc;
-    font-size:13px;
-    letter-spacing:1px;
-    font-weight:bold;
-}
-
-.visitor-number{
-    font-size:34px;
-    font-weight:900;
-    margin-top:7px;
-    background:linear-gradient(90deg,#00eaff,#00ffb3);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.live-dot{
-    display:inline-block;
-    width:9px;
-    height:9px;
-    background:#00ffb3;
-    border-radius:50%;
-    margin-right:6px;
-    box-shadow:0 0 12px #00ffb3;
-    animation:pulseLive 1.2s infinite;
-}
-
-@keyframes pulseLive{
-    0%{transform:scale(1);opacity:1}
-    50%{transform:scale(1.5);opacity:.5}
-    100%{transform:scale(1);opacity:1}
-}
-
-
-/* ============================= */
-/* PUBLIC STUDENT NAME */
-/* ============================= */
-
-.public-name-box{
-    max-width:750px;
-    margin:0 auto 30px;
-    padding:18px;
-    text-align:center;
-    border-radius:17px;
-    background:linear-gradient(135deg,#111b3b,#17103a);
-    border:1px solid #384b83;
-    box-shadow:0 10px 30px #0006;
-}
-
-.public-name-title{
-    color:#aeb9dc;
-    font-size:13px;
-    margin-bottom:7px;
-}
-
-.public-name{
-    font-size:23px;
-    font-weight:900;
-    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-
-/* ============================= */
-/* NAME POPUP */
-/* ============================= */
+/* ================= POPUP ================= */
 
 .name-overlay{
     position:fixed;
     inset:0;
     z-index:9999;
-    display:flex;
+    display:none;
     align-items:center;
     justify-content:center;
     padding:20px;
-    background:rgba(2,5,15,.88);
+    background:rgba(2,5,15,.90);
     backdrop-filter:blur(10px);
 }
 
 .name-modal{
     width:100%;
-    max-width:420px;
+    max-width:430px;
     padding:30px 24px;
-    border-radius:22px;
+    border-radius:23px;
     text-align:center;
-    background:linear-gradient(145deg,#111a38,#0a1025);
+    background:linear-gradient(
+        145deg,
+        #111a38,
+        #0a1025
+    );
     border:1px solid #38518f;
     box-shadow:0 20px 70px #000;
 }
 
-.name-modal .big-logo{
-    font-size:25px;
+.big-logo{
+    font-size:24px;
     font-weight:900;
-    margin-bottom:12px;
-    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
+    background:linear-gradient(
+        90deg,
+        #00eaff,
+        #9b5cff,
+        #ff4ecd
+    );
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .name-modal h2{
-    margin:10px 0;
+    margin:12px 0;
 }
 
 .name-modal p{
@@ -333,31 +535,18 @@ footer{
     line-height:1.6;
 }
 
-.name-modal input{
-    margin-top:18px;
-}
-
 .public-note{
-    margin-top:8px;
+    margin-top:9px;
     color:#7f8db7;
-    font-size:11px;
+    font-size:10px;
 }
 
-.name-modal button{
-    margin-top:10px;
-}
+/* ================= MOBILE ================= */
 
-
-/* Mobile */
-
-@media(max-width:600px){
+@media(max-width:650px){
 
     .logo{
-        font-size:23px;
-    }
-
-    .hero h1{
-        font-size:28px;
+        font-size:22px;
     }
 
     .visitor-panel{
@@ -365,7 +554,46 @@ footer{
     }
 
     .visitor-number{
-        font-size:28px;
+        font-size:27px;
+    }
+
+    .rank-header{
+        grid-template-columns:
+            45px 1fr 75px 65px;
+        font-size:9px;
+    }
+
+    .rank-row{
+        grid-template-columns:
+            45px 1fr 75px 65px;
+        padding:12px 8px;
+        font-size:12px;
+    }
+
+    .rank-name{
+        max-width:150px;
+    }
+
+}
+
+@media(max-width:420px){
+
+    .visitor-panel{
+        gap:8px;
+    }
+
+    .visitor-card{
+        padding:18px 8px;
+    }
+
+    .rank-header{
+        grid-template-columns:
+            38px 1fr 65px 55px;
+    }
+
+    .rank-row{
+        grid-template-columns:
+            38px 1fr 65px 55px;
     }
 
 }
@@ -376,34 +604,50 @@ footer{
 
 <header>
     <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
-    <div class="tagline">Learn • Practice • Test • Rank</div>
+    <div class="tagline">
+        Learn • Practice • Test • Rank
+    </div>
 </header>
-
 
 <div class="container">
 
+<!-- ================= LOGIN ================= -->
 
 <section id="login">
 
     <div class="hero">
-        <h1>आपकी तैयारी, आपका TEST 🎯</h1>
-        <p>UPSC • UPPCS • BPSC • UPSSSC PET</p>
+
+        <h1>
+            <span>आपकी तैयारी, आपका TEST 🎯</span>
+        </h1>
+
+        <p>
+            UPSC • UPPCS • BPSC • UPSSSC PET
+        </p>
+
     </div>
 
     <div class="login-box">
 
-        <h2 style="text-align:center">
-            Student Login
-        </h2>
+        <h2>👨‍🎓 Student Login</h2>
+
+        <p>
+            अपना नाम डालकर LOYAL TEST FACTORY में प्रवेश करें
+        </p>
 
         <input
             id="studentName"
             type="text"
+            maxlength="50"
             placeholder="अपना नाम दर्ज करें"
+            autocomplete="name"
         >
 
-        <button class="primary" onclick="login()">
-            ENTER TEST FACTORY
+        <button
+            class="primary"
+            onclick="login()"
+        >
+            🚀 ENTER TEST FACTORY
         </button>
 
     </div>
@@ -411,12 +655,17 @@ footer{
 </section>
 
 
+<!-- ================= DASHBOARD ================= -->
+
 <section id="dashboard">
 
-    <div class="welcome" id="welcome"></div>
+    <div
+        class="welcome"
+        id="welcome"
+    ></div>
 
 
-    <!-- PUBLIC NAME -->
+    <!-- CURRENT STUDENT -->
 
     <div class="public-name-box">
 
@@ -424,14 +673,24 @@ footer{
             👤 CURRENT TEST STUDENT
         </div>
 
-        <div class="public-name" id="publicStudentName">
+        <div
+            class="public-name"
+            id="publicStudentName"
+        >
             —
+        </div>
+
+        <div
+            class="my-rank"
+            id="myRank"
+        >
+            आपकी Rank: —
         </div>
 
     </div>
 
 
-    <!-- LIVE VISITORS -->
+    <!-- VISITORS -->
 
     <div class="visitor-panel">
 
@@ -478,23 +737,40 @@ footer{
     </div>
 
 
+    <!-- CURRENT TEST STUDENTS -->
+
+    <div class="current-test">
+
+        <div class="current-test-title">
+            📝 CURRENTLY TEST SUBMITTED
+        </div>
+
+        <div
+            class="current-test-number"
+            id="submittedStudents"
+        >
+            0
+        </div>
+
+    </div>
+
+
+    <!-- EXAMS -->
+
     <h2 class="section-title">
         📚 Select Your Examination
     </h2>
 
-
     <div class="exam-grid">
 
-
-        <!-- UPPCS -->
 
         <div class="exam-card">
 
             <h3>🇮🇳 UPPCS PRELIMS</h3>
 
             <p>
-                UPPCS Prelims practice tests with bilingual
-                questions and timed examination.
+                UPPCS Prelims practice test with
+                timed questions, result and ranking.
             </p>
 
             <button
@@ -507,15 +783,13 @@ footer{
         </div>
 
 
-        <!-- UPSC -->
-
         <div class="exam-card">
 
             <h3>🏛️ UPSC PRELIMS</h3>
 
             <p>
-                UPSC Prelims practice section for serious
-                civil services preparation.
+                UPSC Prelims practice section with
+                professional test interface.
             </p>
 
             <button
@@ -528,15 +802,13 @@ footer{
         </div>
 
 
-        <!-- BPSC -->
-
         <div class="exam-card">
 
             <h3>📖 BPSC PRELIMS</h3>
 
             <p>
-                BPSC Prelims test series with professional
-                test interface.
+                BPSC Prelims test series with
+                timed examination.
             </p>
 
             <button
@@ -549,15 +821,13 @@ footer{
         </div>
 
 
-        <!-- PET -->
-
         <div class="exam-card">
 
             <h3>🎓 UPSSSC PET</h3>
 
             <p>
-                UPSSSC PET practice tests with timed questions
-                and result tracking.
+                UPSSSC PET practice tests with
+                result tracking and ranking.
             </p>
 
             <button
@@ -572,46 +842,58 @@ footer{
     </div>
 
 
+    <!-- ================= ALL RANKERS ================= -->
+
     <h2 class="section-title">
-        🏆 TOP 3 RANKERS
+        🏆 LIVE TEST RANKING
     </h2>
 
+    <div class="rank-wrapper">
 
-    <div class="rank-box">
+        <div class="rank-header">
 
-        <div class="rank">
-            <span>🥇 Rank 1 — LOYAL STUDENT</span>
-            <span>—</span>
+            <div>RANK</div>
+
+            <div>STUDENT</div>
+
+            <div>SCORE</div>
+
+            <div>%</div>
+
         </div>
 
-        <div class="rank">
-            <span>🥈 Rank 2 — LOYAL STUDENT</span>
-            <span>—</span>
+
+        <div
+            id="rankList"
+            class="rank-list"
+        >
+
+            <div class="empty-rank">
+                अभी कोई test result submit नहीं हुआ है।
+            </div>
+
         </div>
 
-        <div class="rank">
-            <span>🥉 Rank 3 — LOYAL STUDENT</span>
-            <span>—</span>
-        </div>
 
-        <div class="rank">
-            <span>4. Student</span>
-            <span>—</span>
-        </div>
-
-        <div class="rank">
-            <span>5. Student</span>
-            <span>—</span>
+        <div
+            class="rank-status"
+            id="rankStatus"
+        >
+            🔄 Live ranking connecting...
         </div>
 
     </div>
 
 
+    <!-- SUPER CHAT -->
+
     <div class="super-chat">
 
-        <h2>💬 LOYAL SUPER CHAT</h2>
+        <h2>
+            💬 LOYAL SUPER CHAT
+        </h2>
 
-        <p style="margin:12px 0;color:#b9c4e8">
+        <p>
             Premium learning community में आपका स्वागत है।
         </p>
 
@@ -634,14 +916,11 @@ footer{
 </footer>
 
 
-<!-- ============================= -->
-<!-- NAME POPUP -->
-<!-- ============================= -->
+<!-- ================= NAME POPUP ================= -->
 
 <div
     class="name-overlay"
     id="nameOverlay"
-    style="display:none"
 >
 
     <div class="name-modal">
@@ -662,8 +941,8 @@ footer{
         <input
             id="popupName"
             type="text"
+            maxlength="50"
             placeholder="अपना नाम लिखें"
-            maxlength="40"
         >
 
         <button
@@ -674,7 +953,8 @@ footer{
         </button>
 
         <div class="public-note">
-            ⚠️ आपका नाम public dashboard पर दिखाई देगा।
+            ⚠️ Test submit करने पर नाम और score
+            public ranking में दिखाई देगा।
         </div>
 
     </div>
@@ -682,9 +962,7 @@ footer{
 </div>
 
 
-<!-- ============================= -->
-<!-- FIREBASE -->
-<!-- ============================= -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
@@ -704,21 +982,28 @@ import {
 
 
 /*
-==================================================
-🔥 अपना Firebase CONFIG यहाँ डालें
-==================================================
+=========================================================
+🔥 FIREBASE CONFIG
+=========================================================
+
+IMPORTANT:
+यहाँ अपने Firebase Web App का actual config डालना है.
+
+=========================================================
 */
 
 const firebaseConfig = {
 
     apiKey: "PASTE_YOUR_API_KEY",
 
-    authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
+    authDomain:
+        "PASTE_YOUR_PROJECT.firebaseapp.com",
 
     databaseURL:
         "https://PASTE_YOUR_PROJECT-default-rtdb.firebaseio.com",
 
-    projectId: "PASTE_YOUR_PROJECT",
+    projectId:
+        "PASTE_YOUR_PROJECT",
 
     storageBucket:
         "PASTE_YOUR_PROJECT.firebasestorage.app",
@@ -732,17 +1017,44 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
+/* ================= FIREBASE START ================= */
 
-const db = getDatabase(app);
+let firebaseReady = false;
+let db = null;
+
+try{
+
+    if(
+        firebaseConfig.apiKey !==
+        "PASTE_YOUR_API_KEY"
+    ){
+
+        const app =
+            initializeApp(firebaseConfig);
+
+        db =
+            getDatabase(app);
+
+        firebaseReady = true;
+
+    }
+
+}catch(error){
+
+    console.error(
+        "Firebase Error:",
+        error
+    );
+
+}
 
 
-/* ============================= */
-/* UNIQUE SESSION */
-/* ============================= */
+/* ================= SESSION ================= */
 
 let sessionId =
-    sessionStorage.getItem("loyalSessionId");
+    sessionStorage.getItem(
+        "loyalSessionId"
+    );
 
 if(!sessionId){
 
@@ -757,22 +1069,15 @@ if(!sessionId){
 }
 
 
-/* ============================= */
-/* VISITOR PRESENCE */
-/* ============================= */
+/* =====================================================
+   LIVE VISITOR PRESENCE
+===================================================== */
 
 function startPresence(name){
 
-    if(
-        !name ||
-        firebaseConfig.apiKey ===
-        "PASTE_YOUR_API_KEY"
-    ){
-
+    if(!firebaseReady){
         return;
-
     }
-
 
     const visitorRef =
         ref(
@@ -781,36 +1086,24 @@ function startPresence(name){
         );
 
 
-    const visitorData = {
-
-        name:name,
-
-        joinedAt:Date.now(),
-
-        lastSeen:Date.now()
-
-    };
+    const joinedAt =
+        Date.now();
 
 
     set(
         visitorRef,
-        visitorData
+        {
+            name:name,
+            joinedAt:joinedAt,
+            lastSeen:Date.now()
+        }
     );
 
-
-    /*
-    Browser/tab close होने पर
-    visitor automatically remove होगा.
-    */
 
     onDisconnect(
         visitorRef
     ).remove();
 
-
-    /*
-    हर 20 seconds heartbeat
-    */
 
     setInterval(
         function(){
@@ -819,7 +1112,7 @@ function startPresence(name){
                 visitorRef,
                 {
                     name:name,
-                    joinedAt:visitorData.joinedAt,
+                    joinedAt:joinedAt,
                     lastSeen:Date.now()
                 }
             );
@@ -829,12 +1122,11 @@ function startPresence(name){
     );
 
 
-    /*
-    LIVE COUNT + PUBLIC NAMES
-    */
-
     const visitorsRef =
-        ref(db,"onlineVisitors");
+        ref(
+            db,
+            "onlineVisitors"
+        );
 
 
     onValue(
@@ -853,69 +1145,37 @@ function startPresence(name){
             ).textContent =
                 visitors.length;
 
-
-            /*
-            Current public names को
-            dashboard में show करना.
-            */
-
-            const current =
-                visitors.find(
-                    v =>
-                    v.name === name
-                );
-
-
-            if(current){
-
-                document.getElementById(
-                    "publicStudentName"
-                ).textContent =
-                    name;
-
-            }
-
         }
     );
 
 }
 
 
-/* ============================= */
-/* TOTAL VISITORS */
-/* ============================= */
+/* =====================================================
+   TOTAL VISITORS
+===================================================== */
 
 function countVisitor(){
 
-    if(
-        firebaseConfig.apiKey ===
-        "PASTE_YOUR_API_KEY"
-    ){
-
+    if(!firebaseReady){
         return;
-
     }
 
 
-    const visitorKey =
+    let visitorKey =
         localStorage.getItem(
             "loyalVisitorKey"
         );
 
 
-    /*
-    एक browser को एक visitor
-    के रूप में count करने की कोशिश.
-    */
-
     if(!visitorKey){
 
-        const newKey =
+        visitorKey =
             crypto.randomUUID();
 
         localStorage.setItem(
             "loyalVisitorKey",
-            newKey
+            visitorKey
         );
 
 
@@ -930,7 +1190,9 @@ function countVisitor(){
             totalRef,
             function(current){
 
-                return (current || 0) + 1;
+                return (
+                    Number(current) || 0
+                ) + 1;
 
             }
         );
@@ -960,9 +1222,296 @@ function countVisitor(){
 }
 
 
-/* ============================= */
-/* START FIREBASE */
-/* ============================= */
+/* =====================================================
+   🔥 LIVE RANKING
+===================================================== */
+
+function startRanking(){
+
+    if(!firebaseReady){
+
+        document.getElementById(
+            "rankStatus"
+        ).textContent =
+            "⚠️ Firebase connect नहीं है।";
+
+        return;
+    }
+
+
+    /*
+    UPPCS TEST-01 RESULTS
+
+    Firebase path:
+
+    leaderboard
+       └── UPPCS_TEST1
+              └── resultId
+    */
+
+    const rankingRef =
+        ref(
+            db,
+            "leaderboard/UPPCS_TEST1"
+        );
+
+
+    onValue(
+        rankingRef,
+        function(snapshot){
+
+            const data =
+                snapshot.val() || {};
+
+
+            const results =
+                Object.entries(data)
+                .map(
+                    ([id,result]) => ({
+                        id,
+                        ...result
+                    })
+                );
+
+
+            /*
+            SCORE DESC
+            */
+
+            results.sort(
+                function(a,b){
+
+                    const scoreA =
+                        Number(a.score) || 0;
+
+                    const scoreB =
+                        Number(b.score) || 0;
+
+
+                    if(scoreB !== scoreA){
+
+                        return scoreB - scoreA;
+
+                    }
+
+
+                    /*
+                    Same score होने पर
+                    पहले submit करने वाला ऊपर.
+                    */
+
+                    const timeA =
+                        new Date(
+                            a.submittedAt || 0
+                        ).getTime();
+
+                    const timeB =
+                        new Date(
+                            b.submittedAt || 0
+                        ).getTime();
+
+
+                    return timeA - timeB;
+
+                }
+            );
+
+
+            renderRanking(
+                results
+            );
+
+        },
+        function(error){
+
+            console.error(
+                "Ranking Error:",
+                error
+            );
+
+            document.getElementById(
+                "rankStatus"
+            ).textContent =
+                "❌ Ranking load नहीं हो रही।";
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   RENDER ALL RANKS
+===================================================== */
+
+function renderRanking(results){
+
+    const rankList =
+        document.getElementById(
+            "rankList"
+        );
+
+
+    const currentStudent =
+        localStorage.getItem(
+            "loyalStudentName"
+        ) || "";
+
+
+    document.getElementById(
+        "submittedStudents"
+    ).textContent =
+        results.length;
+
+
+    if(!results.length){
+
+        rankList.innerHTML =
+            '<div class="empty-rank">' +
+            'अभी कोई test result submit नहीं हुआ है।' +
+            '</div>';
+
+        document.getElementById(
+            "myRank"
+        ).textContent =
+            "आपकी Rank: —";
+
+        document.getElementById(
+            "rankStatus"
+        ).textContent =
+            "🟢 Live ranking active";
+
+        return;
+    }
+
+
+    let html = "";
+    let myRank = null;
+
+
+    results.forEach(
+        function(student,index){
+
+            const rank =
+                index + 1;
+
+
+            const name =
+                escapeHTML(
+                    student.candidate ||
+                    "LOYAL STUDENT"
+                );
+
+
+            const score =
+                Number(
+                    student.score
+                ) || 0;
+
+
+            const percentage =
+                Number(
+                    student.percentage
+                ) || 0;
+
+
+            const isMe =
+                student.candidate ===
+                currentStudent;
+
+
+            if(isMe && myRank === null){
+
+                myRank = rank;
+
+            }
+
+
+            let rankText =
+                rank + "";
+
+
+            if(rank === 1){
+
+                rankText = "🥇";
+
+            }else if(rank === 2){
+
+                rankText = "🥈";
+
+            }else if(rank === 3){
+
+                rankText = "🥉";
+
+            }
+
+
+            html +=
+                '<div class="rank-row ' +
+                (isMe ? "me" : "") +
+                '">' +
+
+                    '<div class="rank-number">' +
+                        rankText +
+                    '</div>' +
+
+                    '<div class="rank-name">' +
+                        name +
+                        (isMe
+                            ? " ⭐"
+                            : "") +
+                    '</div>' +
+
+                    '<div class="rank-score">' +
+                        formatNumber(score) +
+                    '</div>' +
+
+                    '<div class="rank-percent">' +
+                        formatNumber(percentage) +
+                        '%' +
+                    '</div>' +
+
+                '</div>';
+
+        }
+    );
+
+
+    rankList.innerHTML =
+        html;
+
+
+    if(myRank !== null){
+
+        document.getElementById(
+            "myRank"
+        ).textContent =
+            "🏆 आपकी Rank: " +
+            myRank;
+
+    }else{
+
+        document.getElementById(
+            "myRank"
+        ).textContent =
+            "आपकी Rank: अभी test submit नहीं किया";
+
+    }
+
+
+    document.getElementById(
+        "rankStatus"
+    ).textContent =
+        "🟢 Live ranking • " +
+        results.length +
+        " result(s)";
+
+}
+
+
+/* =====================================================
+   PUBLIC FUNCTIONS
+===================================================== */
 
 window.startLoyalFirebase =
     function(name){
@@ -971,22 +1520,57 @@ window.startLoyalFirebase =
 
         countVisitor();
 
+        startRanking();
+
     };
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function formatNumber(value){
+
+    if(!Number.isFinite(Number(value))){
+
+        return "0";
+
+    }
+
+
+    return Number(value)
+        .toFixed(2)
+        .replace(/\.00$/,"")
+        .replace(/(\.\d)0$/,"$1");
+
+}
 
 </script>
 
 
 <script>
 
-/* ============================= */
-/* LOGIN */
-/* ============================= */
+/* ================= LOGIN ================= */
 
 function login(){
 
     const name =
         document
-        .getElementById("studentName")
+        .getElementById(
+            "studentName"
+        )
         .value
         .trim();
 
@@ -1002,6 +1586,17 @@ function login(){
     }
 
 
+    saveStudent(
+        name
+    );
+
+}
+
+
+/* ================= SAVE STUDENT ================= */
+
+function saveStudent(name){
+
     localStorage.setItem(
         "loyalStudentName",
         name
@@ -1010,18 +1605,22 @@ function login(){
 
     document.getElementById(
         "login"
-    ).style.display="none";
+    ).style.display =
+        "none";
 
 
     document.getElementById(
         "dashboard"
-    ).style.display="block";
+    ).style.display =
+        "block";
 
 
     document.getElementById(
         "welcome"
-    ).innerHTML =
-        "👋 Welcome, " + name + "!";
+    ).textContent =
+        "👋 Welcome, " +
+        name +
+        "!";
 
 
     document.getElementById(
@@ -1030,24 +1629,32 @@ function login(){
         name;
 
 
+    document.getElementById(
+        "nameOverlay"
+    ).style.display =
+        "none";
+
+
     if(window.startLoyalFirebase){
 
-        window.startLoyalFirebase(name);
+        window.startLoyalFirebase(
+            name
+        );
 
     }
 
 }
 
 
-/* ============================= */
-/* POPUP NAME SAVE */
-/* ============================= */
+/* ================= POPUP ================= */
 
 function savePopupName(){
 
     const name =
         document
-        .getElementById("popupName")
+        .getElementById(
+            "popupName"
+        )
         .value
         .trim();
 
@@ -1063,66 +1670,27 @@ function savePopupName(){
     }
 
 
-    localStorage.setItem(
-        "loyalStudentName",
+    saveStudent(
         name
     );
-
-
-    document.getElementById(
-        "nameOverlay"
-    ).style.display="none";
-
-
-    document.getElementById(
-        "login"
-    ).style.display="none";
-
-
-    document.getElementById(
-        "dashboard"
-    ).style.display="block";
-
-
-    document.getElementById(
-        "welcome"
-    ).innerHTML =
-        "👋 Welcome, " + name + "!";
-
-
-    document.getElementById(
-        "publicStudentName"
-    ).textContent =
-        name;
-
-
-    if(window.startLoyalFirebase){
-
-        window.startLoyalFirebase(name);
-
-    }
 
 }
 
 
-/* ============================= */
-/* OPEN EXAM */
-/* ============================= */
+/* ================= OPEN EXAM ================= */
 
 function openExam(exam){
 
     alert(
         exam +
-        "\n\nTest system अगले step में connect किया जाएगा.\n" +
+        "\n\nTest system अभी connect किया जाना बाकी है.\n" +
         "30 Seconds / Question"
     );
 
 }
 
 
-/* ============================= */
-/* SUPER CHAT */
-/* ============================= */
+/* ================= SUPER CHAT ================= */
 
 function welcomeChat(){
 
@@ -1133,66 +1701,73 @@ function welcomeChat(){
 }
 
 
-/* ============================= */
-/* PAGE LOAD */
-/* ============================= */
+/* ================= ENTER KEY ================= */
 
-window.onload=function(){
+document
+.getElementById(
+    "studentName"
+)
+.addEventListener(
+    "keydown",
+    function(e){
 
-    const savedName =
-        localStorage.getItem(
-            "loyalStudentName"
-        );
+        if(e.key === "Enter"){
 
-
-    if(savedName){
-
-        document.getElementById(
-            "login"
-        ).style.display="none";
-
-
-        document.getElementById(
-            "dashboard"
-        ).style.display="block";
-
-
-        document.getElementById(
-            "welcome"
-        ).innerHTML =
-            "👋 Welcome back, " +
-            savedName +
-            "!";
-
-
-        document.getElementById(
-            "publicStudentName"
-        ).textContent =
-            savedName;
-
-
-        if(window.startLoyalFirebase){
-
-            window.startLoyalFirebase(
-                savedName
-            );
+            login();
 
         }
 
-    }else{
+    }
+);
 
-        /*
-        पहली बार website खोलने पर
-        नाम popup.
-        */
 
-        document.getElementById(
-            "nameOverlay"
-        ).style.display="flex";
+document
+.getElementById(
+    "popupName"
+)
+.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Enter"){
+
+            savePopupName();
+
+        }
 
     }
+);
 
-};
+
+/* ================= PAGE LOAD ================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        const savedName =
+            localStorage.getItem(
+                "loyalStudentName"
+            );
+
+
+        if(savedName){
+
+            saveStudent(
+                savedName
+            );
+
+        }else{
+
+            document.getElementById(
+                "nameOverlay"
+            ).style.display =
+                "flex";
+
+        }
+
+    }
+);
 
 </script>
 
