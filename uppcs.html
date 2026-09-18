@@ -4,245 +4,605 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UPPCS Test 1 | LOYAL TEST FACTORY</title>
+<title>UPPCS Prelims Test | LOYAL TEST FACTORY</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,"Noto Sans Devanagari",sans-serif;
-  background:#050816;
-  color:#fff;
-  min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050816;
+    color:#fff;
+    min-height:100vh;
+}
+
+button,
+input{
+    font-family:inherit;
 }
 
 .header{
-  padding:18px 12px;
-  text-align:center;
-  background:linear-gradient(135deg,#071b32,#171044,#300d35);
-  border-bottom:1px solid #26345c;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,8,22,.95);
+    border-bottom:1px solid #26355f;
+    backdrop-filter:blur(12px);
+    padding:16px 12px;
+    text-align:center;
 }
 
 .logo{
-  font-size:24px;
-  font-weight:900;
-  color:#00eaff;
-  text-shadow:0 0 15px #00eaff;
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:#00eaff;
+    text-shadow:
+        0 0 8px rgba(0,234,255,.7),
+        0 0 20px rgba(124,77,255,.4);
 }
 
-.subtitle{
-  margin-top:7px;
-  color:#b9c5e8;
-  font-size:13px;
+.tagline{
+    margin-top:5px;
+    color:#aebce6;
+    font-size:12px;
+    letter-spacing:.7px;
 }
 
 .container{
-  width:min(900px,94%);
-  margin:20px auto;
+    width:min(900px,94%);
+    margin:25px auto;
 }
 
 .card{
-  background:linear-gradient(145deg,#101936,#080d20);
-  border:1px solid #27345e;
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin:15px 0;
-}
-
-.info{
-  background:#080d20;
-  border:1px solid #253257;
-  border-radius:12px;
-  padding:12px;
-  text-align:center;
-}
-
-.info small{
-  display:block;
-  color:#9ca9cf;
-  margin-bottom:5px;
-}
-
-.info strong{
-  color:#00eaff;
-}
-
-.instructions{
-  line-height:1.7;
-  color:#d9e0f5;
-  margin-top:15px;
-}
-
-button{
-  border:0;
-  border-radius:12px;
-  padding:13px 18px;
-  cursor:pointer;
-  font-weight:800;
-  color:#fff;
-  background:linear-gradient(135deg,#0077ff,#7c4dff);
-}
-
-button:hover{
-  opacity:.9;
-}
-
-.start-btn{
-  width:100%;
-  margin-top:18px;
-  font-size:16px;
+    background:linear-gradient(145deg,#101936,#080d20);
+    border:1px solid #293963;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);
 }
 
 .hidden{
-  display:none !important;
+    display:none!important;
 }
 
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:15px;
+/* START SCREEN */
+
+.hero{
+    text-align:center;
 }
 
-.progress{
-  color:#b9c5e8;
-  font-size:14px;
+.hero-badge{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:30px;
+    background:#17254b;
+    color:#00eaff;
+    border:1px solid #31508b;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:30px;
+    line-height:1.25;
+    margin-bottom:8px;
+}
+
+.hero h1 span{
+    color:#00eaff;
+}
+
+.hero p{
+    color:#b9c5e6;
+    line-height:1.6;
+}
+
+.exam-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:25px 0;
+}
+
+.info-box{
+    background:#0b122b;
+    border:1px solid #26385f;
+    border-radius:14px;
+    padding:16px 8px;
+    text-align:center;
+}
+
+.info-icon{
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.info-title{
+    font-size:12px;
+    color:#91a3d4;
+}
+
+.info-value{
+    margin-top:5px;
+    font-weight:bold;
+    color:#fff;
+    font-size:15px;
+}
+
+.name-area{
+    margin:20px 0;
+}
+
+.name-area label{
+    display:block;
+    margin-bottom:8px;
+    color:#d9e2ff;
+    font-size:14px;
+}
+
+.name-area input{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #344a7c;
+    outline:none;
+    background:#070c20;
+    color:#fff;
+    font-size:16px;
+}
+
+.name-area input:focus{
+    border-color:#00eaff;
+    box-shadow:0 0 0 3px rgba(0,234,255,.1);
+}
+
+.primary-btn{
+    width:100%;
+    border:none;
+    border-radius:13px;
+    padding:15px;
+    cursor:pointer;
+    background:linear-gradient(90deg,#00eaff,#7c4dff);
+    color:#fff;
+    font-weight:900;
+    font-size:16px;
+    box-shadow:0 8px 25px rgba(0,234,255,.18);
+    transition:.2s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-1px);
+}
+
+.note{
+    margin-top:15px;
+    text-align:center;
+    color:#8291ba;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* TEST HEADER */
+
+.test-top{
+    position:sticky;
+    top:75px;
+    z-index:900;
+    background:rgba(5,8,22,.96);
+    padding:10px 0;
+    margin-bottom:10px;
+    backdrop-filter:blur(10px);
+}
+
+.test-top-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.question-count{
+    color:#aebce6;
+    font-size:13px;
+}
+
+.question-count strong{
+    color:#fff;
 }
 
 .timer{
-  min-width:90px;
-  text-align:center;
-  padding:10px 13px;
-  border-radius:12px;
-  background:#170d25;
-  border:1px solid #ff4ecd;
-  color:#ff75d9;
-  font-weight:900;
-  font-size:18px;
+    min-width:105px;
+    text-align:center;
+    padding:9px 12px;
+    border-radius:12px;
+    border:1px solid #344a7c;
+    background:#101936;
+    color:#00ffb3;
+    font-size:18px;
+    font-weight:900;
 }
 
-.question{
-  font-size:20px;
-  line-height:1.6;
-  margin:12px 0 20px;
+.timer.warning{
+    color:#ffcc00;
+    border-color:#806b16;
+}
+
+.timer.danger{
+    color:#ff4d6d;
+    border-color:#803246;
+    animation:pulse .8s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.04);
+    }
+}
+
+.progress-wrap{
+    height:7px;
+    background:#111b39;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#00eaff,#7c4dff,#ff4ecd);
+    transition:width .25s;
+}
+
+/* QUESTION */
+
+.question-card{
+    margin-top:10px;
+}
+
+.question-number{
+    color:#00eaff;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:14px;
+}
+
+.bilingual-block{
+    display:block;
+}
+
+.english-text{
+    font-size:19px;
+    line-height:1.7;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.hindi-text{
+    font-size:18px;
+    line-height:1.8;
+    color:#e7edff;
+    padding-top:12px;
+    margin-top:8px;
+    border-top:1px solid #293963;
+}
+
+.options{
+    margin-top:22px;
+    display:grid;
+    gap:12px;
 }
 
 .option{
-  width:100%;
-  text-align:left;
-  margin:8px 0;
-  background:#0b122b;
-  border:1px solid #293963;
-  color:#eaf0ff;
-  font-size:16px;
-  line-height:1.5;
+    width:100%;
+    text-align:left;
+    border:1px solid #2c3e6c;
+    background:#0b122b;
+    color:#fff;
+    padding:15px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:.18s;
 }
 
 .option:hover{
-  border-color:#00eaff;
+    border-color:#00eaff;
+    background:#101b3b;
 }
 
 .option.selected{
-  border-color:#00eaff;
-  background:#102746;
+    border-color:#00eaff;
+    background:#112a46;
+    box-shadow:0 0 0 2px rgba(0,234,255,.08);
 }
 
-.controls{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
+.option.correct{
+    border-color:#00ffb3;
+    background:rgba(0,255,179,.08);
 }
 
-.controls button{
-  flex:1;
+.option.wrong{
+    border-color:#ff4d6d;
+    background:rgba(255,77,109,.08);
 }
 
-.skip{
-  background:#222a43;
+.english-option{
+    font-size:16px;
+    line-height:1.6;
 }
 
-.result-title{
-  text-align:center;
-  font-size:28px;
-  color:#00ffb3;
-  margin-bottom:15px;
+.hindi-option{
+    font-size:16px;
+    line-height:1.7;
+    color:#dce5ff;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px solid #293963;
 }
 
-.score{
-  text-align:center;
-  font-size:42px;
-  font-weight:900;
-  color:#00eaff;
-  margin:15px 0;
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:22px;
 }
 
-.result-info{
-  text-align:center;
-  line-height:1.8;
-  color:#d5def6;
+.secondary-btn{
+    flex:1;
+    border:1px solid #334875;
+    background:#0d1632;
+    color:#fff;
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.secondary-btn:hover{
+    border-color:#00eaff;
+}
+
+.next-btn{
+    flex:2;
+    border:none;
+    background:linear-gradient(90deg,#00eaff,#7c4dff);
+    color:#fff;
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    font-weight:900;
+}
+
+/* RESULT */
+
+.result-card{
+    text-align:center;
+}
+
+.result-icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.result-card h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.result-name{
+    color:#00eaff;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.score-circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin:20px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#0b122b;
+    border:7px solid #00eaff;
+    box-shadow:0 0 35px rgba(0,234,255,.2);
+}
+
+.score-number{
+    font-size:32px;
+    font-weight:900;
+}
+
+.score-label{
+    color:#9daed9;
+    font-size:12px;
+}
+
+.result-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin:20px 0;
+}
+
+.result-box{
+    background:#0b122b;
+    border:1px solid #293963;
+    border-radius:13px;
+    padding:14px 8px;
+}
+
+.result-box .value{
+    font-size:20px;
+    font-weight:900;
+}
+
+.result-box .label{
+    color:#91a3d4;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.correct-value{
+    color:#00ffb3;
+}
+
+.wrong-value{
+    color:#ff4d6d;
+}
+
+.skip-value{
+    color:#ffcc00;
+}
+
+/* SOLUTION */
+
+.solution-header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.solution-header h2{
+    font-size:27px;
+}
+
+.solution-header p{
+    color:#9eafd8;
+    margin-top:6px;
 }
 
 .solution-item{
-  background:#080d20;
-  border:1px solid #27345e;
-  border-radius:14px;
-  padding:16px;
-  margin:12px 0;
+    background:#0b122b;
+    border:1px solid #293963;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:14px;
 }
 
-.solution-q{
-  font-weight:800;
-  line-height:1.6;
-  margin-bottom:10px;
+.solution-qno{
+    color:#00eaff;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.correct{
-  color:#00ffb3;
-  font-weight:800;
+.solution-options{
+    margin-top:15px;
+    display:grid;
+    gap:8px;
 }
 
-.wrong{
-  color:#ff6b8a;
-  font-weight:800;
+.solution-option{
+    border:1px solid #24365e;
+    border-radius:10px;
+    padding:11px;
+    color:#cbd6f5;
+    font-size:14px;
+}
+
+.solution-option.solution-correct{
+    border-color:#00ffb3;
+    color:#00ffb3;
+    background:rgba(0,255,179,.06);
 }
 
 .explanation{
-  margin-top:10px;
-  color:#cbd5ee;
-  line-height:1.6;
+    margin-top:15px;
+    padding:14px;
+    border-left:3px solid #7c4dff;
+    background:#101936;
+    color:#d8e1fb;
+    line-height:1.7;
+    border-radius:8px;
+}
+
+.your-answer{
+    margin-top:10px;
+    font-size:13px;
+    color:#a9b8db;
 }
 
 .footer{
-  text-align:center;
-  padding:25px 10px;
-  color:#8e9abd;
-  font-size:13px;
+    text-align:center;
+    padding:30px 15px;
+    color:#7382aa;
+    font-size:12px;
 }
 
+.footer strong{
+    color:#00eaff;
+}
+
+/* SMALL SCREEN */
+
 @media(max-width:600px){
-  .info-grid{
-    grid-template-columns:1fr;
-  }
 
-  .question{
-    font-size:18px;
-  }
+    .logo{
+        font-size:19px;
+    }
 
-  .controls{
-    flex-direction:column;
-  }
+    .container{
+        width:94%;
+        margin:18px auto;
+    }
+
+    .card{
+        padding:17px;
+        border-radius:16px;
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .exam-info{
+        gap:7px;
+    }
+
+    .info-box{
+        padding:12px 5px;
+    }
+
+    .info-value{
+        font-size:13px;
+    }
+
+    .english-text{
+        font-size:17px;
+    }
+
+    .hindi-text{
+        font-size:17px;
+    }
+
+    .english-option,
+    .hindi-option{
+        font-size:15px;
+    }
+
+    .test-top{
+        top:68px;
+    }
+
+    .timer{
+        min-width:90px;
+        font-size:16px;
+    }
+
+    .result-grid{
+        gap:6px;
+    }
 }
 </style>
 </head>
@@ -250,814 +610,1421 @@ button:hover{
 <body>
 
 <header class="header">
-  <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
-  <div class="subtitle">UPPCS PRELIMS • TEST 1 • POLITY</div>
+    <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
+    <div class="tagline">Learn • Practice • Test • Rank</div>
 </header>
 
-<div class="container">
 
-  <!-- START SCREEN -->
-  <section id="startScreen" class="card">
+<main class="container">
 
-    <h2>UPPCS PRELIMS — TEST 1</h2>
+<!-- ================= START SCREEN ================= -->
 
-    <div class="info-grid">
-      <div class="info">
-        <small>कुल प्रश्न</small>
-        <strong id="totalQuestions">लोड हो रहा है...</strong>
-      </div>
+<section id="startScreen" class="card hero">
 
-      <div class="info">
-        <small>समय</small>
-        <strong>30 सेकंड / प्रश्न</strong>
-      </div>
+    <div class="hero-badge">UPPCS PRELIMS</div>
 
-      <div class="info">
-        <small>भाषा</small>
-        <strong>Hindi / English</strong>
-      </div>
+    <h1>
+        UPPCS <span>PRELIMS TEST</span>
+    </h1>
+
+    <p>
+        अपनी तैयारी को टेस्ट करें और अपनी रैंक जानें।
+    </p>
+
+    <div class="exam-info">
+
+        <div class="info-box">
+            <div class="info-icon">📝</div>
+            <div class="info-title">Questions</div>
+            <div class="info-value" id="totalQuestionsInfo">150</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-icon">⏱️</div>
+            <div class="info-title">Time / Question</div>
+            <div class="info-value">30 Sec</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-icon">🌐</div>
+            <div class="info-title">Language</div>
+            <div class="info-value">Hindi + English</div>
+        </div>
+
     </div>
 
-    <div class="instructions">
-      <b>निर्देश:</b><br><br>
-      • प्रत्येक प्रश्न के लिए 30 सेकंड मिलेंगे।<br>
-      • समय समाप्त होने पर अगला प्रश्न अपने-आप खुलेगा।<br>
-      • सही उत्तर चुनकर Next दबाएँ।<br>
-      • Skip करने पर प्रश्न बिना उत्तर के आगे चला जाएगा।<br>
-      • टेस्ट पूरा होने के बाद Result और Solution दिखाई जाएगी।
+    <div class="name-area">
+        <label for="userName">अपना नाम दर्ज करें</label>
+        <input
+            type="text"
+            id="userName"
+            placeholder="अपना नाम लिखें..."
+            maxlength="60"
+            autocomplete="name"
+        >
     </div>
 
-    <button class="start-btn" onclick="startTest()">
-      🚀 TEST START करें
+    <button class="primary-btn" onclick="startTest()">
+        🚀 START UPPCS TEST
     </button>
 
-  </section>
+    <div class="note">
+        प्रत्येक प्रश्न के लिए 30 सेकंड मिलेंगे।<br>
+        समय समाप्त होने पर प्रश्न स्वतः Skip हो जाएगा।
+    </div>
+
+</section>
 
 
-  <!-- TEST SCREEN -->
-  <section id="testScreen" class="card hidden">
+<!-- ================= TEST SCREEN ================= -->
 
-    <div class="topbar">
+<section id="testScreen" class="hidden">
 
-      <div class="progress" id="progressText">
-        प्रश्न 1 / 150
-      </div>
+    <div class="test-top">
+        <div class="test-top-inner">
 
-      <div class="timer" id="timer">
-        30
-      </div>
+            <div class="question-count">
+                Question
+                <strong>
+                    <span id="currentQuestionNo">1</span>
+                    /
+                    <span id="questionTotal">150</span>
+                </strong>
+            </div>
+
+            <div id="timer" class="timer">
+                00:30
+            </div>
+
+        </div>
+
+        <div class="progress-wrap">
+            <div id="progressBar" class="progress"></div>
+        </div>
+    </div>
+
+
+    <div class="card question-card">
+
+        <div id="questionNumber" class="question-number">
+            QUESTION 1
+        </div>
+
+        <div id="questionText"></div>
+
+        <div id="optionsContainer" class="options"></div>
+
+        <div class="actions">
+
+            <button
+                class="secondary-btn"
+                onclick="skipQuestion()"
+            >
+                ⏭️ Skip
+            </button>
+
+            <button
+                class="next-btn"
+                onclick="nextQuestion()"
+            >
+                Next ➜
+            </button>
+
+        </div>
 
     </div>
 
-    <div id="questionText" class="question"></div>
+</section>
 
-    <div id="optionsBox"></div>
 
-    <div class="controls">
+<!-- ================= RESULT SCREEN ================= -->
 
-      <button class="skip" onclick="skipQuestion()">
-        ⏭️ Skip
-      </button>
+<section id="resultScreen" class="card result-card hidden">
 
-      <button onclick="nextQuestion()">
-        Next ➜
-      </button>
+    <div class="result-icon">🏆</div>
+
+    <h2>Test Completed!</h2>
+
+    <div class="result-name">
+        <span id="resultUserName">Student</span>
+    </div>
+
+    <div class="score-circle">
+        <div id="scoreNumber" class="score-number">0</div>
+        <div class="score-label">SCORE</div>
+    </div>
+
+    <div class="result-grid">
+
+        <div class="result-box">
+            <div id="correctCount" class="value correct-value">0</div>
+            <div class="label">CORRECT</div>
+        </div>
+
+        <div class="result-box">
+            <div id="wrongCount" class="value wrong-value">0</div>
+            <div class="label">WRONG</div>
+        </div>
+
+        <div class="result-box">
+            <div id="skipCount" class="value skip-value">0</div>
+            <div class="label">SKIPPED</div>
+        </div>
 
     </div>
 
-  </section>
+    <div class="result-grid">
 
+        <div class="result-box">
+            <div id="attemptedCount" class="value">0</div>
+            <div class="label">ATTEMPTED</div>
+        </div>
 
-  <!-- RESULT SCREEN -->
-  <section id="resultScreen" class="card hidden">
+        <div class="result-box">
+            <div id="percentage" class="value">0%</div>
+            <div class="label">PERCENTAGE</div>
+        </div>
 
-    <div class="result-title">
-      🎉 TEST COMPLETE
+        <div class="result-box">
+            <div id="accuracy" class="value">0%</div>
+            <div class="label">ACCURACY</div>
+        </div>
+
     </div>
-
-    <div class="score" id="finalScore">
-      0
-    </div>
-
-    <div class="result-info" id="resultInfo"></div>
 
     <button
-      class="start-btn"
-      onclick="showSolutions()">
-      📖 Solution देखें
+        class="primary-btn"
+        onclick="showSolutions()"
+    >
+        📚 VIEW SOLUTIONS
     </button>
 
-  </section>
+    <br><br>
+
+    <button
+        class="secondary-btn"
+        style="width:100%;"
+        onclick="restartTest()"
+    >
+        🔄 RESTART TEST
+    </button>
+
+</section>
 
 
-  <!-- SOLUTION SCREEN -->
-  <section id="solutionScreen" class="card hidden">
+<!-- ================= SOLUTION SCREEN ================= -->
 
-    <h2 style="margin-bottom:15px;">
-      📖 UPPCS TEST 1 — SOLUTION
-    </h2>
+<section id="solutionScreen" class="hidden">
 
-    <div id="solutions"></div>
+    <div class="card">
 
-  </section>
+        <div class="solution-header">
+            <h2>📚 Test Solutions</h2>
+            <p>
+                UPPCS Prelims — Question & Explanation
+            </p>
+        </div>
 
-</div>
+        <div id="solutionsContainer"></div>
+
+        <button
+            class="primary-btn"
+            onclick="backToResult()"
+        >
+            ← BACK TO RESULT
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
 
 <footer class="footer">
-  ✦ DEVELOPER BY LOYAL ✦
+    <div>✦ <strong>DEVELOPER BY LOYAL</strong> ✦</div>
+    <div style="margin-top:6px;">
+        LOYAL TEST FACTORY
+    </div>
 </footer>
 
 
-<!-- सबसे पहले प्रश्नों वाली JS फाइल -->
+<!--
+=========================================================
+ IMPORTANT:
+ uppcs-test1-data.js इसी folder में होना चाहिए।
+ इसमें UPPCS_TEST1 नाम का question array होना चाहिए।
+=========================================================
+-->
+
 <script src="uppcs-test1-data.js"></script>
 
 
 <script>
 
-/* ================================
-   LOYAL TEST FACTORY
-   UPPCS TEST 1
-================================ */
+/* =======================================================
+   GLOBAL VARIABLES
+======================================================= */
 
 let questions = [];
-
 let currentQuestion = 0;
+
+let userName = "";
 
 let selectedAnswer = null;
 
-let userAnswers = [];
-
-let correctCount = 0;
-
-let wrongCount = 0;
-
-let skippedCount = 0;
-
-let timeLeft = 30;
+let answers = [];
 
 let timerInterval = null;
+let timeLeft = 30;
+
+let testFinished = false;
 
 
-/* ================================
-   QUESTIONS LOAD
-================================ */
+/* =======================================================
+   LOAD QUESTIONS
+======================================================= */
 
 function loadQuestions(){
 
-  if(
-    typeof UPPCS_TEST1 !== "undefined" &&
-    Array.isArray(UPPCS_TEST1)
-  ){
+    if(
+        typeof UPPCS_TEST1 !== "undefined" &&
+        Array.isArray(UPPCS_TEST1)
+    ){
 
-    questions = UPPCS_TEST1;
+        questions = UPPCS_TEST1;
 
-    document.getElementById("totalQuestions").textContent =
-      questions.length;
+    }else{
 
-  }else{
+        questions = [];
 
-    document.getElementById("totalQuestions").textContent =
-      "डेटा नहीं मिला";
+        alert(
+            "Question file load नहीं हुई। कृपया uppcs-test1-data.js को check करें।"
+        );
+    }
 
-    alert(
-      "uppcs-test1-data.js फाइल नहीं मिली।\n" +
-      "कृपया जांचें कि दोनों फाइलें एक ही folder में हैं।"
-    );
+    document.getElementById("totalQuestionsInfo").textContent =
+        questions.length || 0;
 
-  }
-
+    document.getElementById("questionTotal").textContent =
+        questions.length || 0;
 }
 
 
-/* ================================
-   START TEST
-================================ */
-
-function startTest(){
-
-  if(!questions.length){
-
-    alert("प्रश्न लोड नहीं हुए हैं।");
-
-    return;
-
-  }
-
-  currentQuestion = 0;
-
-  selectedAnswer = null;
-
-  userAnswers = [];
-
-  correctCount = 0;
-
-  wrongCount = 0;
-
-  skippedCount = 0;
-
-  document
-    .getElementById("startScreen")
-    .classList.add("hidden");
-
-  document
-    .getElementById("resultScreen")
-    .classList.add("hidden");
-
-  document
-    .getElementById("solutionScreen")
-    .classList.add("hidden");
-
-  document
-    .getElementById("testScreen")
-    .classList.remove("hidden");
-
-  showQuestion();
-
-}
-
-
-/* ================================
-   SHOW QUESTION
-================================ */
-
-function showQuestion(){
-
-  clearInterval(timerInterval);
-
-  selectedAnswer = null;
-
-  const q = questions[currentQuestion];
-
-  document.getElementById("progressText").textContent =
-    "प्रश्न " +
-    (currentQuestion + 1) +
-    " / " +
-    questions.length;
-
-  document.getElementById("questionText").innerHTML =
-    formatText(q.question);
-
-  const optionsBox =
-    document.getElementById("optionsBox");
-
-  optionsBox.innerHTML = "";
-
-  if(!q.options || !q.options.length){
-
-    optionsBox.innerHTML =
-      "<p class='wrong'>इस प्रश्न के options उपलब्ध नहीं हैं।</p>";
-
-  }else{
-
-    q.options.forEach((option,index)=>{
-
-      const button =
-        document.createElement("button");
-
-      button.className = "option";
-
-      button.innerHTML =
-        formatText(option);
-
-      button.onclick = function(){
-
-        selectOption(index,button);
-
-      };
-
-      optionsBox.appendChild(button);
-
-    });
-
-  }
-
-  startTimer();
-
-}
-
-
-/* ================================
-   FORMAT TEXT
-================================ */
+/* =======================================================
+   SAFE TEXT FORMAT
+======================================================= */
 
 function formatText(text){
 
-  if(text === undefined || text === null){
+    if(text === null || text === undefined){
+        return "";
+    }
 
-    return "";
-
-  }
-
-  return String(text)
-    .replace(/\n/g,"<br>");
-
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;")
+        .replace(/\n/g,"<br>");
 }
 
 
-/* ================================
-   SELECT OPTION
-================================ */
+/* =======================================================
+   BILINGUAL QUESTION
+======================================================= */
 
-function selectOption(index,button){
+function bilingualQuestion(q){
 
-  selectedAnswer = index;
+    let english = q.question || "";
+    let hindi = q.questionHi || "";
 
-  document
-    .querySelectorAll(".option")
-    .forEach(btn=>{
-      btn.classList.remove("selected");
-    });
+    return `
+        <div class="bilingual-block">
 
-  button.classList.add("selected");
+            <div class="english-text">
+                🇬🇧 ${formatText(english)}
+            </div>
 
+            ${
+                hindi.trim()
+                ?
+                `
+                <div class="hindi-text">
+                    🇮🇳 ${formatText(hindi)}
+                </div>
+                `
+                :
+                ""
+            }
+
+        </div>
+    `;
 }
 
 
-/* ================================
-   TIMER
-================================ */
+/* =======================================================
+   START TEST
+======================================================= */
 
-function startTimer(){
+function startTest(){
 
-  timeLeft = 30;
+    if(!questions.length){
 
-  updateTimer();
+        alert(
+            "Questions available नहीं हैं। पहले uppcs-test1-data.js check करें।"
+        );
 
-  timerInterval =
-    setInterval(()=>{
+        return;
+    }
 
-      timeLeft--;
+    const input =
+        document.getElementById("userName");
 
-      updateTimer();
+    userName =
+        input.value.trim();
 
-      if(timeLeft <= 0){
+    if(!userName){
 
-        clearInterval(timerInterval);
+        alert("कृपया अपना नाम दर्ज करें।");
 
-        autoNext();
+        input.focus();
 
-      }
+        return;
+    }
 
-    },1000);
+    localStorage.setItem(
+        "loyalTestUserName",
+        userName
+    );
 
+    currentQuestion = 0;
+
+    selectedAnswer = null;
+
+    answers = [];
+
+    testFinished = false;
+
+    document
+        .getElementById("startScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("resultScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("solutionScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("testScreen")
+        .classList.remove("hidden");
+
+    showQuestion();
 }
 
 
-/* ================================
-   UPDATE TIMER
-================================ */
+/* =======================================================
+   SHOW QUESTION
+======================================================= */
 
-function updateTimer(){
+function showQuestion(){
 
-  document.getElementById("timer").textContent =
-    timeLeft;
+    clearTimer();
 
+    if(currentQuestion >= questions.length){
+
+        finishTest();
+
+        return;
+    }
+
+    selectedAnswer =
+        answers[currentQuestion] !== undefined
+        ?
+        answers[currentQuestion]
+        :
+        null;
+
+    const q =
+        questions[currentQuestion];
+
+    document.getElementById(
+        "currentQuestionNo"
+    ).textContent =
+        currentQuestion + 1;
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "QUESTION " + (currentQuestion + 1);
+
+    document.getElementById(
+        "questionText"
+    ).innerHTML =
+        bilingualQuestion(q);
+
+    const container =
+        document.getElementById(
+            "optionsContainer"
+        );
+
+    container.innerHTML = "";
+
+    const options =
+        Array.isArray(q.options)
+        ?
+        q.options
+        :
+        [];
+
+    options.forEach(
+        (option,index)=>{
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "option";
+
+            if(
+                selectedAnswer === index
+            ){
+
+                button.classList.add(
+                    "selected"
+                );
+            }
+
+            const hindiOptions =
+                Array.isArray(q.optionsHi)
+                ?
+                q.optionsHi
+                :
+                [];
+
+            const hindi =
+                hindiOptions[index] || "";
+
+            button.innerHTML = `
+
+                <div class="english-option">
+
+                    <b>
+                        ${String.fromCharCode(65 + index)}.
+                    </b>
+
+                    🇬🇧 ${formatText(option)}
+
+                </div>
+
+                ${
+                    hindi.trim()
+                    ?
+                    `
+                    <div class="hindi-option">
+                        🇮🇳 ${formatText(hindi)}
+                    </div>
+                    `
+                    :
+                    ""
+                }
+
+            `;
+
+            button.onclick =
+                function(){
+
+                    selectAnswer(index);
+                };
+
+            container.appendChild(
+                button
+            );
+        }
+    );
+
+    updateProgress();
+
+    startTimer();
 }
 
 
-/* ================================
-   NEXT
-================================ */
+/* =======================================================
+   SELECT ANSWER
+======================================================= */
+
+function selectAnswer(index){
+
+    if(testFinished){
+        return;
+    }
+
+    selectedAnswer = index;
+
+    answers[currentQuestion] =
+        index;
+
+    const buttons =
+        document.querySelectorAll(
+            "#optionsContainer .option"
+        );
+
+    buttons.forEach(
+        (button,i)=>{
+
+            button.classList.toggle(
+                "selected",
+                i === index
+            );
+        }
+    );
+}
+
+
+/* =======================================================
+   NEXT QUESTION
+======================================================= */
 
 function nextQuestion(){
 
-  clearInterval(timerInterval);
+    if(testFinished){
+        return;
+    }
 
-  saveAnswer();
+    clearTimer();
 
+    currentQuestion++;
+
+    if(
+        currentQuestion >=
+        questions.length
+    ){
+
+        finishTest();
+
+    }else{
+
+        showQuestion();
+    }
 }
 
 
-/* ================================
-   SKIP
-================================ */
+/* =======================================================
+   SKIP QUESTION
+======================================================= */
 
 function skipQuestion(){
 
-  clearInterval(timerInterval);
-
-  skippedCount++;
-
-  userAnswers.push({
-    questionIndex:currentQuestion,
-    selected:null,
-    status:"skipped"
-  });
-
-  moveNext();
-
-}
-
-
-/* ================================
-   AUTO NEXT
-================================ */
-
-function autoNext(){
-
-  if(selectedAnswer === null){
-
-    skippedCount++;
-
-    userAnswers.push({
-      questionIndex:currentQuestion,
-      selected:null,
-      status:"skipped"
-    });
-
-  }else{
-
-    saveAnswer();
-
-    return;
-
-  }
-
-  moveNext();
-
-}
-
-
-/* ================================
-   SAVE ANSWER
-================================ */
-
-function saveAnswer(){
-
-  const q = questions[currentQuestion];
-
-  if(selectedAnswer === null){
-
-    skippedCount++;
-
-    userAnswers.push({
-      questionIndex:currentQuestion,
-      selected:null,
-      status:"skipped"
-    });
-
-    moveNext();
-
-    return;
-
-  }
-
-
-  /*
-    डेटा में answer आमतौर पर
-    0,1,2,3 या a,b,c,d हो सकता है।
-  */
-
-  const correctIndex =
-    getCorrectIndex(q.answer);
-
-
-  let status = "wrong";
-
-
-  if(
-    correctIndex !== null &&
-    selectedAnswer === correctIndex
-  ){
-
-    correctCount++;
-
-    status = "correct";
-
-  }else{
-
-    wrongCount++;
-
-  }
-
-
-  userAnswers.push({
-
-    questionIndex:currentQuestion,
-
-    selected:selectedAnswer,
-
-    correct:correctIndex,
-
-    status:status
-
-  });
-
-
-  moveNext();
-
-}
-
-
-/* ================================
-   ANSWER CONVERTER
-================================ */
-
-function getCorrectIndex(answer){
-
-  if(answer === undefined || answer === null){
-
-    return null;
-
-  }
-
-
-  if(typeof answer === "number"){
-
-    if(answer >= 0 && answer <= 3){
-
-      return answer;
-
+    if(testFinished){
+        return;
     }
 
-    if(answer >= 1 && answer <= 4){
+    clearTimer();
 
-      return answer - 1;
+    answers[currentQuestion] =
+        null;
 
+    currentQuestion++;
+
+    if(
+        currentQuestion >=
+        questions.length
+    ){
+
+        finishTest();
+
+    }else{
+
+        showQuestion();
     }
-
-  }
-
-
-  const value =
-    String(answer)
-      .trim()
-      .toLowerCase();
-
-
-  const map = {
-
-    "a":0,
-    "(a)":0,
-    "option a":0,
-
-    "b":1,
-    "(b)":1,
-    "option b":1,
-
-    "c":2,
-    "(c)":2,
-    "option c":2,
-
-    "d":3,
-    "(d)":3,
-    "option d":3
-
-  };
-
-
-  if(
-    Object.prototype.hasOwnProperty
-    .call(map,value)
-  ){
-
-    return map[value];
-
-  }
-
-
-  const number =
-    parseInt(value);
-
-
-  if(!isNaN(number)){
-
-    if(number >= 1 && number <= 4){
-
-      return number - 1;
-
-    }
-
-  }
-
-
-  return null;
-
 }
 
 
-/* ================================
-   MOVE NEXT
-================================ */
+/* =======================================================
+   TIMER
+======================================================= */
 
-function moveNext(){
+function startTimer(){
 
-  currentQuestion++;
+    timeLeft = 30;
 
-  if(currentQuestion >= questions.length){
+    updateTimer();
 
-    finishTest();
+    timerInterval =
+        setInterval(
+            ()=>{
 
-  }else{
+                timeLeft--;
 
-    showQuestion();
+                updateTimer();
 
-  }
+                playTick();
 
+                if(
+                    timeLeft <= 0
+                ){
+
+                    clearTimer();
+
+                    playTimeUp();
+
+                    answers[currentQuestion] =
+                        selectedAnswer;
+
+                    currentQuestion++;
+
+                    if(
+                        currentQuestion >=
+                        questions.length
+                    ){
+
+                        finishTest();
+
+                    }else{
+
+                        showQuestion();
+                    }
+                }
+
+            },
+            1000
+        );
 }
 
 
-/* ================================
+/* =======================================================
+   UPDATE TIMER
+======================================================= */
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+    let seconds =
+        Math.max(0,timeLeft);
+
+    timer.textContent =
+        "00:" +
+        String(seconds).padStart(2,"0");
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+    if(seconds <= 10){
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }else if(seconds <= 20){
+
+        timer.classList.add(
+            "warning"
+        );
+    }
+}
+
+
+/* =======================================================
+   CLEAR TIMER
+======================================================= */
+
+function clearTimer(){
+
+    if(timerInterval){
+
+        clearInterval(
+            timerInterval
+        );
+
+        timerInterval = null;
+    }
+}
+
+
+/* =======================================================
+   TICK SOUND
+======================================================= */
+
+let audioContext = null;
+
+function playTick(){
+
+    try{
+
+        if(!audioContext){
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+        }
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.type =
+            "sine";
+
+        oscillator.frequency.value =
+            900;
+
+        gain.gain.setValueAtTime(
+            0.035,
+            audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioContext.currentTime + 0.06
+        );
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime + 0.06
+        );
+
+    }catch(e){
+
+        /* Audio may be blocked by browser */
+    }
+}
+
+
+/* =======================================================
+   TIME UP SOUND
+======================================================= */
+
+function playTimeUp(){
+
+    try{
+
+        if(!audioContext){
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+        }
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.type =
+            "square";
+
+        oscillator.frequency.value =
+            450;
+
+        gain.gain.setValueAtTime(
+            0.06,
+            audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            audioContext.currentTime + 0.25
+        );
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+        oscillator.start();
+
+        oscillator.stop(
+            audioContext.currentTime + 0.25
+        );
+
+    }catch(e){}
+}
+
+
+/* =======================================================
+   PROGRESS
+======================================================= */
+
+function updateProgress(){
+
+    const total =
+        questions.length;
+
+    const current =
+        currentQuestion + 1;
+
+    const percent =
+        total
+        ?
+        (current / total) * 100
+        :
+        0;
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        percent + "%";
+}
+
+
+/* =======================================================
    FINISH TEST
-================================ */
+======================================================= */
 
 function finishTest(){
 
-  clearInterval(timerInterval);
+    if(testFinished){
+        return;
+    }
 
-  document
-    .getElementById("testScreen")
-    .classList.add("hidden");
+    testFinished = true;
 
-  document
-    .getElementById("resultScreen")
-    .classList.remove("hidden");
+    clearTimer();
 
+    calculateResult();
 
-  /*
-    Source test instructions:
-    1 mark correct
-    1/3 negative for wrong
+    document
+        .getElementById("testScreen")
+        .classList.add("hidden");
 
-    Score = correct - wrong/3
-  */
+    document
+        .getElementById("resultScreen")
+        .classList.remove("hidden");
 
-  const score =
-    correctCount -
-    (wrongCount / 3);
-
-
-  document.getElementById("finalScore").textContent =
-    score.toFixed(2);
-
-
-  document.getElementById("resultInfo").innerHTML =
-
-    "✅ सही उत्तर: " +
-    correctCount +
-    "<br>" +
-
-    "❌ गलत उत्तर: " +
-    wrongCount +
-    "<br>" +
-
-    "⏭️ छोड़े गए: " +
-    skippedCount +
-    "<br>" +
-
-    "📝 कुल प्रश्न: " +
-    questions.length;
-
-
-  localStorage.setItem(
-    "loyal_last_score",
-    score.toFixed(2)
-  );
-
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
-/* ================================
-   SOLUTIONS
-================================ */
+/* =======================================================
+   CALCULATE RESULT
+======================================================= */
+
+function calculateResult(){
+
+    let correct = 0;
+
+    let wrong = 0;
+
+    let skipped = 0;
+
+    questions.forEach(
+        (q,index)=>{
+
+            const userAnswer =
+                answers[index];
+
+            if(
+                userAnswer === null ||
+                userAnswer === undefined
+            ){
+
+                skipped++;
+
+                return;
+            }
+
+            const correctAnswer =
+                normalizeAnswer(
+                    q.answer
+                );
+
+            if(
+                userAnswer ===
+                correctAnswer
+            ){
+
+                correct++;
+
+            }else{
+
+                wrong++;
+            }
+        }
+    );
+
+    /*
+       UPPCS source instructions:
+       one-third negative marking.
+    */
+
+    const score =
+        correct -
+        (wrong / 3);
+
+    const total =
+        questions.length;
+
+    const attempted =
+        correct + wrong;
+
+    const percentage =
+        total
+        ?
+        (score / total) * 100
+        :
+        0;
+
+    const accuracy =
+        attempted
+        ?
+        (correct / attempted) * 100
+        :
+        0;
+
+    document.getElementById(
+        "resultUserName"
+    ).textContent =
+        userName;
+
+    document.getElementById(
+        "scoreNumber"
+    ).textContent =
+        formatNumber(score);
+
+    document.getElementById(
+        "correctCount"
+    ).textContent =
+        correct;
+
+    document.getElementById(
+        "wrongCount"
+    ).textContent =
+        wrong;
+
+    document.getElementById(
+        "skipCount"
+    ).textContent =
+        skipped;
+
+    document.getElementById(
+        "attemptedCount"
+    ).textContent =
+        attempted;
+
+    document.getElementById(
+        "percentage"
+    ).textContent =
+        formatNumber(percentage) + "%";
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        formatNumber(accuracy) + "%";
+
+    localStorage.setItem(
+        "loyalLastResult",
+        JSON.stringify({
+            name:userName,
+            score:score,
+            correct:correct,
+            wrong:wrong,
+            skipped:skipped,
+            attempted:attempted,
+            percentage:percentage,
+            accuracy:accuracy,
+            total:total
+        })
+    );
+}
+
+
+/* =======================================================
+   NORMALIZE ANSWER
+======================================================= */
+
+function normalizeAnswer(answer){
+
+    if(
+        typeof answer === "number"
+    ){
+
+        return answer;
+    }
+
+    if(
+        typeof answer !== "string"
+    ){
+
+        return -1;
+    }
+
+    const value =
+        answer
+            .trim()
+            .toLowerCase();
+
+    const map = {
+        "a":0,
+        "b":1,
+        "c":2,
+        "d":3,
+        "1":0,
+        "2":1,
+        "3":2,
+        "4":3
+    };
+
+    return map[value] !== undefined
+        ?
+        map[value]
+        :
+        -1;
+}
+
+
+/* =======================================================
+   NUMBER FORMAT
+======================================================= */
+
+function formatNumber(number){
+
+    return Number(number)
+        .toFixed(2)
+        .replace(/\.00$/,"")
+        .replace(/(\.\d)0$/,"$1");
+}
+
+
+/* =======================================================
+   SHOW SOLUTIONS
+======================================================= */
 
 function showSolutions(){
 
-  document
-    .getElementById("resultScreen")
-    .classList.add("hidden");
+    clearTimer();
 
-  document
-    .getElementById("solutionScreen")
-    .classList.remove("hidden");
+    document
+        .getElementById("resultScreen")
+        .classList.add("hidden");
 
+    document
+        .getElementById("solutionScreen")
+        .classList.remove("hidden");
 
-  const box =
-    document.getElementById("solutions");
+    renderSolutions();
 
-  box.innerHTML = "";
-
-
-  questions.forEach((q,index)=>{
-
-    const answerIndex =
-      getCorrectIndex(q.answer);
-
-
-    let answerText =
-      "उपलब्ध नहीं";
-
-
-    if(
-      answerIndex !== null &&
-      q.options &&
-      q.options[answerIndex]
-    ){
-
-      answerText =
-        q.options[answerIndex];
-
-    }
-
-
-    const user =
-      userAnswers.find(
-        item =>
-          item.questionIndex === index
-      );
-
-
-    let statusText =
-      "⏭️ प्रश्न छोड़ा गया";
-
-    let statusClass =
-      "wrong";
-
-
-    if(user){
-
-      if(user.status === "correct"){
-
-        statusText =
-          "✅ आपका उत्तर सही है";
-
-        statusClass =
-          "correct";
-
-      }else if(user.status === "wrong"){
-
-        statusText =
-          "❌ आपका उत्तर गलत है";
-
-        statusClass =
-          "wrong";
-
-      }
-
-    }
-
-
-    const div =
-      document.createElement("div");
-
-    div.className =
-      "solution-item";
-
-
-    div.innerHTML =
-
-      "<div class='solution-q'>" +
-
-      "Q" +
-      (index + 1) +
-      ". " +
-
-      formatText(q.question) +
-
-      "</div>" +
-
-      "<div class='" +
-      statusClass +
-      "'>" +
-
-      statusText +
-
-      "</div>" +
-
-      "<div style='margin-top:8px'>" +
-
-      "<b>सही उत्तर:</b> " +
-
-      formatText(answerText) +
-
-      "</div>" +
-
-      "<div class='explanation'>" +
-
-      "<b>व्याख्या:</b><br>" +
-
-      formatText(
-        q.explanation ||
-        "इस प्रश्न की व्याख्या उपलब्ध नहीं है।"
-      ) +
-
-      "</div>";
-
-
-    box.appendChild(div);
-
-  });
-
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
-/* ================================
-   PAGE LOAD
-================================ */
+/* =======================================================
+   RENDER SOLUTIONS
+======================================================= */
 
-loadQuestions();
+function renderSolutions(){
+
+    const container =
+        document.getElementById(
+            "solutionsContainer"
+        );
+
+    container.innerHTML = "";
+
+    questions.forEach(
+        (q,index)=>{
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "solution-item";
+
+            const correctIndex =
+                normalizeAnswer(
+                    q.answer
+                );
+
+            const userAnswer =
+                answers[index];
+
+            let optionsHtml = "";
+
+            const options =
+                Array.isArray(q.options)
+                ?
+                q.options
+                :
+                [];
+
+            const optionsHi =
+                Array.isArray(q.optionsHi)
+                ?
+                q.optionsHi
+                :
+                [];
+
+            options.forEach(
+                (option,optIndex)=>{
+
+                    const isCorrect =
+                        optIndex ===
+                        correctIndex;
+
+                    const isUser =
+                        optIndex ===
+                        userAnswer;
+
+                    const letter =
+                        String.fromCharCode(
+                            65 + optIndex
+                        );
+
+                    optionsHtml += `
+
+                        <div class="
+                            solution-option
+                            ${
+                                isCorrect
+                                ?
+                                "solution-correct"
+                                :
+                                ""
+                            }
+                        ">
+
+                            <div>
+                                <b>
+                                    ${letter}.
+                                </b>
+
+                                🇬🇧
+                                ${formatText(option)}
+                            </div>
+
+                            ${
+                                optionsHi[optIndex]
+                                ?
+                                `
+                                <div
+                                    style="
+                                        margin-top:6px;
+                                        color:#bfccef;
+                                    "
+                                >
+                                    🇮🇳
+                                    ${formatText(
+                                        optionsHi[optIndex]
+                                    )}
+                                </div>
+                                `
+                                :
+                                ""
+                            }
+
+                            ${
+                                isCorrect
+                                ?
+                                `
+                                <div
+                                    style="
+                                        color:#00ffb3;
+                                        margin-top:6px;
+                                        font-size:12px;
+                                    "
+                                >
+                                    ✓ CORRECT ANSWER
+                                </div>
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+                    `;
+                }
+            );
+
+            let answerText =
+                "Not Attempted";
+
+            if(
+                userAnswer !== null &&
+                userAnswer !== undefined
+            ){
+
+                answerText =
+                    String.fromCharCode(
+                        65 + userAnswer
+                    );
+            }
+
+            item.innerHTML = `
+
+                <div class="solution-qno">
+                    QUESTION ${index + 1}
+                </div>
+
+                ${bilingualQuestion(q)}
+
+                <div class="solution-options">
+                    ${optionsHtml}
+                </div>
+
+                <div class="your-answer">
+                    Your Answer:
+                    <strong>
+                        ${answerText}
+                    </strong>
+                </div>
+
+                <div class="explanation">
+
+                    <strong>
+                        💡 Explanation
+                    </strong>
+
+                    <br><br>
+
+                    ${
+                        q.explanation
+                        ?
+                        formatText(
+                            q.explanation
+                        )
+                        :
+                        "Explanation उपलब्ध नहीं है।"
+                    }
+
+                </div>
+            `;
+
+            container.appendChild(
+                item
+            );
+        }
+    );
+}
+
+
+/* =======================================================
+   BACK TO RESULT
+======================================================= */
+
+function backToResult(){
+
+    document
+        .getElementById("solutionScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("resultScreen")
+        .classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =======================================================
+   RESTART
+======================================================= */
+
+function restartTest(){
+
+    clearTimer();
+
+    currentQuestion = 0;
+
+    selectedAnswer = null;
+
+    answers = [];
+
+    testFinished = false;
+
+    document
+        .getElementById("resultScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("solutionScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("startScreen")
+        .classList.remove("hidden");
+
+    const savedName =
+        localStorage.getItem(
+            "loyalTestUserName"
+        );
+
+    if(savedName){
+
+        document.getElementById(
+            "userName"
+        ).value =
+            savedName;
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =======================================================
+   PAGE LOAD
+======================================================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadQuestions();
+
+        const savedName =
+            localStorage.getItem(
+                "loyalTestUserName"
+            );
+
+        if(savedName){
+
+            document.getElementById(
+                "userName"
+            ).value =
+                savedName;
+        }
+    }
+);
 
 </script>
-<script src="uppcs-test1-data.js"></script>
+
 </body>
 </html>
