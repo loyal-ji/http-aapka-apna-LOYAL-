@@ -7,18 +7,21 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
     font-family:Arial, sans-serif;
     background:#070b18;
     color:#fff;
     min-height:100vh;
 }
+
 header{
     padding:22px 15px;
     text-align:center;
     background:linear-gradient(135deg,#101a3a,#19104a);
     border-bottom:1px solid #27356d;
 }
+
 .logo{
     font-size:28px;
     font-weight:900;
@@ -27,27 +30,33 @@ header{
     -webkit-background-clip:text;
     color:transparent;
 }
+
 .tagline{
     margin-top:7px;
     color:#b9c4e8;
     font-size:14px;
 }
+
 .container{
     max-width:1100px;
     margin:auto;
     padding:25px 15px 50px;
 }
+
 .hero{
     text-align:center;
     padding:35px 15px;
 }
+
 .hero h1{
     font-size:34px;
     margin-bottom:12px;
 }
+
 .hero p{
     color:#aeb9dc;
 }
+
 .login-box{
     max-width:420px;
     margin:20px auto;
@@ -57,6 +66,7 @@ header{
     padding:25px;
     box-shadow:0 15px 45px #0008;
 }
+
 input{
     width:100%;
     padding:15px;
@@ -68,6 +78,7 @@ input{
     outline:none;
     margin:12px 0;
 }
+
 button{
     border:0;
     cursor:pointer;
@@ -75,21 +86,25 @@ button{
     padding:13px 18px;
     font-weight:700;
 }
+
 .primary{
     width:100%;
     color:#001018;
     background:linear-gradient(90deg,#00eaff,#00ffb3);
 }
+
 .section-title{
     text-align:center;
     margin:35px 0 20px;
     font-size:25px;
 }
+
 .exam-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
 }
+
 .exam-card{
     background:#10182f;
     border:1px solid #28396b;
@@ -97,30 +112,36 @@ button{
     padding:23px;
     transition:.2s;
 }
+
 .exam-card:hover{
     transform:translateY(-4px);
     border-color:#00eaff;
 }
+
 .exam-card h3{
     margin-bottom:10px;
 }
+
 .exam-card p{
     color:#aeb9dc;
     font-size:14px;
     line-height:1.6;
 }
+
 .start{
     margin-top:18px;
     background:#00eaff;
     color:#001018;
     width:100%;
 }
+
 .rank-box{
     background:#10182f;
     border:1px solid #28396b;
     border-radius:17px;
     padding:20px;
 }
+
 .rank{
     display:flex;
     justify-content:space-between;
@@ -129,10 +150,12 @@ button{
     border-radius:10px;
     background:#080d20;
 }
+
 .rank span:last-child{
     color:#00ffb3;
     font-weight:bold;
 }
+
 .super-chat{
     margin-top:30px;
     text-align:center;
@@ -141,19 +164,210 @@ button{
     background:linear-gradient(135deg,#17133b,#102d35);
     border:1px solid #315878;
 }
+
 footer{
     text-align:center;
     padding:25px;
     color:#8894b9;
     border-top:1px solid #202c52;
 }
+
 #dashboard{
     display:none;
 }
+
 .welcome{
     text-align:center;
     margin-bottom:20px;
     color:#00ffb3;
+}
+
+
+/* ============================= */
+/* NEW LIVE VISITOR PANEL */
+/* ============================= */
+
+.visitor-panel{
+    margin:20px auto 35px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    max-width:750px;
+}
+
+.visitor-card{
+    position:relative;
+    overflow:hidden;
+    padding:22px 15px;
+    text-align:center;
+    border-radius:18px;
+    background:linear-gradient(145deg,#101936,#080d20);
+    border:1px solid #294277;
+    box-shadow:0 10px 35px #0007;
+}
+
+.visitor-card::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#00eaff;
+    filter:blur(55px);
+    opacity:.16;
+    top:-40px;
+    left:-30px;
+}
+
+.visitor-icon{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.visitor-label{
+    color:#aeb9dc;
+    font-size:13px;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+.visitor-number{
+    font-size:34px;
+    font-weight:900;
+    margin-top:7px;
+    background:linear-gradient(90deg,#00eaff,#00ffb3);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.live-dot{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    background:#00ffb3;
+    border-radius:50%;
+    margin-right:6px;
+    box-shadow:0 0 12px #00ffb3;
+    animation:pulseLive 1.2s infinite;
+}
+
+@keyframes pulseLive{
+    0%{transform:scale(1);opacity:1}
+    50%{transform:scale(1.5);opacity:.5}
+    100%{transform:scale(1);opacity:1}
+}
+
+
+/* ============================= */
+/* PUBLIC STUDENT NAME */
+/* ============================= */
+
+.public-name-box{
+    max-width:750px;
+    margin:0 auto 30px;
+    padding:18px;
+    text-align:center;
+    border-radius:17px;
+    background:linear-gradient(135deg,#111b3b,#17103a);
+    border:1px solid #384b83;
+    box-shadow:0 10px 30px #0006;
+}
+
+.public-name-title{
+    color:#aeb9dc;
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.public-name{
+    font-size:23px;
+    font-weight:900;
+    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+
+/* ============================= */
+/* NAME POPUP */
+/* ============================= */
+
+.name-overlay{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(2,5,15,.88);
+    backdrop-filter:blur(10px);
+}
+
+.name-modal{
+    width:100%;
+    max-width:420px;
+    padding:30px 24px;
+    border-radius:22px;
+    text-align:center;
+    background:linear-gradient(145deg,#111a38,#0a1025);
+    border:1px solid #38518f;
+    box-shadow:0 20px 70px #000;
+}
+
+.name-modal .big-logo{
+    font-size:25px;
+    font-weight:900;
+    margin-bottom:12px;
+    background:linear-gradient(90deg,#00eaff,#9b5cff,#ff4ecd);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.name-modal h2{
+    margin:10px 0;
+}
+
+.name-modal p{
+    color:#aeb9dc;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.name-modal input{
+    margin-top:18px;
+}
+
+.public-note{
+    margin-top:8px;
+    color:#7f8db7;
+    font-size:11px;
+}
+
+.name-modal button{
+    margin-top:10px;
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .logo{
+        font-size:23px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .visitor-panel{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .visitor-number{
+        font-size:28px;
+    }
+
 }
 </style>
 </head>
@@ -165,16 +379,22 @@ footer{
     <div class="tagline">Learn • Practice • Test • Rank</div>
 </header>
 
+
 <div class="container">
 
+
 <section id="login">
+
     <div class="hero">
         <h1>आपकी तैयारी, आपका TEST 🎯</h1>
         <p>UPSC • UPPCS • BPSC • UPSSSC PET</p>
     </div>
 
     <div class="login-box">
-        <h2 style="text-align:center">Student Login</h2>
+
+        <h2 style="text-align:center">
+            Student Login
+        </h2>
 
         <input
             id="studentName"
@@ -185,19 +405,91 @@ footer{
         <button class="primary" onclick="login()">
             ENTER TEST FACTORY
         </button>
+
     </div>
+
 </section>
+
 
 <section id="dashboard">
 
     <div class="welcome" id="welcome"></div>
 
-    <h2 class="section-title">📚 Select Your Examination</h2>
+
+    <!-- PUBLIC NAME -->
+
+    <div class="public-name-box">
+
+        <div class="public-name-title">
+            👤 CURRENT TEST STUDENT
+        </div>
+
+        <div class="public-name" id="publicStudentName">
+            —
+        </div>
+
+    </div>
+
+
+    <!-- LIVE VISITORS -->
+
+    <div class="visitor-panel">
+
+        <div class="visitor-card">
+
+            <div class="visitor-icon">
+                🟢
+            </div>
+
+            <div class="visitor-label">
+                <span class="live-dot"></span>
+                LIVE VISITORS
+            </div>
+
+            <div
+                class="visitor-number"
+                id="liveVisitors"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="visitor-card">
+
+            <div class="visitor-icon">
+                👥
+            </div>
+
+            <div class="visitor-label">
+                TOTAL VISITORS
+            </div>
+
+            <div
+                class="visitor-number"
+                id="totalVisitors"
+            >
+                0
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        📚 Select Your Examination
+    </h2>
+
 
     <div class="exam-grid">
 
+
         <!-- UPPCS -->
+
         <div class="exam-card">
+
             <h3>🇮🇳 UPPCS PRELIMS</h3>
 
             <p>
@@ -211,10 +503,14 @@ footer{
             >
                 START TEST
             </button>
+
         </div>
 
+
         <!-- UPSC -->
+
         <div class="exam-card">
+
             <h3>🏛️ UPSC PRELIMS</h3>
 
             <p>
@@ -228,10 +524,14 @@ footer{
             >
                 START TEST
             </button>
+
         </div>
 
+
         <!-- BPSC -->
+
         <div class="exam-card">
+
             <h3>📖 BPSC PRELIMS</h3>
 
             <p>
@@ -245,10 +545,14 @@ footer{
             >
                 START TEST
             </button>
+
         </div>
 
+
         <!-- PET -->
+
         <div class="exam-card">
+
             <h3>🎓 UPSSSC PET</h3>
 
             <p>
@@ -262,11 +566,16 @@ footer{
             >
                 START TEST
             </button>
+
         </div>
 
     </div>
 
-    <h2 class="section-title">🏆 TOP 3 RANKERS</h2>
+
+    <h2 class="section-title">
+        🏆 TOP 3 RANKERS
+    </h2>
+
 
     <div class="rank-box">
 
@@ -297,6 +606,7 @@ footer{
 
     </div>
 
+
     <div class="super-chat">
 
         <h2>💬 LOYAL SUPER CHAT</h2>
@@ -318,49 +628,501 @@ footer{
 
 </div>
 
+
 <footer>
     ✦ DEVELOPER BY LOYAL ✦
 </footer>
 
+
+<!-- ============================= -->
+<!-- NAME POPUP -->
+<!-- ============================= -->
+
+<div
+    class="name-overlay"
+    id="nameOverlay"
+    style="display:none"
+>
+
+    <div class="name-modal">
+
+        <div class="big-logo">
+            ✦ LOYAL TEST FACTORY ✦
+        </div>
+
+        <h2>
+            👋 Welcome Student
+        </h2>
+
+        <p>
+            Test Factory में प्रवेश करने के लिए
+            अपना नाम दर्ज करें।
+        </p>
+
+        <input
+            id="popupName"
+            type="text"
+            placeholder="अपना नाम लिखें"
+            maxlength="40"
+        >
+
+        <button
+            class="primary"
+            onclick="savePopupName()"
+        >
+            🚀 ENTER TEST FACTORY
+        </button>
+
+        <div class="public-note">
+            ⚠️ आपका नाम public dashboard पर दिखाई देगा।
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- FIREBASE -->
+<!-- ============================= -->
+
+<script type="module">
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    set,
+    remove,
+    onValue,
+    onDisconnect,
+    runTransaction
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
+
+/*
+==================================================
+🔥 अपना Firebase CONFIG यहाँ डालें
+==================================================
+*/
+
+const firebaseConfig = {
+
+    apiKey: "PASTE_YOUR_API_KEY",
+
+    authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
+
+    databaseURL:
+        "https://PASTE_YOUR_PROJECT-default-rtdb.firebaseio.com",
+
+    projectId: "PASTE_YOUR_PROJECT",
+
+    storageBucket:
+        "PASTE_YOUR_PROJECT.firebasestorage.app",
+
+    messagingSenderId:
+        "PASTE_YOUR_MESSAGING_SENDER_ID",
+
+    appId:
+        "PASTE_YOUR_APP_ID"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+/* ============================= */
+/* UNIQUE SESSION */
+/* ============================= */
+
+let sessionId =
+    sessionStorage.getItem("loyalSessionId");
+
+if(!sessionId){
+
+    sessionId =
+        crypto.randomUUID();
+
+    sessionStorage.setItem(
+        "loyalSessionId",
+        sessionId
+    );
+
+}
+
+
+/* ============================= */
+/* VISITOR PRESENCE */
+/* ============================= */
+
+function startPresence(name){
+
+    if(
+        !name ||
+        firebaseConfig.apiKey ===
+        "PASTE_YOUR_API_KEY"
+    ){
+
+        return;
+
+    }
+
+
+    const visitorRef =
+        ref(
+            db,
+            "onlineVisitors/" + sessionId
+        );
+
+
+    const visitorData = {
+
+        name:name,
+
+        joinedAt:Date.now(),
+
+        lastSeen:Date.now()
+
+    };
+
+
+    set(
+        visitorRef,
+        visitorData
+    );
+
+
+    /*
+    Browser/tab close होने पर
+    visitor automatically remove होगा.
+    */
+
+    onDisconnect(
+        visitorRef
+    ).remove();
+
+
+    /*
+    हर 20 seconds heartbeat
+    */
+
+    setInterval(
+        function(){
+
+            set(
+                visitorRef,
+                {
+                    name:name,
+                    joinedAt:visitorData.joinedAt,
+                    lastSeen:Date.now()
+                }
+            );
+
+        },
+        20000
+    );
+
+
+    /*
+    LIVE COUNT + PUBLIC NAMES
+    */
+
+    const visitorsRef =
+        ref(db,"onlineVisitors");
+
+
+    onValue(
+        visitorsRef,
+        function(snapshot){
+
+            const data =
+                snapshot.val() || {};
+
+            const visitors =
+                Object.values(data);
+
+
+            document.getElementById(
+                "liveVisitors"
+            ).textContent =
+                visitors.length;
+
+
+            /*
+            Current public names को
+            dashboard में show करना.
+            */
+
+            const current =
+                visitors.find(
+                    v =>
+                    v.name === name
+                );
+
+
+            if(current){
+
+                document.getElementById(
+                    "publicStudentName"
+                ).textContent =
+                    name;
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ============================= */
+/* TOTAL VISITORS */
+/* ============================= */
+
+function countVisitor(){
+
+    if(
+        firebaseConfig.apiKey ===
+        "PASTE_YOUR_API_KEY"
+    ){
+
+        return;
+
+    }
+
+
+    const visitorKey =
+        localStorage.getItem(
+            "loyalVisitorKey"
+        );
+
+
+    /*
+    एक browser को एक visitor
+    के रूप में count करने की कोशिश.
+    */
+
+    if(!visitorKey){
+
+        const newKey =
+            crypto.randomUUID();
+
+        localStorage.setItem(
+            "loyalVisitorKey",
+            newKey
+        );
+
+
+        const totalRef =
+            ref(
+                db,
+                "stats/totalVisitors"
+            );
+
+
+        runTransaction(
+            totalRef,
+            function(current){
+
+                return (current || 0) + 1;
+
+            }
+        );
+
+    }
+
+
+    const totalRef =
+        ref(
+            db,
+            "stats/totalVisitors"
+        );
+
+
+    onValue(
+        totalRef,
+        function(snapshot){
+
+            document.getElementById(
+                "totalVisitors"
+            ).textContent =
+                snapshot.val() || 0;
+
+        }
+    );
+
+}
+
+
+/* ============================= */
+/* START FIREBASE */
+/* ============================= */
+
+window.startLoyalFirebase =
+    function(name){
+
+        startPresence(name);
+
+        countVisitor();
+
+    };
+
+</script>
+
+
 <script>
+
+/* ============================= */
+/* LOGIN */
+/* ============================= */
 
 function login(){
 
     const name =
-        document.getElementById("studentName").value.trim();
+        document
+        .getElementById("studentName")
+        .value
+        .trim();
+
 
     if(!name){
 
-        alert("कृपया अपना नाम दर्ज करें।");
+        alert(
+            "कृपया अपना नाम दर्ज करें।"
+        );
+
         return;
 
     }
+
 
     localStorage.setItem(
         "loyalStudentName",
         name
     );
 
-    document.getElementById("login").style.display="none";
 
-    document.getElementById("dashboard").style.display="block";
+    document.getElementById(
+        "login"
+    ).style.display="none";
 
-    document.getElementById("welcome").innerHTML =
+
+    document.getElementById(
+        "dashboard"
+    ).style.display="block";
+
+
+    document.getElementById(
+        "welcome"
+    ).innerHTML =
         "👋 Welcome, " + name + "!";
+
+
+    document.getElementById(
+        "publicStudentName"
+    ).textContent =
+        name;
+
+
+    if(window.startLoyalFirebase){
+
+        window.startLoyalFirebase(name);
+
+    }
 
 }
 
+
+/* ============================= */
+/* POPUP NAME SAVE */
+/* ============================= */
+
+function savePopupName(){
+
+    const name =
+        document
+        .getElementById("popupName")
+        .value
+        .trim();
+
+
+    if(!name){
+
+        alert(
+            "कृपया अपना नाम दर्ज करें।"
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "loyalStudentName",
+        name
+    );
+
+
+    document.getElementById(
+        "nameOverlay"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "login"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "dashboard"
+    ).style.display="block";
+
+
+    document.getElementById(
+        "welcome"
+    ).innerHTML =
+        "👋 Welcome, " + name + "!";
+
+
+    document.getElementById(
+        "publicStudentName"
+    ).textContent =
+        name;
+
+
+    if(window.startLoyalFirebase){
+
+        window.startLoyalFirebase(name);
+
+    }
+
+}
+
+
+/* ============================= */
+/* OPEN EXAM */
+/* ============================= */
 
 function openExam(exam){
 
     alert(
         exam +
-        "\n\nTest system अगले step में connect किया जाएगा।\n" +
+        "\n\nTest system अगले step में connect किया जाएगा.\n" +
         "30 Seconds / Question"
     );
 
 }
 
+
+/* ============================= */
+/* SUPER CHAT */
+/* ============================= */
 
 function welcomeChat(){
 
@@ -371,19 +1133,62 @@ function welcomeChat(){
 }
 
 
+/* ============================= */
+/* PAGE LOAD */
+/* ============================= */
+
 window.onload=function(){
 
     const savedName =
-        localStorage.getItem("loyalStudentName");
+        localStorage.getItem(
+            "loyalStudentName"
+        );
+
 
     if(savedName){
 
-        document.getElementById("login").style.display="none";
+        document.getElementById(
+            "login"
+        ).style.display="none";
 
-        document.getElementById("dashboard").style.display="block";
 
-        document.getElementById("welcome").innerHTML =
-            "👋 Welcome back, " + savedName + "!";
+        document.getElementById(
+            "dashboard"
+        ).style.display="block";
+
+
+        document.getElementById(
+            "welcome"
+        ).innerHTML =
+            "👋 Welcome back, " +
+            savedName +
+            "!";
+
+
+        document.getElementById(
+            "publicStudentName"
+        ).textContent =
+            savedName;
+
+
+        if(window.startLoyalFirebase){
+
+            window.startLoyalFirebase(
+                savedName
+            );
+
+        }
+
+    }else{
+
+        /*
+        पहली बार website खोलने पर
+        नाम popup.
+        */
+
+        document.getElementById(
+            "nameOverlay"
+        ).style.display="flex";
 
     }
 
