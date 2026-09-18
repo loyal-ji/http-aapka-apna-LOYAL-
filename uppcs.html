@@ -3,2026 +3,1386 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>UPPCS Prelims Test | LOYAL TEST FACTORY</title>
+<title>UPPCS Prelims Test-01 | LOYAL TEST FACTORY</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-html{
-    scroll-behavior:smooth;
+:root{
+  --bg:#050816;
+  --card:#0c1226;
+  --card2:#101936;
+  --text:#f5f7ff;
+  --muted:#aeb8d8;
+  --green:#00ffb3;
+  --cyan:#00eaff;
+  --pink:#ff4ecd;
+  --yellow:#ffe600;
+  --red:#ff4d67;
+  --border:rgba(255,255,255,.12);
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#050816;
-    color:#fff;
-    min-height:100vh;
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(0,234,255,.12),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(255,78,205,.12),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
 }
 
-button,
-input{
-    font-family:inherit;
+button,input{
+  font:inherit;
 }
 
-.header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(5,8,22,.95);
-    border-bottom:1px solid #26355f;
-    backdrop-filter:blur(12px);
-    padding:16px 12px;
-    text-align:center;
-}
-
-.logo{
-    font-size:23px;
-    font-weight:900;
-    letter-spacing:1px;
-    color:#00eaff;
-    text-shadow:
-        0 0 8px rgba(0,234,255,.7),
-        0 0 20px rgba(124,77,255,.4);
-}
-
-.tagline{
-    margin-top:5px;
-    color:#aebce6;
-    font-size:12px;
-    letter-spacing:.7px;
-}
-
-.container{
-    width:min(900px,94%);
-    margin:25px auto;
-}
-
-.card{
-    background:linear-gradient(145deg,#101936,#080d20);
-    border:1px solid #293963;
-    border-radius:20px;
-    padding:22px;
-    box-shadow:0 12px 40px rgba(0,0,0,.35);
+button{
+  cursor:pointer;
 }
 
 .hidden{
-    display:none!important;
+  display:none!important;
 }
 
-/* START SCREEN */
+/* ================= HEADER ================= */
 
-.hero{
-    text-align:center;
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:16px;
+  text-align:center;
+  background:rgba(5,8,22,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
 }
 
-.hero-badge{
-    display:inline-block;
-    padding:7px 14px;
-    border-radius:30px;
-    background:#17254b;
-    color:#00eaff;
-    border:1px solid #31508b;
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:15px;
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,var(--cyan),var(--pink),var(--green));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-.hero h1{
-    font-size:30px;
-    line-height:1.25;
-    margin-bottom:8px;
+.header-sub{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
 }
 
-.hero h1 span{
-    color:#00eaff;
+/* ================= COMMON ================= */
+
+.page{
+  width:min(1000px,94%);
+  margin:0 auto;
+  padding:28px 0 60px;
 }
 
-.hero p{
-    color:#b9c5e6;
-    line-height:1.6;
+.card{
+  background:linear-gradient(145deg,rgba(16,25,54,.96),rgba(8,13,32,.98));
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
-.exam-info{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin:25px 0;
+/* ================= START ================= */
+
+.start-card{
+  padding:30px 22px;
+  text-align:center;
+  margin-top:25px;
 }
 
-.info-box{
-    background:#0b122b;
-    border:1px solid #26385f;
-    border-radius:14px;
-    padding:16px 8px;
-    text-align:center;
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border-radius:999px;
+  color:#001a18;
+  background:linear-gradient(90deg,var(--green),var(--cyan));
+  font-weight:900;
+  font-size:13px;
 }
 
-.info-icon{
-    font-size:22px;
-    margin-bottom:7px;
+.start-title{
+  margin-top:18px;
+  font-size:clamp(28px,7vw,48px);
+  font-weight:900;
 }
 
-.info-title{
-    font-size:12px;
-    color:#91a3d4;
+.gradient-text{
+  background:linear-gradient(90deg,var(--cyan),var(--pink),var(--yellow),var(--green));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-.info-value{
-    margin-top:5px;
-    font-weight:bold;
-    color:#fff;
-    font-size:15px;
+.start-desc{
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.7;
 }
 
-.name-area{
-    margin:20px 0;
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:25px 0;
 }
 
-.name-area label{
-    display:block;
-    margin-bottom:8px;
-    color:#d9e2ff;
-    font-size:14px;
+.info{
+  padding:17px 10px;
+  background:rgba(255,255,255,.045);
+  border:1px solid var(--border);
+  border-radius:16px;
 }
 
-.name-area input{
-    width:100%;
-    padding:15px;
-    border-radius:12px;
-    border:1px solid #344a7c;
-    outline:none;
-    background:#070c20;
-    color:#fff;
-    font-size:16px;
+.info b{
+  display:block;
+  color:var(--cyan);
+  font-size:21px;
+  margin-bottom:5px;
 }
 
-.name-area input:focus{
-    border-color:#00eaff;
-    box-shadow:0 0 0 3px rgba(0,234,255,.1);
+.info span{
+  color:var(--muted);
+  font-size:12px;
 }
 
-.primary-btn{
-    width:100%;
-    border:none;
-    border-radius:13px;
-    padding:15px;
-    cursor:pointer;
-    background:linear-gradient(90deg,#00eaff,#7c4dff);
-    color:#fff;
-    font-weight:900;
-    font-size:16px;
-    box-shadow:0 8px 25px rgba(0,234,255,.18);
-    transition:.2s;
+.name-box{
+  max-width:500px;
+  margin:0 auto;
 }
 
-.primary-btn:hover{
-    transform:translateY(-1px);
+.name-box label{
+  display:block;
+  text-align:left;
+  margin-bottom:8px;
+  color:var(--muted);
+  font-size:14px;
 }
 
-.note{
-    margin-top:15px;
-    text-align:center;
-    color:#8291ba;
-    font-size:12px;
-    line-height:1.5;
+.name-box input{
+  width:100%;
+  padding:16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  outline:none;
+  background:#070c1d;
+  color:#fff;
 }
 
-/* TEST HEADER */
+.name-box input:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 20px rgba(0,234,255,.12);
+}
+
+.main-btn{
+  width:100%;
+  max-width:500px;
+  margin:18px auto 0;
+  display:block;
+  padding:16px 20px;
+  border:0;
+  border-radius:14px;
+  background:linear-gradient(90deg,var(--cyan),var(--pink));
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 10px 30px rgba(0,234,255,.16);
+}
+
+.main-btn:active{
+  transform:scale(.98);
+}
+
+/* ================= TEST ================= */
+
+.test-page{
+  padding-top:18px;
+}
 
 .test-top{
-    position:sticky;
-    top:75px;
-    z-index:900;
-    background:rgba(5,8,22,.96);
-    padding:10px 0;
-    margin-bottom:10px;
-    backdrop-filter:blur(10px);
+  position:sticky;
+  top:73px;
+  z-index:50;
+  padding:13px;
+  margin-bottom:15px;
+  background:rgba(7,11,24,.94);
+  backdrop-filter:blur(12px);
+  border:1px solid var(--border);
+  border-radius:18px;
 }
 
-.test-top-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
+.top-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
 }
 
-.question-count{
-    color:#aebce6;
-    font-size:13px;
-}
-
-.question-count strong{
-    color:#fff;
+.counter{
+  font-weight:900;
+  color:var(--cyan);
 }
 
 .timer{
-    min-width:105px;
-    text-align:center;
-    padding:9px 12px;
-    border-radius:12px;
-    border:1px solid #344a7c;
-    background:#101936;
-    color:#00ffb3;
-    font-size:18px;
-    font-weight:900;
+  min-width:75px;
+  text-align:center;
+  padding:9px 12px;
+  border-radius:12px;
+  background:#151d38;
+  color:var(--green);
+  font-weight:900;
 }
 
 .timer.warning{
-    color:#ffcc00;
-    border-color:#806b16;
-}
-
-.timer.danger{
-    color:#ff4d6d;
-    border-color:#803246;
-    animation:pulse .8s infinite;
+  color:#fff;
+  background:rgba(255,77,103,.18);
+  border:1px solid var(--red);
+  animation:pulse .7s infinite alternate;
 }
 
 @keyframes pulse{
-    50%{
-        transform:scale(1.04);
-    }
-}
-
-.progress-wrap{
-    height:7px;
-    background:#111b39;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:10px;
+  from{transform:scale(1)}
+  to{transform:scale(1.06)}
 }
 
 .progress{
-    height:100%;
-    width:0%;
-    background:linear-gradient(90deg,#00eaff,#7c4dff,#ff4ecd);
-    transition:width .25s;
+  margin-top:10px;
+  height:7px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#171e37;
 }
 
-/* QUESTION */
+.progress-bar{
+  height:100%;
+  width:0;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--cyan),var(--pink),var(--yellow),var(--green));
+  transition:.3s;
+}
+
+/* ================= QUESTION ================= */
 
 .question-card{
-    margin-top:10px;
+  padding:23px 18px;
+  border-radius:22px;
+  border:2px solid var(--cyan);
+  animation:rainbowBorder 7s linear infinite;
 }
 
-.question-number{
-    color:#00eaff;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:14px;
+@keyframes rainbowBorder{
+  0%{border-color:#00eaff;box-shadow:0 0 25px rgba(0,234,255,.10)}
+  25%{border-color:#7c4dff;box-shadow:0 0 25px rgba(124,77,255,.10)}
+  50%{border-color:#ff4ecd;box-shadow:0 0 25px rgba(255,78,205,.10)}
+  75%{border-color:#ffe600;box-shadow:0 0 25px rgba(255,230,0,.08)}
+  100%{border-color:#00ffb3;box-shadow:0 0 25px rgba(0,255,179,.10)}
 }
 
-.bilingual-block{
-    display:block;
+.q-number{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:12px;
 }
 
-.english-text{
-    font-size:19px;
-    line-height:1.7;
-    font-weight:700;
-    color:#fff;
-    margin-bottom:12px;
+.question-hi{
+  font-size:clamp(19px,4.5vw,25px);
+  line-height:1.75;
+  font-weight:800;
+  color:#fff;
+  animation:textRainbow 8s linear infinite;
 }
 
-.hindi-text{
-    font-size:18px;
-    line-height:1.8;
-    color:#e7edff;
-    padding-top:12px;
-    margin-top:8px;
-    border-top:1px solid #293963;
+@keyframes textRainbow{
+  0%{color:#00eaff}
+  20%{color:#7c4dff}
+  40%{color:#ff4ecd}
+  60%{color:#ffe600}
+  80%{color:#00ffb3}
+  100%{color:#00eaff}
+}
+
+.statement-box{
+  white-space:pre-line;
 }
 
 .options{
-    margin-top:22px;
-    display:grid;
-    gap:12px;
+  display:grid;
+  gap:12px;
+  margin-top:22px;
 }
 
 .option{
-    width:100%;
-    text-align:left;
-    border:1px solid #2c3e6c;
-    background:#0b122b;
-    color:#fff;
-    padding:15px;
-    border-radius:14px;
-    cursor:pointer;
-    transition:.18s;
+  width:100%;
+  padding:16px;
+  text-align:left;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#080e22;
+  color:#fff;
+  transition:.2s;
 }
 
 .option:hover{
-    border-color:#00eaff;
-    background:#101b3b;
+  border-color:var(--cyan);
+  transform:translateY(-1px);
 }
 
 .option.selected{
-    border-color:#00eaff;
-    background:#112a46;
-    box-shadow:0 0 0 2px rgba(0,234,255,.08);
+  border-color:var(--green);
+  background:rgba(0,255,179,.09);
+  box-shadow:0 0 20px rgba(0,255,179,.08);
 }
 
-.option.correct{
-    border-color:#00ffb3;
-    background:rgba(0,255,179,.08);
+.option-letter{
+  display:inline-flex;
+  width:29px;
+  height:29px;
+  align-items:center;
+  justify-content:center;
+  margin-right:9px;
+  border-radius:50%;
+  background:#18203c;
+  color:var(--cyan);
+  font-weight:900;
 }
 
-.option.wrong{
-    border-color:#ff4d6d;
-    background:rgba(255,77,109,.08);
+.controls{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
 }
 
-.english-option{
-    font-size:16px;
-    line-height:1.6;
+.control-btn{
+  flex:1;
+  padding:14px;
+  border-radius:13px;
+  border:1px solid var(--border);
+  color:#fff;
+  background:#111936;
+  font-weight:800;
 }
 
-.hindi-option{
-    font-size:16px;
-    line-height:1.7;
-    color:#dce5ff;
-    margin-top:8px;
-    padding-top:8px;
-    border-top:1px solid #293963;
+.control-btn.next{
+  background:linear-gradient(90deg,#00a8ff,#7c4dff);
+  border:0;
 }
 
-.actions{
-    display:flex;
-    gap:10px;
-    margin-top:22px;
+.control-btn.submit{
+  background:linear-gradient(90deg,#ff4ecd,#ff4d67);
+  border:0;
 }
 
-.secondary-btn{
-    flex:1;
-    border:1px solid #334875;
-    background:#0d1632;
-    color:#fff;
-    border-radius:12px;
-    padding:14px;
-    cursor:pointer;
-    font-weight:bold;
+.control-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
 }
 
-.secondary-btn:hover{
-    border-color:#00eaff;
-}
-
-.next-btn{
-    flex:2;
-    border:none;
-    background:linear-gradient(90deg,#00eaff,#7c4dff);
-    color:#fff;
-    border-radius:12px;
-    padding:14px;
-    cursor:pointer;
-    font-weight:900;
-}
-
-/* RESULT */
+/* ================= RESULT ================= */
 
 .result-card{
-    text-align:center;
+  padding:27px 18px;
+  text-align:center;
+  margin-top:25px;
 }
 
-.result-icon{
-    font-size:55px;
-    margin-bottom:10px;
+.welcome{
+  color:var(--green);
+  font-size:18px;
+  font-weight:900;
 }
 
-.result-card h2{
-    font-size:28px;
-    margin-bottom:8px;
+.result-title{
+  margin:12px 0;
+  font-size:34px;
 }
 
-.result-name{
-    color:#00eaff;
-    font-weight:bold;
-    margin-bottom:20px;
+.score{
+  font-size:52px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--cyan),var(--pink),var(--green));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-.score-circle{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    margin:20px auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    background:#0b122b;
-    border:7px solid #00eaff;
-    box-shadow:0 0 35px rgba(0,234,255,.2);
+.score-sub{
+  color:var(--muted);
+  margin-top:5px;
 }
 
-.score-number{
-    font-size:32px;
-    font-weight:900;
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:25px 0;
 }
 
-.score-label{
-    color:#9daed9;
-    font-size:12px;
+.stat{
+  padding:17px 10px;
+  border-radius:15px;
+  background:rgba(255,255,255,.045);
+  border:1px solid var(--border);
 }
 
-.result-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin:20px 0;
+.stat b{
+  display:block;
+  font-size:24px;
 }
 
-.result-box{
-    background:#0b122b;
-    border:1px solid #293963;
-    border-radius:13px;
-    padding:14px 8px;
+.stat span{
+  color:var(--muted);
+  font-size:12px;
 }
 
-.result-box .value{
-    font-size:20px;
-    font-weight:900;
+.correct{color:var(--green)}
+.wrong{color:var(--red)}
+.skipped{color:var(--yellow)}
+.accuracy{color:var(--cyan)}
+
+.result-actions{
+  display:grid;
+  gap:10px;
+  max-width:500px;
+  margin:auto;
 }
 
-.result-box .label{
-    color:#91a3d4;
-    font-size:11px;
-    margin-top:5px;
+/* ================= SOLUTIONS ================= */
+
+.solutions{
+  margin-top:20px;
 }
 
-.correct-value{
-    color:#00ffb3;
+.solution-card{
+  margin-bottom:15px;
+  padding:20px;
+  border-radius:18px;
+  background:#0b1228;
+  border:1px solid var(--border);
 }
 
-.wrong-value{
-    color:#ff4d6d;
+.solution-q{
+  color:var(--cyan);
+  font-weight:900;
+  margin-bottom:12px;
 }
 
-.skip-value{
-    color:#ffcc00;
-}
-
-/* SOLUTION */
-
-.solution-header{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.solution-header h2{
-    font-size:27px;
-}
-
-.solution-header p{
-    color:#9eafd8;
-    margin-top:6px;
-}
-
-.solution-item{
-    background:#0b122b;
-    border:1px solid #293963;
-    border-radius:16px;
-    padding:18px;
-    margin-bottom:14px;
-}
-
-.solution-qno{
-    color:#00eaff;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.solution-options{
-    margin-top:15px;
-    display:grid;
-    gap:8px;
+.solution-question{
+  white-space:pre-line;
+  line-height:1.7;
 }
 
 .solution-option{
-    border:1px solid #24365e;
-    border-radius:10px;
-    padding:11px;
-    color:#cbd6f5;
-    font-size:14px;
+  padding:10px;
+  margin-top:8px;
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
 }
 
-.solution-option.solution-correct{
-    border-color:#00ffb3;
-    color:#00ffb3;
-    background:rgba(0,255,179,.06);
+.solution-option.correct-answer{
+  border:1px solid var(--green);
+  color:var(--green);
 }
 
 .explanation{
-    margin-top:15px;
-    padding:14px;
-    border-left:3px solid #7c4dff;
-    background:#101936;
-    color:#d8e1fb;
+  margin-top:15px;
+  padding:14px;
+  border-left:4px solid var(--pink);
+  background:rgba(255,78,205,.06);
+  color:#e8ebff;
+  line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  color:#737d9e;
+  font-size:12px;
+  padding:25px 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+  .page{
+    width:94%;
+    padding-top:15px;
+  }
+
+  .start-card{
+    padding:25px 15px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .question-card{
+    padding:19px 14px;
+  }
+
+  .question-hi{
+    font-size:18px;
     line-height:1.7;
-    border-radius:8px;
-}
+  }
 
-.your-answer{
-    margin-top:10px;
-    font-size:13px;
-    color:#a9b8db;
-}
+  .controls{
+    flex-direction:column;
+  }
 
-.footer{
-    text-align:center;
-    padding:30px 15px;
-    color:#7382aa;
-    font-size:12px;
-}
+  .control-btn{
+    width:100%;
+  }
 
-.footer strong{
-    color:#00eaff;
-}
-
-/* SMALL SCREEN */
-
-@media(max-width:600px){
-
-    .logo{
-        font-size:19px;
-    }
-
-    .container{
-        width:94%;
-        margin:18px auto;
-    }
-
-    .card{
-        padding:17px;
-        border-radius:16px;
-    }
-
-    .hero h1{
-        font-size:25px;
-    }
-
-    .exam-info{
-        gap:7px;
-    }
-
-    .info-box{
-        padding:12px 5px;
-    }
-
-    .info-value{
-        font-size:13px;
-    }
-
-    .english-text{
-        font-size:17px;
-    }
-
-    .hindi-text{
-        font-size:17px;
-    }
-
-    .english-option,
-    .hindi-option{
-        font-size:15px;
-    }
-
-    .test-top{
-        top:68px;
-    }
-
-    .timer{
-        min-width:90px;
-        font-size:16px;
-    }
-
-    .result-grid{
-        gap:6px;
-    }
+  .test-top{
+    top:66px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
-    <div class="tagline">Learn • Practice • Test • Rank</div>
+<header>
+  <div class="logo">LOYAL TEST FACTORY</div>
+  <div class="header-sub">UPPCS PRELIMS • TEST-01 • POLITY</div>
 </header>
 
-
-<main class="container">
+<main class="page">
 
 <!-- ================= START SCREEN ================= -->
 
-<section id="startScreen" class="card hero">
+<section id="startScreen" class="card start-card">
 
-    <div class="hero-badge">UPPCS PRELIMS</div>
+  <div class="badge">UPPCS PRELIMS TEST-01</div>
 
-    <h1>
-        UPPCS <span>PRELIMS TEST</span>
-    </h1>
+  <h1 class="start-title">
+    <span class="gradient-text">POLITY</span>
+  </h1>
 
-    <p>
-        अपनी तैयारी को टेस्ट करें और अपनी रैंक जानें।
-    </p>
+  <p class="start-desc">
+    भारतीय राजव्यवस्था एवं संविधान आधारित अभ्यास परीक्षा
+  </p>
 
-    <div class="exam-info">
-
-        <div class="info-box">
-            <div class="info-icon">📝</div>
-            <div class="info-title">Questions</div>
-            <div class="info-value" id="totalQuestionsInfo">150</div>
-        </div>
-
-        <div class="info-box">
-            <div class="info-icon">⏱️</div>
-            <div class="info-title">Time / Question</div>
-            <div class="info-value">30 Sec</div>
-        </div>
-
-        <div class="info-box">
-            <div class="info-icon">🌐</div>
-            <div class="info-title">Language</div>
-            <div class="info-value">Hindi + English</div>
-        </div>
-
+  <div class="info-grid">
+    <div class="info">
+      <b id="totalQuestionsInfo">30</b>
+      <span>कुल प्रश्न</span>
     </div>
 
-    <div class="name-area">
-        <label for="userName">अपना नाम दर्ज करें</label>
-        <input
-            type="text"
-            id="userName"
-            placeholder="अपना नाम लिखें..."
-            maxlength="60"
-            autocomplete="name"
-        >
+    <div class="info">
+      <b>30 Sec</b>
+      <span>प्रति प्रश्न</span>
     </div>
 
-    <button class="primary-btn" onclick="startTest()">
-        🚀 START UPPCS TEST
-    </button>
-
-    <div class="note">
-        प्रत्येक प्रश्न के लिए 30 सेकंड मिलेंगे।<br>
-        समय समाप्त होने पर प्रश्न स्वतः Skip हो जाएगा।
+    <div class="info">
+      <b>1/3</b>
+      <span>Negative Marking</span>
     </div>
+  </div>
+
+  <div class="name-box">
+    <label for="candidateName">अपना नाम दर्ज करें</label>
+    <input
+      id="candidateName"
+      type="text"
+      maxlength="50"
+      placeholder="जैसे — Vishwajeet"
+      autocomplete="name"
+    >
+  </div>
+
+  <button class="main-btn" onclick="startTest()">
+    🚀 TEST START करें
+  </button>
 
 </section>
-
 
 <!-- ================= TEST SCREEN ================= -->
 
-<section id="testScreen" class="hidden">
+<section id="testScreen" class="test-page hidden">
 
-    <div class="test-top">
-        <div class="test-top-inner">
+  <div class="test-top">
 
-            <div class="question-count">
-                Question
-                <strong>
-                    <span id="currentQuestionNo">1</span>
-                    /
-                    <span id="questionTotal">150</span>
-                </strong>
-            </div>
+    <div class="top-row">
+      <div class="counter" id="questionCounter">
+        प्रश्न 1 / 30
+      </div>
 
-            <div id="timer" class="timer">
-                00:30
-            </div>
-
-        </div>
-
-        <div class="progress-wrap">
-            <div id="progressBar" class="progress"></div>
-        </div>
+      <div class="timer" id="timer">
+        30s
+      </div>
     </div>
 
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
 
-    <div class="card question-card">
+  </div>
 
-        <div id="questionNumber" class="question-number">
-            QUESTION 1
-        </div>
+  <div id="questionCard" class="card question-card">
 
-        <div id="questionText"></div>
+    <div class="q-number" id="qNumber">
+      प्रश्न 1
+    </div>
 
-        <div id="optionsContainer" class="options"></div>
+    <div id="questionText" class="question-hi"></div>
 
-        <div class="actions">
+    <div id="options" class="options"></div>
 
-            <button
-                class="secondary-btn"
-                onclick="skipQuestion()"
-            >
-                ⏭️ Skip
-            </button>
+    <div class="controls">
 
-            <button
-                class="next-btn"
-                onclick="nextQuestion()"
-            >
-                Next ➜
-            </button>
+      <button
+        id="skipBtn"
+        class="control-btn"
+        onclick="skipQuestion()"
+      >
+        ⏭️ Skip
+      </button>
 
-        </div>
+      <button
+        id="nextBtn"
+        class="control-btn next"
+        onclick="nextQuestion()"
+      >
+        Next ➜
+      </button>
+
+      <button
+        id="submitBtn"
+        class="control-btn submit hidden"
+        onclick="finishTest()"
+      >
+        📤 Paper Submit
+      </button>
 
     </div>
+
+  </div>
 
 </section>
-
 
 <!-- ================= RESULT SCREEN ================= -->
 
 <section id="resultScreen" class="card result-card hidden">
 
-    <div class="result-icon">🏆</div>
+  <div class="welcome" id="welcomeText"></div>
 
-    <h2>Test Completed!</h2>
+  <h2 class="result-title">🎯 Test Complete</h2>
 
-    <div class="result-name">
-        <span id="resultUserName">Student</span>
+  <div class="score" id="finalScore">0</div>
+
+  <div class="score-sub">
+    Final Score
+  </div>
+
+  <div class="stats">
+
+    <div class="stat">
+      <b class="correct" id="correctCount">0</b>
+      <span>सही</span>
     </div>
 
-    <div class="score-circle">
-        <div id="scoreNumber" class="score-number">0</div>
-        <div class="score-label">SCORE</div>
+    <div class="stat">
+      <b class="wrong" id="wrongCount">0</b>
+      <span>गलत</span>
     </div>
 
-    <div class="result-grid">
-
-        <div class="result-box">
-            <div id="correctCount" class="value correct-value">0</div>
-            <div class="label">CORRECT</div>
-        </div>
-
-        <div class="result-box">
-            <div id="wrongCount" class="value wrong-value">0</div>
-            <div class="label">WRONG</div>
-        </div>
-
-        <div class="result-box">
-            <div id="skipCount" class="value skip-value">0</div>
-            <div class="label">SKIPPED</div>
-        </div>
-
+    <div class="stat">
+      <b class="skipped" id="skippedCount">0</b>
+      <span>छोड़े गए</span>
     </div>
 
-    <div class="result-grid">
-
-        <div class="result-box">
-            <div id="attemptedCount" class="value">0</div>
-            <div class="label">ATTEMPTED</div>
-        </div>
-
-        <div class="result-box">
-            <div id="percentage" class="value">0%</div>
-            <div class="label">PERCENTAGE</div>
-        </div>
-
-        <div class="result-box">
-            <div id="accuracy" class="value">0%</div>
-            <div class="label">ACCURACY</div>
-        </div>
-
+    <div class="stat">
+      <b id="attemptedCount">0</b>
+      <span>Attempted</span>
     </div>
 
-    <button
-        class="primary-btn"
-        onclick="showSolutions()"
-    >
-        📚 VIEW SOLUTIONS
+    <div class="stat">
+      <b id="percentageCount">0%</b>
+      <span>Percentage</span>
+    </div>
+
+    <div class="stat">
+      <b class="accuracy" id="accuracyCount">0%</b>
+      <span>Accuracy</span>
+    </div>
+
+  </div>
+
+  <div class="result-actions">
+
+    <button class="main-btn" onclick="showSolutions()">
+      📝 View All Solutions
     </button>
 
-    <br><br>
-
-    <button
-        class="secondary-btn"
-        style="width:100%;"
-        onclick="restartTest()"
-    >
-        🔄 RESTART TEST
+    <button class="main-btn" onclick="restartTest()">
+      🔄 Restart Test
     </button>
+
+  </div>
 
 </section>
-
 
 <!-- ================= SOLUTION SCREEN ================= -->
 
 <section id="solutionScreen" class="hidden">
 
-    <div class="card">
+  <div class="card result-card">
+    <h2 class="result-title">
+      📚 Complete Solutions
+    </h2>
 
-        <div class="solution-header">
-            <h2>📚 Test Solutions</h2>
-            <p>
-                UPPCS Prelims — Question & Explanation
-            </p>
-        </div>
+    <p class="start-desc">
+      UPPCS Prelims Test-01 — Polity
+    </p>
+  </div>
 
-        <div id="solutionsContainer"></div>
+  <div id="solutions" class="solutions"></div>
 
-        <button
-            class="primary-btn"
-            onclick="backToResult()"
-        >
-            ← BACK TO RESULT
-        </button>
-
-    </div>
+  <button class="main-btn" onclick="backToResult()">
+    ← Back to Result
+  </button>
 
 </section>
 
 </main>
 
-
-<footer class="footer">
-    <div>✦ <strong>DEVELOPER BY LOYAL</strong> ✦</div>
-    <div style="margin-top:6px;">
-        LOYAL TEST FACTORY
-    </div>
+<footer>
+  © LOYAL TEST FACTORY • UPPCS Prelims Test-01
 </footer>
 
-
-<!--
-=========================================================
- IMPORTANT:
- uppcs-test1-data.js इसी folder में होना चाहिए।
- इसमें UPPCS_TEST1 नाम का question array होना चाहिए।
-=========================================================
--->
-
+<!-- YOUR QUESTION DATA -->
 <script src="uppcs-test1-data.js"></script>
-
 
 <script>
 
-/* =======================================================
-   GLOBAL VARIABLES
-======================================================= */
+/* =========================================================
+   LOYAL TEST FACTORY
+   UPPCS PRELIMS TEST-01
+   ========================================================= */
 
 let questions = [];
 let currentQuestion = 0;
-
-let userName = "";
-
-let selectedAnswer = null;
-
-let answers = [];
-
+let selectedAnswers = [];
 let timerInterval = null;
 let timeLeft = 30;
+let candidate = "";
+let testStartedAt = null;
+let testFinishedAt = null;
 
-let testFinished = false;
-
-
-/* =======================================================
-   LOAD QUESTIONS
-======================================================= */
+/* ================= LOAD DATA ================= */
 
 function loadQuestions(){
 
-    if(
-        typeof UPPCS_TEST1 !== "undefined" &&
-        Array.isArray(UPPCS_TEST1)
-    ){
+  if(
+    typeof UPPCS_TEST1 !== "undefined" &&
+    Array.isArray(UPPCS_TEST1) &&
+    UPPCS_TEST1.length > 0
+  ){
+    questions = UPPCS_TEST1;
+  }else{
+    alert(
+      "Question file load नहीं हुई। कृपया uppcs-test1-data.js को check करें।"
+    );
+  }
 
-        questions = UPPCS_TEST1;
-
-    }else{
-
-        questions = [];
-
-        alert(
-            "Question file load नहीं हुई। कृपया uppcs-test1-data.js को check करें।"
-        );
-    }
-
-    document.getElementById("totalQuestionsInfo").textContent =
-        questions.length || 0;
-
-    document.getElementById("questionTotal").textContent =
-        questions.length || 0;
+  document.getElementById("totalQuestionsInfo").textContent =
+    questions.length || 30;
 }
 
-
-/* =======================================================
-   SAFE TEXT FORMAT
-======================================================= */
-
-function formatText(text){
-
-    if(text === null || text === undefined){
-        return "";
-    }
-
-    return String(text)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;")
-        .replace(/\n/g,"<br>");
-}
-
-
-/* =======================================================
-   BILINGUAL QUESTION
-======================================================= */
-
-function bilingualQuestion(q){
-
-    let english = q.question || "";
-    let hindi = q.questionHi || "";
-
-    return `
-        <div class="bilingual-block">
-
-            <div class="english-text">
-                🇬🇧 ${formatText(english)}
-            </div>
-
-            ${
-                hindi.trim()
-                ?
-                `
-                <div class="hindi-text">
-                    🇮🇳 ${formatText(hindi)}
-                </div>
-                `
-                :
-                ""
-            }
-
-        </div>
-    `;
-}
-
-
-/* =======================================================
-   START TEST
-======================================================= */
+/* ================= START ================= */
 
 function startTest(){
 
-    if(!questions.length){
+  candidate =
+    document.getElementById("candidateName").value.trim();
 
-        alert(
-            "Questions available नहीं हैं। पहले uppcs-test1-data.js check करें।"
-        );
+  if(!candidate){
+    alert("कृपया पहले अपना नाम दर्ज करें।");
+    document.getElementById("candidateName").focus();
+    return;
+  }
 
-        return;
-    }
+  if(!questions.length){
+    alert("Questions load नहीं हुए हैं।");
+    return;
+  }
 
-    const input =
-        document.getElementById("userName");
+  localStorage.setItem("loyalCandidateName",candidate);
 
-    userName =
-        input.value.trim();
+  currentQuestion = 0;
+  selectedAnswers = new Array(questions.length).fill(null);
+  testStartedAt = Date.now();
 
-    if(!userName){
+  document.getElementById("startScreen")
+    .classList.add("hidden");
 
-        alert("कृपया अपना नाम दर्ज करें।");
+  document.getElementById("resultScreen")
+    .classList.add("hidden");
 
-        input.focus();
+  document.getElementById("solutionScreen")
+    .classList.add("hidden");
 
-        return;
-    }
+  document.getElementById("testScreen")
+    .classList.remove("hidden");
 
-    localStorage.setItem(
-        "loyalTestUserName",
-        userName
-    );
+  speak(
+    "Welcome " +
+    candidate +
+    " ji. Loyal Test Factory mein aapka swagat hai."
+  );
 
-    currentQuestion = 0;
-
-    selectedAnswer = null;
-
-    answers = [];
-
-    testFinished = false;
-
-    document
-        .getElementById("startScreen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("resultScreen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("solutionScreen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("testScreen")
-        .classList.remove("hidden");
-
-    showQuestion();
+  renderQuestion();
 }
 
+/* ================= RENDER QUESTION ================= */
 
-/* =======================================================
-   SHOW QUESTION
-======================================================= */
+function renderQuestion(){
 
-function showQuestion(){
+  clearInterval(timerInterval);
 
-    clearTimer();
+  const q = questions[currentQuestion];
 
-    if(currentQuestion >= questions.length){
+  document.getElementById("questionCounter").textContent =
+    "प्रश्न " +
+    (currentQuestion + 1) +
+    " / " +
+    questions.length;
 
-        finishTest();
+  document.getElementById("qNumber").textContent =
+    "प्रश्न " + q.id;
 
-        return;
+  /*
+    User ने Hindi Medium मांगा है।
+    इसलिए questionHi मौजूद होने पर वही दिखेगा।
+  */
+  document.getElementById("questionText").textContent =
+    q.questionHi || q.question || "";
+
+  const optionsBox =
+    document.getElementById("options");
+
+  optionsBox.innerHTML = "";
+
+  const options = q.options || [];
+
+  options.forEach((option,index)=>{
+
+    const button = document.createElement("button");
+
+    button.className = "option";
+
+    if(selectedAnswers[currentQuestion] === index){
+      button.classList.add("selected");
     }
 
-    selectedAnswer =
-        answers[currentQuestion] !== undefined
-        ?
-        answers[currentQuestion]
-        :
-        null;
+    const letter =
+      String.fromCharCode(65 + index);
 
-    const q =
-        questions[currentQuestion];
+    button.innerHTML =
+      '<span class="option-letter">' +
+      letter +
+      '</span>' +
+      escapeHTML(option);
 
-    document.getElementById(
-        "currentQuestionNo"
-    ).textContent =
-        currentQuestion + 1;
+    button.onclick = function(){
+      selectAnswer(index);
+    };
 
-    document.getElementById(
-        "questionNumber"
-    ).textContent =
-        "QUESTION " + (currentQuestion + 1);
+    optionsBox.appendChild(button);
 
-    document.getElementById(
-        "questionText"
-    ).innerHTML =
-        bilingualQuestion(q);
+  });
 
-    const container =
-        document.getElementById(
-            "optionsContainer"
-        );
+  const progress =
+    ((currentQuestion + 1) / questions.length) * 100;
 
-    container.innerHTML = "";
+  document.getElementById("progressBar")
+    .style.width = progress + "%";
 
-    const options =
-        Array.isArray(q.options)
-        ?
-        q.options
-        :
-        [];
+  const nextBtn =
+    document.getElementById("nextBtn");
 
-    options.forEach(
-        (option,index)=>{
+  const skipBtn =
+    document.getElementById("skipBtn");
 
-            const button =
-                document.createElement("button");
+  const submitBtn =
+    document.getElementById("submitBtn");
 
-            button.className =
-                "option";
+  if(currentQuestion === questions.length - 1){
 
-            if(
-                selectedAnswer === index
-            ){
+    nextBtn.classList.add("hidden");
+    skipBtn.classList.add("hidden");
+    submitBtn.classList.remove("hidden");
 
-                button.classList.add(
-                    "selected"
-                );
-            }
+  }else{
 
-            const hindiOptions =
-                Array.isArray(q.optionsHi)
-                ?
-                q.optionsHi
-                :
-                [];
+    nextBtn.classList.remove("hidden");
+    skipBtn.classList.remove("hidden");
+    submitBtn.classList.add("hidden");
+  }
 
-            const hindi =
-                hindiOptions[index] || "";
-
-            button.innerHTML = `
-
-                <div class="english-option">
-
-                    <b>
-                        ${String.fromCharCode(65 + index)}.
-                    </b>
-
-                    🇬🇧 ${formatText(option)}
-
-                </div>
-
-                ${
-                    hindi.trim()
-                    ?
-                    `
-                    <div class="hindi-option">
-                        🇮🇳 ${formatText(hindi)}
-                    </div>
-                    `
-                    :
-                    ""
-                }
-
-            `;
-
-            button.onclick =
-                function(){
-
-                    selectAnswer(index);
-                };
-
-            container.appendChild(
-                button
-            );
-        }
-    );
-
-    updateProgress();
-
-    startTimer();
+  startTimer();
 }
 
-
-/* =======================================================
-   SELECT ANSWER
-======================================================= */
+/* ================= SELECT ================= */
 
 function selectAnswer(index){
 
-    if(testFinished){
-        return;
-    }
+  selectedAnswers[currentQuestion] = index;
 
-    selectedAnswer = index;
+  const buttons =
+    document.querySelectorAll(".option");
 
-    answers[currentQuestion] =
-        index;
-
-    const buttons =
-        document.querySelectorAll(
-            "#optionsContainer .option"
-        );
-
-    buttons.forEach(
-        (button,i)=>{
-
-            button.classList.toggle(
-                "selected",
-                i === index
-            );
-        }
+  buttons.forEach((btn,i)=>{
+    btn.classList.toggle(
+      "selected",
+      i === index
     );
+  });
 }
 
-
-/* =======================================================
-   NEXT QUESTION
-======================================================= */
-
-function nextQuestion(){
-
-    if(testFinished){
-        return;
-    }
-
-    clearTimer();
-
-    currentQuestion++;
-
-    if(
-        currentQuestion >=
-        questions.length
-    ){
-
-        finishTest();
-
-    }else{
-
-        showQuestion();
-    }
-}
-
-
-/* =======================================================
-   SKIP QUESTION
-======================================================= */
-
-function skipQuestion(){
-
-    if(testFinished){
-        return;
-    }
-
-    clearTimer();
-
-    answers[currentQuestion] =
-        null;
-
-    currentQuestion++;
-
-    if(
-        currentQuestion >=
-        questions.length
-    ){
-
-        finishTest();
-
-    }else{
-
-        showQuestion();
-    }
-}
-
-
-/* =======================================================
-   TIMER
-======================================================= */
+/* ================= TIMER ================= */
 
 function startTimer(){
 
-    timeLeft = 30;
+  timeLeft = 30;
 
-    updateTimer();
+  updateTimer();
 
-    timerInterval =
-        setInterval(
-            ()=>{
+  timerInterval =
+    setInterval(()=>{
 
-                timeLeft--;
+      timeLeft--;
 
-                updateTimer();
+      updateTimer();
 
-                playTick();
+      if(timeLeft <= 0){
 
-                if(
-                    timeLeft <= 0
-                ){
+        clearInterval(timerInterval);
 
-                    clearTimer();
+        autoNext();
+      }
 
-                    playTimeUp();
-
-                    answers[currentQuestion] =
-                        selectedAnswer;
-
-                    currentQuestion++;
-
-                    if(
-                        currentQuestion >=
-                        questions.length
-                    ){
-
-                        finishTest();
-
-                    }else{
-
-                        showQuestion();
-                    }
-                }
-
-            },
-            1000
-        );
+    },1000);
 }
-
-
-/* =======================================================
-   UPDATE TIMER
-======================================================= */
 
 function updateTimer(){
 
-    const timer =
-        document.getElementById(
-            "timer"
-        );
+  const timer =
+    document.getElementById("timer");
 
-    let seconds =
-        Math.max(0,timeLeft);
+  timer.textContent =
+    timeLeft + "s";
 
-    timer.textContent =
-        "00:" +
-        String(seconds).padStart(2,"0");
-
-    timer.classList.remove(
-        "warning",
-        "danger"
-    );
-
-    if(seconds <= 10){
-
-        timer.classList.add(
-            "danger"
-        );
-
-    }else if(seconds <= 20){
-
-        timer.classList.add(
-            "warning"
-        );
-    }
+  if(timeLeft <= 10){
+    timer.classList.add("warning");
+  }else{
+    timer.classList.remove("warning");
+  }
 }
 
+/* ================= NEXT ================= */
 
-/* =======================================================
-   CLEAR TIMER
-======================================================= */
+function nextQuestion(){
 
-function clearTimer(){
+  clearInterval(timerInterval);
 
-    if(timerInterval){
+  if(currentQuestion < questions.length - 1){
 
-        clearInterval(
-            timerInterval
-        );
+    currentQuestion++;
 
-        timerInterval = null;
-    }
+    renderQuestion();
+
+  }else{
+
+    finishTest();
+  }
 }
 
+/* ================= AUTO NEXT ================= */
 
-/* =======================================================
-   TICK SOUND
-======================================================= */
+function autoNext(){
 
-let audioContext = null;
+  if(currentQuestion < questions.length - 1){
 
-function playTick(){
+    currentQuestion++;
 
-    try{
+    renderQuestion();
 
-        if(!audioContext){
+  }else{
 
-            audioContext =
-                new (
-                    window.AudioContext ||
-                    window.webkitAudioContext
-                )();
-        }
-
-        const oscillator =
-            audioContext.createOscillator();
-
-        const gain =
-            audioContext.createGain();
-
-        oscillator.type =
-            "sine";
-
-        oscillator.frequency.value =
-            900;
-
-        gain.gain.setValueAtTime(
-            0.035,
-            audioContext.currentTime
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audioContext.currentTime + 0.06
-        );
-
-        oscillator.connect(gain);
-
-        gain.connect(
-            audioContext.destination
-        );
-
-        oscillator.start();
-
-        oscillator.stop(
-            audioContext.currentTime + 0.06
-        );
-
-    }catch(e){
-
-        /* Audio may be blocked by browser */
-    }
+    finishTest();
+  }
 }
 
+/* ================= SKIP ================= */
 
-/* =======================================================
-   TIME UP SOUND
-======================================================= */
+function skipQuestion(){
 
-function playTimeUp(){
+  selectedAnswers[currentQuestion] = null;
 
-    try{
+  clearInterval(timerInterval);
 
-        if(!audioContext){
+  if(currentQuestion < questions.length - 1){
 
-            audioContext =
-                new (
-                    window.AudioContext ||
-                    window.webkitAudioContext
-                )();
-        }
+    currentQuestion++;
 
-        const oscillator =
-            audioContext.createOscillator();
+    renderQuestion();
 
-        const gain =
-            audioContext.createGain();
+  }else{
 
-        oscillator.type =
-            "square";
-
-        oscillator.frequency.value =
-            450;
-
-        gain.gain.setValueAtTime(
-            0.06,
-            audioContext.currentTime
-        );
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audioContext.currentTime + 0.25
-        );
-
-        oscillator.connect(gain);
-
-        gain.connect(
-            audioContext.destination
-        );
-
-        oscillator.start();
-
-        oscillator.stop(
-            audioContext.currentTime + 0.25
-        );
-
-    }catch(e){}
+    finishTest();
+  }
 }
 
-
-/* =======================================================
-   PROGRESS
-======================================================= */
-
-function updateProgress(){
-
-    const total =
-        questions.length;
-
-    const current =
-        currentQuestion + 1;
-
-    const percent =
-        total
-        ?
-        (current / total) * 100
-        :
-        0;
-
-    document.getElementById(
-        "progressBar"
-    ).style.width =
-        percent + "%";
-}
-
-
-/* =======================================================
-   FINISH TEST
-======================================================= */
-
-function finishTest(){
-
-    if(testFinished){
-        return;
-    }
-
-    testFinished = true;
-
-    clearTimer();
-
-    calculateResult();
-
-    document
-        .getElementById("testScreen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("resultScreen")
-        .classList.remove("hidden");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
-
-
-/* =======================================================
-   CALCULATE RESULT
-======================================================= */
-
-function calculateResult(){
-
-    let correct = 0;
-
-    let wrong = 0;
-
-    let skipped = 0;
-
-    questions.forEach(
-        (q,index)=>{
-
-            const userAnswer =
-                answers[index];
-
-            if(
-                userAnswer === null ||
-                userAnswer === undefined
-            ){
-
-                skipped++;
-
-                return;
-            }
-
-            const correctAnswer =
-                normalizeAnswer(
-                    q.answer
-                );
-
-            if(
-                userAnswer ===
-                correctAnswer
-            ){
-
-                correct++;
-
-            }else{
-
-                wrong++;
-            }
-        }
-    );
-
-    /*
-       UPPCS source instructions:
-       one-third negative marking.
-    */
-
-    const score =
-        correct -
-        (wrong / 3);
-
-    const total =
-        questions.length;
-
-    const attempted =
-        correct + wrong;
-
-    const percentage =
-        total
-        ?
-        (score / total) * 100
-        :
-        0;
-
-    const accuracy =
-        attempted
-        ?
-        (correct / attempted) * 100
-        :
-        0;
-
-    document.getElementById(
-        "resultUserName"
-    ).textContent =
-        userName;
-
-    document.getElementById(
-        "scoreNumber"
-    ).textContent =
-        formatNumber(score);
-
-    document.getElementById(
-        "correctCount"
-    ).textContent =
-        correct;
-
-    document.getElementById(
-        "wrongCount"
-    ).textContent =
-        wrong;
-
-    document.getElementById(
-        "skipCount"
-    ).textContent =
-        skipped;
-
-    document.getElementById(
-        "attemptedCount"
-    ).textContent =
-        attempted;
-
-    document.getElementById(
-        "percentage"
-    ).textContent =
-        formatNumber(percentage) + "%";
-
-    document.getElementById(
-        "accuracy"
-    ).textContent =
-        formatNumber(accuracy) + "%";
-
-    localStorage.setItem(
-        "loyalLastResult",
-        JSON.stringify({
-            name:userName,
-            score:score,
-            correct:correct,
-            wrong:wrong,
-            skipped:skipped,
-            attempted:attempted,
-            percentage:percentage,
-            accuracy:accuracy,
-            total:total
-        })
-    );
-}
-
-
-/* =======================================================
-   NORMALIZE ANSWER
-======================================================= */
+/* ================= ANSWER NORMALIZE ================= */
 
 function normalizeAnswer(answer){
 
-    if(
-        typeof answer === "number"
-    ){
+  if(answer === null || answer === undefined){
+    return -1;
+  }
 
-        return answer;
-    }
+  const value =
+    String(answer).trim().toLowerCase();
 
-    if(
-        typeof answer !== "string"
-    ){
+  const map = {
+    "a":0,
+    "b":1,
+    "c":2,
+    "d":3,
+    "1":0,
+    "2":1,
+    "3":2,
+    "4":3
+  };
 
-        return -1;
-    }
-
-    const value =
-        answer
-            .trim()
-            .toLowerCase();
-
-    const map = {
-        "a":0,
-        "b":1,
-        "c":2,
-        "d":3,
-        "1":0,
-        "2":1,
-        "3":2,
-        "4":3
-    };
-
-    return map[value] !== undefined
-        ?
-        map[value]
-        :
-        -1;
+  return Object.prototype.hasOwnProperty.call(map,value)
+    ? map[value]
+    : -1;
 }
 
+/* ================= FINISH ================= */
 
-/* =======================================================
-   NUMBER FORMAT
-======================================================= */
+function finishTest(){
 
-function formatNumber(number){
+  clearInterval(timerInterval);
 
-    return Number(number)
-        .toFixed(2)
-        .replace(/\.00$/,"")
-        .replace(/(\.\d)0$/,"$1");
+  testFinishedAt = Date.now();
+
+  let correct = 0;
+  let wrong = 0;
+  let skipped = 0;
+
+  questions.forEach((q,index)=>{
+
+    const selected =
+      selectedAnswers[index];
+
+    const correctAnswer =
+      normalizeAnswer(q.answer);
+
+    if(selected === null || selected === undefined){
+
+      skipped++;
+
+    }else if(selected === correctAnswer){
+
+      correct++;
+
+    }else{
+
+      wrong++;
+    }
+
+  });
+
+  const attempted =
+    correct + wrong;
+
+  const score =
+    correct - (wrong / 3);
+
+  const percentage =
+    (score / questions.length) * 100;
+
+  const accuracy =
+    attempted > 0
+      ? (correct / attempted) * 100
+      : 0;
+
+  document.getElementById("testScreen")
+    .classList.add("hidden");
+
+  document.getElementById("resultScreen")
+    .classList.remove("hidden");
+
+  document.getElementById("welcomeText").textContent =
+    "Welcome " + candidate + " ji! 🎉";
+
+  document.getElementById("finalScore").textContent =
+    formatNumber(score);
+
+  document.getElementById("correctCount").textContent =
+    correct;
+
+  document.getElementById("wrongCount").textContent =
+    wrong;
+
+  document.getElementById("skippedCount").textContent =
+    skipped;
+
+  document.getElementById("attemptedCount").textContent =
+    attempted;
+
+  document.getElementById("percentageCount").textContent =
+    formatNumber(percentage) + "%";
+
+  document.getElementById("accuracyCount").textContent =
+    formatNumber(accuracy) + "%";
+
+  const result = {
+    candidate,
+    correct,
+    wrong,
+    skipped,
+    attempted,
+    score,
+    percentage,
+    accuracy,
+    total:questions.length,
+    submittedAt:new Date().toISOString()
+  };
+
+  localStorage.setItem(
+    "loyalLastResult",
+    JSON.stringify(result)
+  );
+
+  speak(
+    "Congratulations " +
+    candidate +
+    " ji. Aapka test complete ho gaya hai. " +
+    "Aapka score " +
+    formatNumber(score) +
+    " hai."
+  );
 }
 
-
-/* =======================================================
-   SHOW SOLUTIONS
-======================================================= */
+/* ================= SOLUTIONS ================= */
 
 function showSolutions(){
 
-    clearTimer();
+  document.getElementById("resultScreen")
+    .classList.add("hidden");
 
-    document
-        .getElementById("resultScreen")
-        .classList.add("hidden");
+  document.getElementById("solutionScreen")
+    .classList.remove("hidden");
 
-    document
-        .getElementById("solutionScreen")
-        .classList.remove("hidden");
+  const box =
+    document.getElementById("solutions");
 
-    renderSolutions();
+  box.innerHTML = "";
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
+  questions.forEach((q,index)=>{
+
+    const correctIndex =
+      normalizeAnswer(q.answer);
+
+    const selected =
+      selectedAnswers[index];
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "card solution-card";
+
+    let optionsHTML = "";
+
+    (q.options || []).forEach((option,i)=>{
+
+      const letter =
+        String.fromCharCode(65+i);
+
+      const isCorrect =
+        i === correctIndex;
+
+      const isSelected =
+        i === selected;
+
+      let className =
+        "solution-option";
+
+      if(isCorrect){
+        className +=
+          " correct-answer";
+      }
+
+      let suffix = "";
+
+      if(isCorrect){
+        suffix += " ✅ सही उत्तर";
+      }
+
+      if(isSelected && !isCorrect){
+        suffix += " ❌ आपका उत्तर";
+      }
+
+      optionsHTML +=
+        '<div class="' +
+        className +
+        '">' +
+        '<b>' + letter + ".</b> " +
+        escapeHTML(option) +
+        suffix +
+        '</div>';
     });
+
+    card.innerHTML =
+      '<div class="solution-q">' +
+      "Q" + q.id +
+      '</div>' +
+
+      '<div class="solution-question">' +
+      escapeHTML(
+        q.questionHi ||
+        q.question ||
+        ""
+      ) +
+      '</div>' +
+
+      optionsHTML +
+
+      '<div class="explanation">' +
+      '<b>💡 Solution:</b><br>' +
+      escapeHTML(
+        q.explanation ||
+        "इस प्रश्न का explanation उपलब्ध नहीं है।"
+      ) +
+      '</div>';
+
+    box.appendChild(card);
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
-
-/* =======================================================
-   RENDER SOLUTIONS
-======================================================= */
-
-function renderSolutions(){
-
-    const container =
-        document.getElementById(
-            "solutionsContainer"
-        );
-
-    container.innerHTML = "";
-
-    questions.forEach(
-        (q,index)=>{
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-            item.className =
-                "solution-item";
-
-            const correctIndex =
-                normalizeAnswer(
-                    q.answer
-                );
-
-            const userAnswer =
-                answers[index];
-
-            let optionsHtml = "";
-
-            const options =
-                Array.isArray(q.options)
-                ?
-                q.options
-                :
-                [];
-
-            const optionsHi =
-                Array.isArray(q.optionsHi)
-                ?
-                q.optionsHi
-                :
-                [];
-
-            options.forEach(
-                (option,optIndex)=>{
-
-                    const isCorrect =
-                        optIndex ===
-                        correctIndex;
-
-                    const isUser =
-                        optIndex ===
-                        userAnswer;
-
-                    const letter =
-                        String.fromCharCode(
-                            65 + optIndex
-                        );
-
-                    optionsHtml += `
-
-                        <div class="
-                            solution-option
-                            ${
-                                isCorrect
-                                ?
-                                "solution-correct"
-                                :
-                                ""
-                            }
-                        ">
-
-                            <div>
-                                <b>
-                                    ${letter}.
-                                </b>
-
-                                🇬🇧
-                                ${formatText(option)}
-                            </div>
-
-                            ${
-                                optionsHi[optIndex]
-                                ?
-                                `
-                                <div
-                                    style="
-                                        margin-top:6px;
-                                        color:#bfccef;
-                                    "
-                                >
-                                    🇮🇳
-                                    ${formatText(
-                                        optionsHi[optIndex]
-                                    )}
-                                </div>
-                                `
-                                :
-                                ""
-                            }
-
-                            ${
-                                isCorrect
-                                ?
-                                `
-                                <div
-                                    style="
-                                        color:#00ffb3;
-                                        margin-top:6px;
-                                        font-size:12px;
-                                    "
-                                >
-                                    ✓ CORRECT ANSWER
-                                </div>
-                                `
-                                :
-                                ""
-                            }
-
-                        </div>
-
-                    `;
-                }
-            );
-
-            let answerText =
-                "Not Attempted";
-
-            if(
-                userAnswer !== null &&
-                userAnswer !== undefined
-            ){
-
-                answerText =
-                    String.fromCharCode(
-                        65 + userAnswer
-                    );
-            }
-
-            item.innerHTML = `
-
-                <div class="solution-qno">
-                    QUESTION ${index + 1}
-                </div>
-
-                ${bilingualQuestion(q)}
-
-                <div class="solution-options">
-                    ${optionsHtml}
-                </div>
-
-                <div class="your-answer">
-                    Your Answer:
-                    <strong>
-                        ${answerText}
-                    </strong>
-                </div>
-
-                <div class="explanation">
-
-                    <strong>
-                        💡 Explanation
-                    </strong>
-
-                    <br><br>
-
-                    ${
-                        q.explanation
-                        ?
-                        formatText(
-                            q.explanation
-                        )
-                        :
-                        "Explanation उपलब्ध नहीं है।"
-                    }
-
-                </div>
-            `;
-
-            container.appendChild(
-                item
-            );
-        }
-    );
-}
-
-
-/* =======================================================
-   BACK TO RESULT
-======================================================= */
+/* ================= BACK RESULT ================= */
 
 function backToResult(){
 
-    document
-        .getElementById("solutionScreen")
-        .classList.add("hidden");
+  document.getElementById("solutionScreen")
+    .classList.add("hidden");
 
-    document
-        .getElementById("resultScreen")
-        .classList.remove("hidden");
+  document.getElementById("resultScreen")
+    .classList.remove("hidden");
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
-
-/* =======================================================
-   RESTART
-======================================================= */
+/* ================= RESTART ================= */
 
 function restartTest(){
 
-    clearTimer();
+  clearInterval(timerInterval);
 
-    currentQuestion = 0;
+  document.getElementById("resultScreen")
+    .classList.add("hidden");
 
-    selectedAnswer = null;
+  document.getElementById("solutionScreen")
+    .classList.add("hidden");
 
-    answers = [];
+  document.getElementById("testScreen")
+    .classList.add("hidden");
 
-    testFinished = false;
+  document.getElementById("startScreen")
+    .classList.remove("hidden");
 
-    document
-        .getElementById("resultScreen")
-        .classList.add("hidden");
+  document.getElementById("candidateName").value =
+    candidate || "";
 
-    document
-        .getElementById("solutionScreen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("startScreen")
-        .classList.remove("hidden");
-
-    const savedName =
-        localStorage.getItem(
-            "loyalTestUserName"
-        );
-
-    if(savedName){
-
-        document.getElementById(
-            "userName"
-        ).value =
-            savedName;
-    }
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
+/* ================= VOICE ================= */
 
-/* =======================================================
-   PAGE LOAD
-======================================================= */
+function speak(text){
 
-window.addEventListener(
-    "DOMContentLoaded",
-    function(){
+  try{
 
-        loadQuestions();
-
-        const savedName =
-            localStorage.getItem(
-                "loyalTestUserName"
-            );
-
-        if(savedName){
-
-            document.getElementById(
-                "userName"
-            ).value =
-                savedName;
-        }
+    if(!("speechSynthesis" in window)){
+      return;
     }
-);
+
+    window.speechSynthesis.cancel();
+
+    const utterance =
+      new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "hi-IN";
+    utterance.rate = 0.92;
+    utterance.pitch = 1.05;
+    utterance.volume = 1;
+
+    window.speechSynthesis.speak(utterance);
+
+  }catch(error){
+    console.log("Voice unavailable:",error);
+  }
+}
+
+/* ================= SECURITY / HTML ESCAPE ================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+/* ================= NUMBER FORMAT ================= */
+
+function formatNumber(value){
+
+  if(!Number.isFinite(value)){
+    return "0";
+  }
+
+  return Number(value).toFixed(2)
+    .replace(/\.00$/,"")
+    .replace(/(\.\d)0$/,"$1");
+}
+
+/* ================= ENTER KEY ================= */
+
+document
+  .getElementById("candidateName")
+  .addEventListener("keydown",function(e){
+
+    if(e.key === "Enter"){
+      startTest();
+    }
+
+  });
+
+/* ================= INITIAL LOAD ================= */
+
+loadQuestions();
 
 </script>
 
