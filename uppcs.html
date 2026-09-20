@@ -955,25 +955,28 @@ config से replace करना है.
 const firebaseConfig = {
 
   apiKey:
-    "PASTE_YOUR_API_KEY",
+    "AIzaSyCrZcJhGbghhRia-CA5AwjnnEpq0A6Asr0",
 
   authDomain:
-    "PASTE_YOUR_PROJECT.firebaseapp.com",
+    "vishrat-36bc6.firebaseapp.com",
 
   databaseURL:
-    "https://PASTE_YOUR_PROJECT-default-rtdb.firebaseio.com",
+    "https://vishrat-36bc6-default-rtdb.firebaseio.com",
 
   projectId:
-    "PASTE_YOUR_PROJECT",
+    "vishrat-36bc6",
 
   storageBucket:
-    "PASTE_YOUR_PROJECT.firebasestorage.app",
+    "vishrat-36bc6.firebasestorage.app",
 
   messagingSenderId:
-    "PASTE_YOUR_MESSAGING_SENDER_ID",
+    "713177652515",
 
   appId:
-    "PASTE_YOUR_APP_ID"
+    "1:713177652515:web:62d8c22558858d63640096",
+
+  measurementId:
+    "G-2ZFQS2E6GG"
 
 };
 
@@ -1009,7 +1012,7 @@ window.loyalFirebaseReady =
         push(
           ref(
             db,
-            "rankings/UPPCS_PRELIMS_TEST_01"
+            "leaderboard/UPPCS_TEST1"
           )
         );
 
@@ -1019,6 +1022,13 @@ window.loyalFirebaseReady =
         {
 
           name:
+            String(
+              result.name || "Student"
+            )
+            .trim()
+            .slice(0,40),
+
+          candidate:
             String(
               result.name || "Student"
             )
