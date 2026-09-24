@@ -275,9 +275,18 @@ input:focus{
 }
 
 @keyframes livePulse{
-    0%{transform:scale(1);opacity:1}
-    50%{transform:scale(1.5);opacity:.5}
-    100%{transform:scale(1);opacity:1}
+    0%{
+        transform:scale(1);
+        opacity:1
+    }
+    50%{
+        transform:scale(1.5);
+        opacity:.5
+    }
+    100%{
+        transform:scale(1);
+        opacity:1
+    }
 }
 
 /* ================= SECTION ================= */
@@ -603,11 +612,17 @@ footer{
 <body>
 
 <header>
-    <div class="logo">✦ LOYAL TEST FACTORY ✦</div>
+
+    <div class="logo">
+        ✦ LOYAL TEST FACTORY ✦
+    </div>
+
     <div class="tagline">
         Learn • Practice • Test • Rank
     </div>
+
 </header>
+
 
 <div class="container">
 
@@ -627,9 +642,12 @@ footer{
 
     </div>
 
+
     <div class="login-box">
 
-        <h2>👨‍🎓 Student Login</h2>
+        <h2>
+            👨‍🎓 Student Login
+        </h2>
 
         <p>
             अपना नाम डालकर LOYAL TEST FACTORY में प्रवेश करें
@@ -755,23 +773,31 @@ footer{
     </div>
 
 
-    <!-- EXAMS -->
+    <!-- ================= EXAMS ================= -->
 
     <h2 class="section-title">
         📚 Select Your Examination
     </h2>
 
+
     <div class="exam-grid">
 
 
+        <!-- ================= UPPCS ================= -->
+
         <div class="exam-card">
 
-            <h3>🇮🇳 UPPCS PRELIMS</h3>
+            <h3>
+                🇮🇳 UPPCS PRELIMS
+            </h3>
 
             <p>
-                UPPCS Prelims Test-01 और Test-02 —
+                UPPCS Prelims Test Series —
                 timed questions, result और live ranking.
             </p>
+
+
+            <!-- TEST 01 -->
 
             <button
                 class="start"
@@ -780,20 +806,73 @@ footer{
                 🚀 START TEST-01
             </button>
 
+
+            <!-- TEST 02 -->
+
             <button
                 class="start"
-                style="margin-top:10px;background:linear-gradient(90deg,#9b5cff,#ff4ecd);color:#fff;"
-                onclick="location.href='tests/UPPCS_PRELIMS_TEST_02_FULL_150.html'"
+                style="
+                    margin-top:10px;
+                    background:linear-gradient(
+                        90deg,
+                        #9b5cff,
+                        #ff4ecd
+                    );
+                    color:#fff;
+                "
+                onclick="location.href='tests/UPPCS_PRELIMS_TEST_02_HINDI_PDF.html'"
             >
                 🔥 START TEST-02
+            </button>
+
+
+            <!-- TEST 04 -->
+
+            <button
+                class="start"
+                style="
+                    margin-top:10px;
+                    background:linear-gradient(
+                        90deg,
+                        #ff4ecd,
+                        #ffe600
+                    );
+                    color:#111;
+                "
+                onclick="location.href='tests/UPPCS_PRELIMS_TEST_04_HINDI_PDF.html'"
+            >
+                ⚡ START TEST-04
+            </button>
+
+
+            <!-- TEST 05 -->
+
+            <button
+                class="start"
+                style="
+                    margin-top:10px;
+                    background:linear-gradient(
+                        90deg,
+                        #00ffb3,
+                        #00eaff
+                    );
+                    color:#001018;
+                "
+                onclick="location.href='tests/UPPCS_PRELIMS_TEST_05_HINDI_PDF.html'"
+            >
+                💎 START TEST-05
             </button>
 
         </div>
 
 
+        <!-- ================= UPSC ================= -->
+
         <div class="exam-card">
 
-            <h3>🏛️ UPSC PRELIMS</h3>
+            <h3>
+                🏛️ UPSC PRELIMS
+            </h3>
 
             <p>
                 UPSC Prelims practice section with
@@ -810,9 +889,13 @@ footer{
         </div>
 
 
+        <!-- ================= BPSC ================= -->
+
         <div class="exam-card">
 
-            <h3>📖 BPSC PRELIMS</h3>
+            <h3>
+                📖 BPSC PRELIMS
+            </h3>
 
             <p>
                 BPSC Prelims test series with
@@ -829,9 +912,13 @@ footer{
         </div>
 
 
+        <!-- ================= UPSSSC ================= -->
+
         <div class="exam-card">
 
-            <h3>🎓 UPSSSC PET</h3>
+            <h3>
+                🎓 UPSSSC PET
+            </h3>
 
             <p>
                 UPSSSC PET practice tests with
@@ -856,17 +943,26 @@ footer{
         🏆 LIVE TEST RANKING
     </h2>
 
+
     <div class="rank-wrapper">
 
         <div class="rank-header">
 
-            <div>RANK</div>
+            <div>
+                RANK
+            </div>
 
-            <div>STUDENT</div>
+            <div>
+                STUDENT
+            </div>
 
-            <div>SCORE</div>
+            <div>
+                SCORE
+            </div>
 
-            <div>%</div>
+            <div>
+                %
+            </div>
 
         </div>
 
@@ -893,7 +989,7 @@ footer{
     </div>
 
 
-    <!-- SUPER CHAT -->
+    <!-- ================= SUPER CHAT ================= -->
 
     <div class="super-chat">
 
@@ -918,6 +1014,8 @@ footer{
 
 </div>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
     ✦ DEVELOPER BY LOYAL ✦
@@ -993,16 +1091,12 @@ import {
 =========================================================
 🔥 FIREBASE CONFIG
 =========================================================
-
-IMPORTANT:
-यहाँ अपने Firebase Web App का actual config डालना है.
-
-=========================================================
 */
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCrZcJhGbghhRia-CA5AwjnnEpq0A6Asr0",
+    apiKey:
+        "AIzaSyCrZcJhGbghhRia-CA5AwjnnEpq0A6Asr0",
 
     authDomain:
         "vishrat-36bc6.firebaseapp.com",
@@ -1090,6 +1184,7 @@ function startPresence(name){
         return;
     }
 
+
     const visitorRef =
         ref(
             db,
@@ -1147,6 +1242,7 @@ function startPresence(name){
             const data =
                 snapshot.val() || {};
 
+
             const visitors =
                 Object.values(data);
 
@@ -1183,6 +1279,7 @@ function countVisitor(){
 
         visitorKey =
             crypto.randomUUID();
+
 
         localStorage.setItem(
             "loyalVisitorKey",
@@ -1316,6 +1413,7 @@ function startRanking(){
                             a.submittedAt || 0
                         ).getTime();
 
+
                     const timeB =
                         new Date(
                             b.submittedAt || 0
@@ -1339,6 +1437,7 @@ function startRanking(){
                 "Ranking Error:",
                 error
             );
+
 
             document.getElementById(
                 "rankStatus"
@@ -1382,10 +1481,12 @@ function renderRanking(results){
             'अभी कोई test result submit नहीं हुआ है।' +
             '</div>';
 
+
         document.getElementById(
             "myRank"
         ).textContent =
             "आपकी Rank: —";
+
 
         document.getElementById(
             "rankStatus"
@@ -1397,6 +1498,7 @@ function renderRanking(results){
 
 
     let html = "";
+
     let myRank = null;
 
 
@@ -1431,7 +1533,10 @@ function renderRanking(results){
                 currentStudent;
 
 
-            if(isMe && myRank === null){
+            if(
+                isMe &&
+                myRank === null
+            ){
 
                 myRank = rank;
 
@@ -1468,9 +1573,11 @@ function renderRanking(results){
 
                     '<div class="rank-name">' +
                         name +
-                        (isMe
-                            ? " ⭐"
-                            : "") +
+                        (
+                            isMe
+                                ? " ⭐"
+                                : ""
+                        ) +
                     '</div>' +
 
                     '<div class="rank-score">' +
@@ -1552,9 +1659,17 @@ function escapeHTML(value){
 }
 
 
+/* =====================================================
+   FORMAT NUMBER
+===================================================== */
+
 function formatNumber(value){
 
-    if(!Number.isFinite(Number(value))){
+    if(
+        !Number.isFinite(
+            Number(value)
+        )
+    ){
 
         return "0";
 
