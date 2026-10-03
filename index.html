@@ -606,6 +606,22 @@ footer{
     }
 
 }
+
+/* ===== UPPSC CRASH COURSE 2026 ===== */
+.crash-course-card{grid-column:1/-1;padding:18px;border-radius:22px;background:linear-gradient(145deg,#101936,#080d20);border:2px solid #1765ff;box-shadow:0 0 25px rgba(0,100,255,.20);overflow:hidden}
+.crash-course-banner{width:100%;display:block;border-radius:14px;margin-bottom:18px;max-height:430px;object-fit:cover}
+.crash-course-card h3{color:#00eaff;font-size:23px;margin-bottom:10px}
+.crash-course-card p{color:#b9c4e8;line-height:1.7;font-size:14px}
+.course-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:18px 0}
+.course-info div{text-align:center;padding:13px 8px;border-radius:12px;background:#080d20;border:1px solid #304477;color:#00eaff;font-weight:bold}
+.curriculum{display:none;margin-top:20px}
+.curriculum-item{padding:16px;margin:12px 0;border-radius:14px;background:#0b1228;border:1px solid #304477}
+.curriculum-item h4{color:#00eaff;margin-bottom:10px;font-size:15px}
+.curriculum-item p{color:#aeb9dc;font-size:12px}
+.curriculum-btn{width:100%;padding:14px;margin-top:12px;border:0;border-radius:12px;background:linear-gradient(90deg,#00eaff,#00ffb3);color:#001018;font-weight:900;cursor:pointer}
+.course-badge{display:inline-block;padding:7px 12px;border-radius:30px;color:#fff;background:linear-gradient(90deg,#174aff,#9b5cff);font-size:12px;margin-bottom:12px}
+@media(max-width:650px){.crash-course-card{padding:12px}.crash-course-card h3{font-size:20px}.crash-course-banner{max-height:none}}
+
 </style>
 </head>
 
@@ -865,6 +881,86 @@ footer{
 
         </div>
 
+
+
+
+        <!-- ================= UPPSC CRASH COURSE 2026 ================= -->
+        <div class="crash-course-card">
+
+            <img
+                src="uppcs-crash-course-2026.jpg"
+                alt="UPPCS Prelims 2026 Crash Course"
+                class="crash-course-banner"
+            >
+
+            <span class="course-badge">🔥 NEW BATCH 2026</span>
+
+            <h3>🇮🇳 UPPSC Crash Course 2026</h3>
+
+            <p>
+                UPPCS Prelims 2026 Crash Course — Online | हिंदी माध्यम
+            </p>
+
+            <div class="course-info">
+                <div>📚 8 Sections</div>
+                <div>🎥 134 Videos</div>
+                <div>📝 21 Notes</div>
+                <div>🌐 Hindi Medium</div>
+            </div>
+
+            <p><b>💰 Offer Fee: ₹2499/-</b></p>
+            <p>📅 Batch Starts: 01 September 2026</p>
+            <p>👨‍🏫 By Khan Sir &amp; Team</p>
+
+            <button class="curriculum-btn" onclick="toggleCurriculum()">
+                📖 VIEW COURSE CURRICULUM
+            </button>
+
+            <div class="curriculum" id="crashCurriculum">
+
+                <div class="curriculum-item">
+                    <h4>01. 📚 Useful Resources</h4>
+                    <p>🎥 0 Videos &nbsp; | &nbsp; 📝 1 Note</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>02. 🏛️ History by Manish Shrivastav Sir</h4>
+                    <p>🎥 25 Videos &nbsp; | &nbsp; 📝 0 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>03. ⚖️ Polity by Shrikant Bhagat Sir</h4>
+                    <p>🎥 25 Videos &nbsp; | &nbsp; 📝 0 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>04. 🇬🇧 CSAT English by Ashutosh Sir (Recorded)</h4>
+                    <p>🎥 13 Videos &nbsp; | &nbsp; 📝 12 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>05. 📖 CSAT Hindi by Ajay Anurag Sir (Recorded)</h4>
+                    <p>🎥 7 Videos &nbsp; | &nbsp; 📝 0 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>06. 🔢 CSAT Maths by Dhrub Singh Sir (Recorded)</h4>
+                    <p>🎥 43 Videos &nbsp; | &nbsp; 📝 6 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>07. 📘 CSAT (Comprehension) by Dhrub Singh Sir (Recorded)</h4>
+                    <p>🎥 9 Videos &nbsp; | &nbsp; 📝 2 Notes</p>
+                </div>
+
+                <div class="curriculum-item">
+                    <h4>08. 🌍 Geography by VK Mishra Sir</h4>
+                    <p>🎥 12 Videos &nbsp; | &nbsp; 📝 0 Notes</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- ================= END UPPSC CRASH COURSE 2026 ================= -->
 
         <!-- ================= UPSC ================= -->
 
@@ -1802,6 +1898,22 @@ function savePopupName(){
 
 }
 
+
+
+
+/* ================= UPPSC CRASH COURSE 2026 ================= */
+function toggleCurriculum(){
+    const curriculum=document.getElementById("crashCurriculum");
+    const button=document.querySelector(".crash-course-card .curriculum-btn");
+    if(!curriculum || !button) return;
+    if(curriculum.style.display === "block"){
+        curriculum.style.display="none";
+        button.textContent="📖 VIEW COURSE CURRICULUM";
+    }else{
+        curriculum.style.display="block";
+        button.textContent="🔼 HIDE CURRICULUM";
+    }
+}
 
 /* ================= OPEN EXAM ================= */
 
